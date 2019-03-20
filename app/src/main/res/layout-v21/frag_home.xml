@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/x_margin_panel"
+    android:paddingEnd="@dimen/x_margin_panel"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:layout_gravity="start|bottom"
+    android:clipChildren="false"
+    tools:context=".fragment.sections.FragHome">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_header"
+        android:elevation="4dp"
+        android:clipChildren="false"
+        android:layout_gravity="center">
+
+        <!-- LAYOUT DIVIDER & ICON -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="-20dp"
+            android:gravity="start|bottom"
+            android:clipChildren="false"
+            android:orientation="horizontal"
+            android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_capsule"
+                android:layout_weight="0.08"
+                android:layout_marginBottom="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="0dp"
+                android:contentDescription="@string/cont_desc_rounded_rect"
+                android:background="@drawable/capsule_main_light" />
+
+            <!-- PAGE ICON -->
+            <ImageView
+                android:id="@+id/ic_home"
+                android:layout_width="@dimen/size_page_icon"
+                android:layout_height="@dimen/size_page_icon"
+                android:background="@drawable/ic_sketch_home_kkwhiteishblue_64dp"
+                android:contentDescription="@string/page_tab_icon" />
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_capsule"
+                android:layout_weight="0.70"
+                android:layout_marginStart="0dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                android:contentDescription="@string/cont_desc_rounded_rect"
+                android:background="@drawable/capsule_main_light" />
+
+        </LinearLayout>
+
+        <!-- LAYOUT ACTION BUTTONS -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="end|bottom"
+            android:orientation="horizontal">
+
+            <!-- USER SUPERBUTTON -->
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/superbutton_user"
+                android:layout_width="88dp"
+                android:layout_height="48dp"
+                android:gravity="center_horizontal|center_vertical"
+                app:isShowState="true"
+                app:state_drawable="@drawable/ic_sketch_cloud_kkblueishwhite_bkg"
+                app:state_drawable_mode="fill"
+                app:state_drawable_width="88dp"
+                app:state_drawable_height="48dp"
+                app:state_drawable_padding_top="4dp"
+                android:text="@string/default_user_name"
+                android:textColor="@color/colorPrimaryDark"
+                app:text_fill_color="@color/colorPrimaryDark"
+                app:pressTextColor="@color/elizabethOrange"
+                android:textSize="@dimen/text_size_username"
+                android:textAlignment="gravity"
+                android:fontFamily="@font/permanent_marker"
+                tools:ignore="RelativeOverlap" />
+
+            <!-- SETTINGS SUPERBUTTON -->
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/superbutton_settings"
+                android:layout_width="@dimen/size_action_button"
+                android:layout_height="@dimen/size_action_button"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                app:corner="@dimen/corner_superbtn"
+                app:pressBgColor="@color/elizabethOrange"
+                app:isShowState="true"
+                app:state_drawable="@drawable/ic_sketch_settings_kkorange_56dp"
+                app:state_drawable_mode="center"
+                app:state_drawable_height="@dimen/size_action_button"
+                app:state_drawable_width="@dimen/size_action_button"
+                tools:ignore="RelativeOverlap" />
+
+            <!-- HELP SUPERBUTTON
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/superbutton_help"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:padding="4dp"
+                android:gravity="center"
+                app:corner="@dimen/corner_superbtn"
+                app:stroke_width="@dimen/stroke_width_map_overlay"
+                app:stroke_color="@color/colorPrimaryDark"
+                app:solid="@color/colorWhite"
+                app:pressBgColor="@color/colorGrey"
+                app:isShowState="true"
+                app:state_drawable="@drawable/ic_sketch_help_kkdarkblue_64dp"
+                app:state_drawable_mode="center"
+                app:state_drawable_height="32dp"
+                app:state_drawable_width="32dp"
+                tools:ignore="RelativeOverlap" /> -->
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- MIDDLE -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_middle"
+        android:padding="@dimen/x_margin_panel"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
+
+        <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+            android:id="@+id/featured_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!-- FOOTER -->
+    <LinearLayout
+        android:id="@+id/layout_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_footer"
+        android:clipChildren="false"
+        android:background="@drawable/bkg_panel_footer_kkdarkblue_transparent"
+        android:orientation="horizontal">
+
+        <!--View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_capsule"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/capsule_main_light"
+            android:contentDescription="@string/cont_desc_rounded_rect" /-->
+
+    </LinearLayout>
+
+
+</LinearLayout>

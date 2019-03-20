@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary -->
+    <color name="colorPrimaryWhite">#E8EFF1</color><color name="colorPrimaryVeryLight">#D2E0E4</color>
+    <color name="colorPrimaryLighter">#AEDCE9</color><color name="colorPrimaryLight">#51b5d1</color>
+    <color name="colorPrimary">#206578</color><color name="colorPrimaryDarkish">#1C5869</color>
+    <color name="colorPrimaryDark">#184B59</color><color name="colorPrimaryDarker">#164654</color><color name="colorPrimaryBlack">#164654</color>
+    <color name="colorAccentWhite">#FDF5F3</color><color name="colorAccentVeryLight">#F0BEB2</color><color name="colorAccentLight">#E38770</color>
+    <color name="colorAccent">#CA4827</color><color name="colorAccentDark">#98311E</color><color name="colorAccentDarker">#672114</color><color name="colorAccentBlack">#040101</color>
+
+    <!-- Karl's Colors -->
+    <color name="elizabethWhite">#FFF6E5</color><color name="elizabethLighter">#FFE3B1</color><color name="elizabethLight">#FFC04C</color>
+    <color name="elizabethOrange">#FFA500</color><color name="elizabethDarkish">#E59400</color><color name="elizabethDark">#B27300</color><color name="elizabethDarker">#664200</color><color name="elizabethBlack">#140D00</color>
+    <color name="timberlineWhite">#F3FDF9</color><color name="timberlineLighter">#90EACA</color><color name="timberlineLight">#2ED69C</color>
+    <color name="timberlineGreen">#14674A</color><color name="timberlineDarkish">#11573E</color><color name="timberlineDark">#0E4632</color><color name="timberlineDarker">#07251B</color>
+    <color name="colorAzureWhite">#E5F2FF</color><color name="colorAzureLighter">#99CBFF</color><color name="colorAzureLight">#4CA5FF</color>
+    <color name="colorAzure">#007FFF</color><color name="colorAzureDarkish">#0075EB</color><color name="colorAzureDark">#0062C4</color><color name="colorAzureDarker">#003B76</color><color name="colorAzureBlack">#000A14</color>
+    <color name="colorGrey">#434343</color><color name="colorElizabethGrey">#898276</color><color name="timberlineGrey">#3A413F</color><color name="colorAzureGrey">#767F89</color>
+
+    <!-- Basic Colors -->
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorVeryLightGrey">#F1F1F1</color>
+    <!-- Transparents -->
+    <color name="colorPrimaryWhiteishTransparent">#7FD2E0E4</color>
+    <color name="colorPrimaryLightTransparent">#A1AEDCE9</color>
+    <color name="colorPrimaryTransparent">#9F206578</color>
+    <color name="colorPrimaryDarkTransparent">#A11E444F</color>
+    <color name="timberlineTransparent">#A114674A</color>
+
+</resources>

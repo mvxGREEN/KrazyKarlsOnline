@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryWhite"
+    tools:context="com.xxxgreen.mvx.krazykarlsonline.activity.MenuActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|top"
+        android:orientation="vertical">
+
+        <!-- TOOLBAR/TABS -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bkg_toolbar_kkdarkblue">
+
+            <!-- LOGO -->
+            <ImageView
+                android:id="@+id/toolbar_kk_logo"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:contentDescription="@string/cont_desc_toolbar_icon"
+                android:background="@drawable/logo_kk_170dp"/>
+
+            <!-- LAYOUT TITLES -->
+            <LinearLayout
+                android:id="@+id/layout_titles"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toEndOf="@id/toolbar_kk_logo"
+                android:layout_toRightOf="@id/toolbar_kk_logo"
+                android:orientation="vertical">
+
+                <!-- TITLE -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/cont_desc_kk_title"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/kk_title_kkblueishwhite"/>
+
+                <!-- SUBTITLE -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp">
+
+                    <View
+                        android:layout_width="48dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="@string/cont_desc_rounded_rect"
+                        android:background="@drawable/capsule_kkorange" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/elizabethOrange"
+                        android:textAlignment="gravity"
+                        android:textStyle="italic|bold"
+                        android:shadowColor="@color/elizabethDark"
+                        android:shadowDx="-2"
+                        android:shadowDy="2"
+                        android:shadowRadius="2"
+                        android:text="@string/toolbar_subtitle_menu"/>
+
+                    <View
+                        android:layout_width="48dp"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:contentDescription="@string/cont_desc_rounded_rect"
+                        android:background="@drawable/capsule_kkorange" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- LAYOUT ACTIONS -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toEndOf="@id/layout_titles"
+                android:layout_toRightOf="@id/layout_titles"
+                android:layout_above="@id/tab_layout_menu"
+                android:padding="8dp"
+                android:background="@null">
+
+                <!-- CART ICON -->
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:src="@drawable/ic_sketch_cart_white_32dp"
+                    android:contentDescription="@string/cont_desc_my_cart"/>
+
+            </RelativeLayout>
+
+            <!-- LAYOUT TABS -->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout_menu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_menu_tab"
+                android:layout_below="@id/layout_titles"
+                android:background="@null"
+                android:theme="@style/AppTheme.PopupOverlay"
+                app:tabGravity="center"
+                app:tabMode="scrollable"
+                app:tabIndicatorColor="@color/elizabethLighter"
+                app:tabSelectedTextColor="@color/elizabethLighter"
+                app:tabTextColor="@color/colorVeryLightGrey" />
+
+        </RelativeLayout>
+
+        <!--  PAGE CONTENT  -->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

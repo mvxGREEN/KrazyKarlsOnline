@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/x_margin_panel"
+    android:paddingEnd="@dimen/x_margin_panel"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:layout_gravity="start|bottom"
+    android:clipChildren="false"
+    tools:context=".fragment.sections.FragMenu">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_header"
+        android:elevation="4dp"
+        android:clipChildren="false"
+        android:layout_gravity="center">
+
+        <!-- LAYOUT ICON & DIVIDER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|bottom"
+            android:clipChildren="false"
+            android:orientation="vertical"
+            android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
+
+            <!-- CAPSULE EXPANDABLE -->
+            <View
+                android:layout_width="40dp"
+                android:layout_height="@dimen/height_capsule"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="@string/cont_desc_rounded_rect"
+                android:background="@drawable/capsule_main_light" />
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_capsule"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="@string/cont_desc_rounded_rect"
+                android:background="@drawable/capsule_main_light" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- MIDDLE (CONTENT) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_middle_menu"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
+
+        <!--  PAGE CONTENT  -->
+        <com.xxxgreen.mvx.krazykarlsonline.ui.NonSwipeViewPager
+            android:id="@+id/view_pager_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </LinearLayout>
+
+    <!-- FOOTER -->
+    <LinearLayout
+        android:id="@+id/layout_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_footer"
+        android:clipChildren="false"
+        android:background="@drawable/bkg_panel_footer_kkdarkblue_transparent"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/divider_footer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_capsule"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/capsule_main_light"
+            android:contentDescription="@string/cont_desc_rounded_rect" />
+
+        <!-- LAYOUT TABS -->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout_menu"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_menu_tab"
+            android:layout_marginTop="-12dp"
+            android:background="@null"
+            android:theme="@style/AppTheme.PopupOverlay"
+            app:tabTextAppearance="@style/Base.TextAppearance.KKTabText"
+            app:tabGravity="center"
+            app:tabMode="scrollable"
+            app:tabIndicatorColor="@color/elizabethLighter"
+            app:tabSelectedTextColor="@color/elizabethLighter"
+            app:tabTextColor="@color/colorVeryLightGrey" />
+
+    </LinearLayout>
+
+</LinearLayout>

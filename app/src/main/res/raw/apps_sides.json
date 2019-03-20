@@ -1,0 +1,56 @@
+{
+  "apps_sides": [
+    {
+      "name": "Chicken Parmesan",
+      "base": "Marinara",
+      "top1": "Mozzarella",
+      "top2": "Parmesan",
+      "top3": "Crispy Chicken",
+      "top4": "",
+      "top5": "",
+      "top6": "",
+      "top7": "",
+      "top8": "",
+      "top9": ""
+    },
+    {
+      "name": "Pub",
+      "base": "Prime Rib",
+      "top1": "Cheddar",
+      "top2": "Bacon",
+      "top3": "Onions",
+      "top4": "Mayo",
+      "top5": "",
+      "top6": "",
+      "top7": "",
+      "top8": "",
+      "top9": ""
+    },
+    {
+      "name": "Buffalo",
+      "base": "Buffalo Sauce",
+      "top1": "Swiss/American Cheese",
+      "top2": "Chicken",
+      "top3": "Onions",
+      "top4": "Jalapeños",
+      "top5": "Ranch",
+      "top6": "",
+      "top7": "",
+      "top8": "",
+      "top9": ""
+    },
+    {
+      "name": "BBQ",
+      "base": "BBQ Sauce",
+      "top1": "Chicken, onions, pineapple, Swiss/American cheese, side of ranch",
+      "top2": "Chicken",
+      "top3": "Onions",
+      "top4": "Jalapeños",
+      "top5": "Ranch",
+      "top6": "",
+      "top7": "",
+      "top8": "",
+      "top9": ""
+    },
+  ]
+}

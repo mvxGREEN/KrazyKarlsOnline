@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners
+        android:radius="@dimen/corner_map_overlay_inner_panel" />
+    <stroke
+        android:width="@dimen/stroke_width_inner_panel"
+        android:color="@color/colorPrimaryDarkTransparent" />
+    <solid
+        android:color="@color/colorPrimaryWhite" />
+</shape>

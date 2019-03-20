@@ -1,0 +1,104 @@
+{
+  "toppings": [
+    {
+      "flatness": 10,
+      "name": "Marinara",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Ranch",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Spicy Ranch",
+      "isPremium": true
+    },
+    {
+      "flatness": 10,
+      "name": "Bleu Cheese (Sauce)",
+      "isPremium": true
+    },
+    {
+      "flatness": 10,
+      "name": "Garlic Butter",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Sweet Chili",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Thai",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Olive Oil and Garlic",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Pesto",
+      "isPremium": true
+    },
+    {
+      "flatness": 10,
+      "name": "Alfredo",
+      "isPremium": true
+    },
+    {
+      "flatness": 10,
+      "name": "BBQ",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Sweet Caroline BBQ",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Buffalo",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Green Chili",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Queso",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Sausage Gravy",
+      "isPremium": true
+    },
+    {
+      "flatness": 10,
+      "name": "Garlic Serrano",
+      "isPremium": true
+    },
+    {
+      "flatness": 10,
+      "name": "Teriyaki",
+      "isPremium": true
+    },
+    {
+      "flatness": 10,
+      "name": "Reg. Butter",
+      "isPremium": false
+    },
+    {
+      "flatness": 10,
+      "name": "Caesar",
+      "isPremium": false
+    }
+  ]
+}

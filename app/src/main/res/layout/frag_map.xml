@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/x_margin_panel"
+    android:paddingEnd="@dimen/x_margin_panel"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:layout_gravity="start|bottom"
+    android:clipChildren="false"
+    tools:context=".fragment.sections.FragMap">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_header"
+        android:layout_marginTop="16dp"
+        android:clipChildren="false"
+        android:layout_gravity="center"
+        android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
+
+        <!-- LAYOUT ICON & DIVIDER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start|bottom"
+            android:clipChildren="false"
+            android:orientation="horizontal">
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_capsule"
+                android:layout_weight="0.08"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:contentDescription="@string/cont_desc_rounded_rect"
+                android:background="@drawable/capsule_main_light" />
+
+            <!-- PAGE ICON -->
+            <ImageView
+                android:id="@+id/img_page_icon"
+                android:layout_width="@dimen/size_page_icon"
+                android:layout_height="@dimen/size_page_icon"
+                android:background="@drawable/ic_sketch_map_kkblueishwhite_88dp"
+                android:contentDescription="@string/page_tab_icon" />
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="3dp"
+                android:layout_weight="0.76"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginRight="4dp"
+                android:contentDescription="@string/cont_desc_rounded_rect"
+                android:background="@drawable/capsule_main_light" />
+
+        </LinearLayout>
+
+        <!-- LAYOUT ACTION BUTTONS -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="end|bottom"
+            android:orientation="horizontal">
+
+            <!-- MY LOCATION SUPERBUTTON    TODO: XML, JAVA -> onClick="getUserLocation" -->
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/superbutton_user"
+                android:layout_width="@dimen/size_action_button"
+                android:layout_height="@dimen/size_action_button"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                app:isShowState="true"
+                app:state_drawable="@drawable/ic_sketch_current_location_red_128dp"
+                app:state_drawable_mode="fill"
+                app:state_drawable_padding_top="4dp"
+                tools:ignore="RelativeOverlap" />
+
+            <!-- ADD LOCATION SUPERBUTTON -->
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/superbutton_add_location"
+                android:layout_width="@dimen/size_action_button"
+                android:layout_height="@dimen/size_action_button"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                app:corner="@dimen/corner_superbtn"
+                app:pressBgColor="@color/colorPrimary"
+                app:isShowState="true"
+                app:state_drawable="@drawable/ic_sketchy_add_location_red_72dp"
+                app:state_drawable_mode="fill"
+                tools:ignore="RelativeOverlap" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <!-- MIDDLE (CONTENT) -->
+    <LinearLayout
+        android:id="@+id/layout_panel_middle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_middle"
+        android:padding="@dimen/padding_panel"
+        android:gravity="bottom"
+        android:orientation="horizontal"
+        android:clipChildren="false"
+        android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
+
+        <!-- LAYOUT STORE LOCATIONS -->
+        <LinearLayout
+            android:id="@+id/layout_store_locations"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginEnd="@dimen/width_my_location_panel"
+            android:layout_marginRight="@dimen/width_my_location_panel"
+            android:layout_marginBottom="4dp"
+            android:gravity="start|bottom"
+            android:orientation="vertical"
+            android:clipChildren="false">
+
+            <!-- STORE LOCATION #1 (ELIZABETH) -->
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/superpanel_store_location_1"
+                android:layout_width="@dimen/width_store_location_panel"
+                android:layout_height="@dimen/height_store_location_panel"
+                android:paddingTop="0dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="2dp"
+                android:layout_marginBottom="-12dp"
+                android:alpha="0.80"
+                android:gravity="start|bottom"
+                app:isShowState="true"
+                app:state_drawable="@drawable/photo_elizabeth_storefront_sketch_border_kkorangeishwhite"
+                app:state_drawable_mode="fill"
+                android:text="@string/title_map_location_elizabeth"
+                android:fontFamily="@font/permanent_marker"
+                android:textAlignment="gravity"
+                android:textSize="17sp"
+                app:text_fill_color="@color/elizabethWhite"
+                app:text_stroke="true"
+                app:text_stroke_color="@color/elizabethDark"
+                app:text_stroke_width="3dp"/>
+            <!-- STORE LOCATION #2 (TIMBERLINE) -->
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/superpanel_store_location_2"
+                android:layout_width="@dimen/width_store_location_panel"
+                android:layout_height="@dimen/height_store_location_panel"
+                android:paddingTop="0dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="2dp"
+                android:layout_marginBottom="-4dp"
+                android:alpha="0.80"
+                android:gravity="start|bottom"
+                app:isShowState="true"
+                app:state_drawable="@drawable/photo_timberline_storefront_sketch_border_kkgreenishwhite"
+                app:state_drawable_mode="fill"
+                app:isShowState2="false"
+                app:state_drawable2="@drawable/ic_sketch_store_location_kkblueihwhite_88dp"
+                app:state_drawable2_width="20dp"
+                app:state_drawable2_height="20dp"
+                app:state_drawable2_mode="leftBottom"
+                app:state_drawable2_padding_top="-8dp"
+                app:state_drawable2_padding_left="20dp"
+                android:text="@string/title_map_location_timberline"
+                android:fontFamily="@font/permanent_marker"
+                android:textAlignment="gravity"
+                android:textSize="17sp"
+                app:text_fill_color="@color/timberlineWhite"
+                app:text_stroke="true"
+                app:text_stroke_color="@color/timberlineDark"
+                app:text_stroke_width="3dp" />
+
+        </LinearLayout>
+
+        <!-- LAYOUT CUSTOM LOCATIONS -->
+        <LinearLayout
+            android:id="@+id/layout_custom_locations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginEnd="@dimen/width_my_location_panel"
+            android:layout_marginRight="@dimen/width_my_location_panel"
+            android:layout_marginBottom="4dp"
+            android:gravity="end|bottom"
+            android:orientation="vertical"
+            android:clipChildren="false">
+
+            <!-- HOME -->
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/supertext_location_home"
+                android:layout_width="@dimen/width_my_location_panel"
+                android:layout_height="@dimen/height_my_location_panel"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:paddingTop="0dp"
+                android:alpha="0.80"
+                android:gravity="center_horizontal|bottom"
+                app:isShowState="true"
+                app:state_drawable="@drawable/bkg_sketch_rectangle_kkblueishwhite_2x1_large"
+                app:state_drawable_mode="fill"
+                app:isShowState2="true"
+                app:state_drawable2="@drawable/ic_sketch_home_kkwhiteishblue_64dp"
+                app:state_drawable2_width="32dp"
+                app:state_drawable2_height="32dp"
+                app:state_drawable2_mode="top"
+                app:state_drawable2_padding_top="8dp"
+                android:text="@string/location_title_custom_location_home"
+                android:fontFamily="@font/permanent_marker"
+                android:textAlignment="gravity"
+                android:textSize="15sp"
+                app:text_fill_color="@color/colorPrimaryWhite"
+                app:text_stroke="true"
+                app:text_stroke_color="@color/colorPrimaryDark" />
+            <!-- WORK/SCHOOL -->
+            <com.coorchice.library.SuperTextView
+                android:id="@+id/supertext_location_workschool"
+                android:layout_width="@dimen/width_my_location_panel"
+                android:layout_height="@dimen/height_my_location_panel"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:padding="2dp"
+                android:alpha="0.80"
+                android:gravity="center_horizontal|bottom"
+                app:isShowState="true"
+                app:state_drawable="@drawable/bkg_sketch_rectangle_kkblueishwhite_2x1_large"
+                app:state_drawable_mode="fill"
+                app:isShowState2="true"
+                app:state_drawable2="@drawable/ic_sketch_work_kkblueishwhite_64dp"
+                app:state_drawable2_width="32dp"
+                app:state_drawable2_height="32dp"
+                app:state_drawable2_mode="top"
+                app:state_drawable2_padding_top="8dp"
+                android:text="@string/location_title_custom_location_workschool"
+                android:fontFamily="@font/permanent_marker"
+                android:textAlignment="gravity"
+                android:textSize="15sp"
+                app:text_fill_color="@color/colorPrimaryWhite"
+                app:text_stroke="true"
+                app:text_stroke_color="@color/colorPrimaryDark" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- FOOTER -->
+    <LinearLayout
+        android:id="@+id/layout_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_footer"
+        android:clipChildren="false"
+        android:background="@drawable/bkg_panel_footer_kkdarkblue_transparent"
+        android:orientation="horizontal">
+
+        <!--View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_capsule"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/capsule_main_light"
+            android:contentDescription="@string/cont_desc_rounded_rect" /-->
+
+    </LinearLayout>
+
+</LinearLayout>

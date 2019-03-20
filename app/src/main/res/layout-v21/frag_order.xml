@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/x_margin_panel"
+    android:paddingEnd="@dimen/x_margin_panel"
+    android:orientation="vertical"
+    android:gravity="bottom"
+    android:layout_gravity="start|bottom"
+    android:clipChildren="false"
+    tools:context=".fragment.sections.FragOrder">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_header"
+        android:elevation="4dp"
+        android:clipChildren="false"
+        android:layout_gravity="center"
+        android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
+
+        <!-- LAYOUT PANEL TITLE -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start|center_vertical"
+            android:clipChildren="false"
+            android:orientation="horizontal">
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_capsule"
+                android:layout_weight="0.08"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginEnd="-2dp"
+                android:layout_marginRight="-2dp"
+                android:contentDescription="@string/cont_desc_rounded_rect"
+                android:background="@drawable/capsule_main_light" />
+
+            <!-- PAGE ICON -->
+            <ImageView
+                android:id="@+id/ic_page"
+                android:layout_width="@dimen/size_page_icon"
+                android:layout_height="@dimen/size_page_icon"
+                android:layout_marginBottom="-16dp"
+                android:background="@drawable/ic_sketch_order_kkblueishwhite_88dp"
+                android:contentDescription="@string/page_tab_icon"/>
+
+            <!-- DIVIDER -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_capsule"
+                android:layout_weight="0.70"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="-2dp"
+                android:layout_marginLeft="-2dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:contentDescription="@string/cont_desc_rounded_rect"
+                android:background="@drawable/capsule_main_light" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- MIDDLE (CONTENT) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_middle"
+        android:padding="@dimen/x_margin_panel"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
+
+        <!-- TODO -->
+
+    </LinearLayout>
+
+    <!-- FOOTER -->
+    <LinearLayout
+        android:id="@+id/layout_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_footer"
+        android:clipChildren="false"
+        android:background="@drawable/bkg_panel_footer_kkdarkblue_transparent"
+        android:orientation="horizontal">
+
+        <!--View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_capsule"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/capsule_main_light"
+            android:contentDescription="@string/cont_desc_rounded_rect" /-->
+
+    </LinearLayout>
+
+</LinearLayout>

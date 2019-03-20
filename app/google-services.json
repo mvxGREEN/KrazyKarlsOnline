@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "674946493793",
+    "firebase_url": "https://krazy-karls-pizza.firebaseio.com",
+    "project_id": "krazy-karls-pizza",
+    "storage_bucket": "krazy-karls-pizza.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674946493793:android:9c23fbe88e50267f",
+        "android_client_info": {
+          "package_name": "com.xxxgreen.mvx.krazykarlsonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674946493793-8sljebn0273bn6jksfjes8iimrlofolt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD39WAk28iYtRc_vH5XjvcWWEC6fEajz2s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

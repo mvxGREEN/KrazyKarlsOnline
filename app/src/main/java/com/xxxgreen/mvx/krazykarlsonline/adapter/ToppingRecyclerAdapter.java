@@ -1,0 +1,104 @@
+package com.xxxgreen.mvx.krazykarlsonline.adapter;
+
+import android.content.Context;
+import android.content.res.Resources;
+import android.database.Cursor;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.xxxgreen.mvx.krazykarlsonline.R;
+import com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseManager;
+import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Pizza;
+
+import java.util.List;
+
+public class ToppingRecyclerAdapter extends RecyclerView.Adapter<ToppingRecyclerAdapter.PizzaHolder> {
+    private final String TAG = "PizzaRecyclerAdapter";
+
+    private List<Pizza> pizzaList;
+    private OnItemClickListener itemClickListener;
+    Context context;
+
+    public ToppingRecyclerAdapter(List<Pizza> pizzaList, Context context) {
+        this.pizzaList = pizzaList;
+        this.context = context;
+
+        DatabaseManager dbm = DatabaseManager.getInstance(this.context);
+        Cursor pizzaCursor = dbm.queryAllPizzas();
+        fillList(pizzaCursor);
+    }
+
+    public class PizzaHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public ImageView i_icon;
+        public TextView t_title, t_subtitle;
+
+        public PizzaHolder(View itemView) {
+            super(itemView);
+            this.i_icon = itemView.findViewById(R.id.icon_pizza);
+            this.t_title = itemView.findViewById(R.id.title_pizza);
+            this.t_subtitle = itemView.findViewById(R.id.toppings_pizza);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            itemClickListener.onItemClick(v, getAdapterPosition());
+        }
+    }
+
+    @NonNull
+    @Override
+    public PizzaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+        View view = inflater.inflate(R.layout.item_pizza, parent, false);
+
+        return new PizzaHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull PizzaHolder holder, int position) {
+        final Pizza pizza = pizzaList.get(position);
+        Context ctx = holder.i_icon.getContext();
+        Resources res = ctx.getResources();     // Get resources to access drawables
+
+        holder.i_icon.setBackground(res.getDrawable(R.drawable.ic_specialty_pizza_white_128dp));
+        holder.t_title.setText(pizza.name);
+    }
+
+    @Override
+    public int getItemCount() {
+        return pizzaList.size();
+    }
+
+    public Pizza getItem(int index) {
+        if (index > -1 && index < getItemCount()) {
+            return pizzaList.get(index);
+        } else {
+            return null;
+        }
+    }
+
+    private void fillList(Cursor cursor) {
+        if (cursor.isClosed()) {
+            Log.e(TAG, "ERROR! fillList: cursor is closed!");
+        } else if (cursor.moveToLast()) {
+            do {
+                Pizza p = new Pizza(cursor);
+                this.pizzaList.add(p);
+            } while(cursor.moveToPrevious());
+        } else {
+            Log.e(TAG, "cursor failed to move to last");
+        }
+    }
+
+    // Click listener callback & setter
+    public interface OnItemClickListener {
+        public void onItemClick(View view, int position);
+    }
+}

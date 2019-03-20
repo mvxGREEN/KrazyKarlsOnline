@@ -1,0 +1,60 @@
+<resources>
+    <!-- GENERAL/APP -->
+    <string name="app_name">Krazy Karl\'s Pizza</string>
+    <string name="toolbar_subtitle_map"> MAP </string>
+    <string name="toolbar_subtitle_menu">MENU</string>
+    <string name="app_order_type_pickup">Pickup</string>
+    <string name="app_order_type_delivery">Delivery</string>
+
+    <!-- MENU -->
+    <string name="action_review">Review Order</string>
+
+    <!-- LOCATIONS -->
+
+
+    <!-- GEOCODER -->
+    <string name="invalid_lat_long_used">Invalid Lat/Long</string>
+    <string name="service_not_available">Service not Available</string>
+
+    <!-- CONT. DESC. -->
+    <string name="cont_desc_kk_title">kk title</string>
+    <string name="cont_desc_rounded_rect">rounded rectangle</string>
+    <string name="cont_desc_toolbar_icon">karl\'s logo for toolbar</string>
+
+    <!-- NEW/TEMP -->
+    <string name="example_pizza_name">Example Pizza</string>
+    <string name="example_pizza_toppings">Base, Cheese, Toppings…</string>
+    <string name="cont_desc_my_cart">cart icon</string>
+    <string name="cont_desc_edit_item_button">edit item button</string>
+    <string name="cont_desc_icon_order_item">icon order item</string>
+    <string name="cont_desc_imgbtn_settings">image button settings</string>
+    <string name="overlay_title_home">Home</string>
+    <string name="overlay_title_menu">Menu</string>
+    <string name="overlay_title_order">Order</string>
+    <string name="superheader_title_history">History</string>
+    <string name="overlay_title_quick_order">Quick Order</string>
+    <string name="default_user_name">Guest</string>
+    <string name="toolbar_subtitle_online">Online</string>
+    <string name="page_tab_icon">page tab icon</string>
+    <string name="menu_category">menu category</string>
+    <string name="category_pizza">Pizza</string>
+    <string name="category_more">More</string>
+    <string name="category_salads">Salads</string>
+    <string name="category_grinders">Grinders</string>
+    <string name="category_apps_amp_sides">Sides</string>
+    <string name="pizza_krazy_hawaiian">Krazy Hawaiian</string>
+    <string name="inner_panel_pizza_of_the_week">P.O.T.W.</string>
+    <string name="category_coupons">Coupons</string>
+
+    <!-- SECTION MAP -->
+    <string name="section_title_map">Map</string>
+    <string name="location_title_custom_location_home">Home</string>
+    <string name="location_title_custom_location_workschool">Work/School</string>
+    <string name="location_title_work">Add…</string>
+    <string name="title_map_location_elizabeth">\@Elizabeth</string>
+    <string name="title_map_location_timberline">\@Timberline</string>
+    <string name="title_map_snippet_my_location">My Location</string>
+    <string name="hint_map_searchbox">New Location…</string>
+    <string name="cont_desc_pizza_icon">pizza icon</string>
+
+</resources>

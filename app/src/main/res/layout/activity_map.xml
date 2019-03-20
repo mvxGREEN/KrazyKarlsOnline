@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <!-- MAP -->
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.MapActivity" />
+
+    <!-- TOOLBAR -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bkg_toolbar_kkdarkblue">
+
+        <!-- KRAZY KARL's LOGO -->
+        <ImageView
+            android:id="@+id/toolbar_kk_logo"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="@string/cont_desc_toolbar_icon"
+            android:background="@drawable/logo_kk_170dp"/>
+
+        <!-- TITLE (LAYOUT) -->
+        <LinearLayout
+            android:id="@+id/layout_titles"
+            android:layout_width="228dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_toEndOf="@id/toolbar_kk_logo"
+            android:layout_toRightOf="@id/toolbar_kk_logo"
+            android:orientation="vertical">
+
+            <!-- TITLE (IMAGE)  TODO: GIMP -> Higher resolution; apply shadow BL (?) -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:contentDescription="@string/cont_desc_kk_title"
+                android:background="@drawable/kk_title_kkblueishwhite"/>
+
+            <!-- SUBTITLE (LAYOUT) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="-2dp">
+
+                <!-- DIVIDER -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="0.28"
+                    android:layout_marginTop="14dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_marginRight="2dp"
+                    android:layout_marginBottom="4dp"
+                    android:contentDescription="@string/cont_desc_rounded_rect"
+                    android:background="@drawable/capsule_main_light" />
+
+                <!-- SUBTITLE (TEXT) -->
+                <TextView
+                    android:id="@+id/text_toolbar_subtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.35"
+                    android:gravity="center"
+                    android:letterSpacing="@dimen/letter_spacing_toolbar"
+                    android:text="@string/toolbar_subtitle_online"
+                    android:textSize="18sp"
+                    android:fontFamily="@font/permanent_marker"
+                    android:textColor="@color/colorPrimaryVeryLight"
+                    android:textAlignment="gravity"
+                    tools:targetApi="lollipop" />
+
+                <!-- DIVIDER -->
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="2dp"
+                    android:layout_weight="0.28"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginBottom="4dp"
+                    android:contentDescription="@string/cont_desc_rounded_rect"
+                    android:background="@drawable/capsule_main_light"
+                    tools:ignore="RtlSymmetry" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- TAB LAYOUT -->
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab_layout_map"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_menu_tab"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/layout_titles"
+            android:background="@null"
+            android:theme="@style/AppTheme.PopupOverlay"
+            app:tabTextAppearance="@style/Base.TextAppearance.KKTabText"
+            app:tabMinWidth="64dp"
+            app:tabGravity="fill"
+            app:tabMode="scrollable"
+            app:tabIndicatorHeight="3dp"
+            app:tabIndicatorColor="@color/elizabethLight"
+            app:tabSelectedTextColor="@color/elizabethLight"
+            app:tabTextColor="@color/colorPrimaryLighter" />
+
+    </RelativeLayout>
+
+    <!-- VIEW PAGER OVERLAY (PANEL) -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_map"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@null"
+        android:clipChildren="false"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
