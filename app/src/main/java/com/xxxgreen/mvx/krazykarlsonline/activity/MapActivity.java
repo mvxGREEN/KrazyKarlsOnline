@@ -3,11 +3,8 @@ package com.xxxgreen.mvx.krazykarlsonline.activity;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
-import android.os.Handler;
-import android.os.ResultReceiver;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
@@ -36,7 +33,6 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolygonOptions;
-import com.xxxgreen.mvx.krazykarlsonline.GeocoderIntentService;
 import com.xxxgreen.mvx.krazykarlsonline.R;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Location;
 import com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseManager;
@@ -72,7 +68,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private GoogleMap mMap;
     protected LatLng userLatLng, cameraCenter;
     protected android.location.Location mLastLocation;
-    private AddressResultReceiver mResultReceiver;  // TODO
     private static LayoutInflater layoutInflater;
     private Location selectedLocation, searchedLocation;
     DatabaseManager mDbm;
@@ -244,29 +239,11 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
                 .zIndex(16)
         );
-
-        locationListener.onLocationChanged(location);
     }
 
     private Context getContext() {
         return this;
     }
-
-    private final LocationListener locationListener = new LocationListener() {
-        public void onLocationChanged(android.location.Location location) {
-            Log.i(TAG, "LocationListener.OnLocationChanged Test");
-            if (location == null) { return; }
-
-            // Update class vars
-            userLatLng = new LatLng(location.getLatitude(), location.getLongitude());
-
-            // Start Geocoder intent service
-            Intent intent = new Intent(getContext(), GeocoderIntentService.class);
-            intent.putExtra(GeocoderIntentService.Constants.RECEIVER, mResultReceiver);
-            intent.putExtra(GeocoderIntentService.Constants.LOCATION_DATA_EXTRA, mLastLocation);
-            startService(intent);
-        }
-    };
 
     private void checkAndRequestPermissions(Context context) {
         // Check fine location permission
@@ -299,7 +276,6 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                         .zIndex(4)
                 );
 
-                locationListener.onLocationChanged(location);
             } else {
                 Log.w(TAG, "User location unknown");
             }
@@ -463,30 +439,5 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             Log.w(TAG, "Index, " + position + ", is outside array length: " + 2);
             return "";
         }
-    }
-
-    class AddressResultReceiver extends ResultReceiver {
-
-        public AddressResultReceiver(Handler handler) {
-            super(handler);
-        }
-
-        @Override
-        protected void onReceiveResult(int resultCode, Bundle resultData) {
-            if (resultData == null) {
-                Log.i(TAG, "Geocoder result data: NULL");
-                return;
-            }
-
-            if (resultCode == GeocoderIntentService.Constants.SUCCESS_RESULT) {
-                Log.i(TAG, "Geocoder FetchAddress: success!");
-            }
-
-            // Get address_1 from Geocoder results
-            String mAddressOutput =
-                    resultData.getString(GeocoderIntentService.Constants.RESULT_DATA_KEY);
-
-        }
-
     }
 }
