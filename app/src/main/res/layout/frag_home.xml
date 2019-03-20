@@ -46,7 +46,6 @@
 
             <!-- PAGE ICON -->
             <ImageView
-                android:id="@+id/ic_home"
                 android:layout_width="@dimen/size_page_icon"
                 android:layout_height="@dimen/size_page_icon"
                 android:layout_marginTop="4dp"
@@ -102,7 +101,6 @@
 
             <!-- SETTINGS SUPERBUTTON -->
             <com.coorchice.library.SuperTextView
-                android:id="@+id/superbutton_settings"
                 android:layout_width="@dimen/size_action_button"
                 android:layout_height="@dimen/size_action_button"
                 android:layout_marginStart="4dp"
@@ -159,7 +157,6 @@
 
     <!-- FOOTER -->
     <LinearLayout
-        android:id="@+id/layout_footer"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_footer"
         android:clipChildren="false"

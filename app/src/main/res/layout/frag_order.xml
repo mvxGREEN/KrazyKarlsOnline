@@ -85,7 +85,6 @@
 
     <!-- FOOTER -->
     <LinearLayout
-        android:id="@+id/layout_footer"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_footer"
         android:clipChildren="false"

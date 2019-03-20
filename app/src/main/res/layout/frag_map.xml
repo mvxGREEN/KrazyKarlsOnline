@@ -46,7 +46,6 @@
 
             <!-- PAGE ICON -->
             <ImageView
-                android:id="@+id/img_page_icon"
                 android:layout_width="@dimen/size_page_icon"
                 android:layout_height="@dimen/size_page_icon"
                 android:background="@drawable/ic_sketch_map_kkblueishwhite_88dp"
@@ -95,7 +94,6 @@
 
             <!-- ADD LOCATION SUPERBUTTON -->
             <com.coorchice.library.SuperTextView
-                android:id="@+id/superbutton_add_location"
                 android:layout_width="@dimen/size_action_button"
                 android:layout_height="@dimen/size_action_button"
                 android:layout_marginStart="4dp"
@@ -115,7 +113,6 @@
 
     <!-- MIDDLE (CONTENT) -->
     <LinearLayout
-        android:id="@+id/layout_panel_middle"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_middle"
         android:padding="@dimen/padding_panel"
@@ -126,7 +123,6 @@
 
         <!-- LAYOUT STORE LOCATIONS -->
         <LinearLayout
-            android:id="@+id/layout_store_locations"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"
@@ -141,7 +137,6 @@
 
             <!-- STORE LOCATION #1 (ELIZABETH) -->
             <com.coorchice.library.SuperTextView
-                android:id="@+id/superpanel_store_location_1"
                 android:layout_width="@dimen/width_store_location_panel"
                 android:layout_height="@dimen/height_store_location_panel"
                 android:paddingTop="0dp"
@@ -164,7 +159,6 @@
                 app:text_stroke_width="3dp"/>
             <!-- STORE LOCATION #2 (TIMBERLINE) -->
             <com.coorchice.library.SuperTextView
-                android:id="@+id/superpanel_store_location_2"
                 android:layout_width="@dimen/width_store_location_panel"
                 android:layout_height="@dimen/height_store_location_panel"
                 android:paddingTop="0dp"
@@ -197,7 +191,6 @@
 
         <!-- LAYOUT CUSTOM LOCATIONS -->
         <LinearLayout
-            android:id="@+id/layout_custom_locations"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -212,7 +205,6 @@
 
             <!-- HOME -->
             <com.coorchice.library.SuperTextView
-                android:id="@+id/supertext_location_home"
                 android:layout_width="@dimen/width_my_location_panel"
                 android:layout_height="@dimen/height_my_location_panel"
                 android:layout_marginStart="8dp"
@@ -238,7 +230,6 @@
                 app:text_stroke_color="@color/colorPrimaryDark" />
             <!-- WORK/SCHOOL -->
             <com.coorchice.library.SuperTextView
-                android:id="@+id/supertext_location_workschool"
                 android:layout_width="@dimen/width_my_location_panel"
                 android:layout_height="@dimen/height_my_location_panel"
                 android:layout_marginStart="8dp"
@@ -270,7 +261,6 @@
 
     <!-- FOOTER -->
     <LinearLayout
-        android:id="@+id/layout_footer"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_footer"
         android:clipChildren="false"

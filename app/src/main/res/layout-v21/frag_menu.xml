@@ -74,7 +74,6 @@
 
     <!-- FOOTER -->
     <LinearLayout
-        android:id="@+id/layout_footer"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_footer"
         android:clipChildren="false"
@@ -82,7 +81,6 @@
         android:orientation="vertical">
 
         <View
-            android:id="@+id/divider_footer"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_capsule"
             android:layout_marginStart="8dp"
