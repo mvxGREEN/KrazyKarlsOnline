@@ -1,4 +1,4 @@
-package com.xxxgreen.mvx.krazykarlsonline.fragment.inner;
+package com.xxxgreen.mvx.krazykarlsonline.fragment.home;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,8 +11,11 @@ import android.widget.LinearLayout;
 import com.xxxgreen.mvx.krazykarlsonline.R;
 import com.xxxgreen.mvx.krazykarlsonline.utils.MapUtils;
 
+import cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager;
+
 public class FeatureFrag extends Fragment {
     private static final String TAG = "FeatureFrag";
+    AutoScrollViewPager autoScrollViewPager;
 
     LinearLayout layoutFeatureFrag;
 
@@ -36,6 +39,8 @@ public class FeatureFrag extends Fragment {
                 false);
 
         layoutFeatureFrag = rootView.findViewById(R.id.layout_fetaure_fragment);
+        autoScrollViewPager = rootView.findViewById(R.id.autoscroll_viewpager);
+        //TODO: init autoscroll viewpager
 
         return rootView;
     }
