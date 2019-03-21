@@ -15,6 +15,9 @@
     <color name="colorAzureWhite">#E5F2FF</color><color name="colorAzureLighter">#99CBFF</color><color name="colorAzureLight">#4CA5FF</color>
     <color name="colorAzure">#007FFF</color><color name="colorAzureDarkish">#0075EB</color><color name="colorAzureDark">#0062C4</color><color name="colorAzureDarker">#003B76</color>
 
+    <!-- MVX COLORS -->
+    <color name="kellyGreen">#4CBB17</color>
+
     <!-- Basic Colors -->
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorVeryLightGrey">#F1F1F1</color>

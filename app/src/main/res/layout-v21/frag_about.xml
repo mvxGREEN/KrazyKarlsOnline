@@ -44,7 +44,7 @@
                 android:contentDescription="@string/cont_desc_rounded_rect"
                 android:background="@drawable/capsule_main_light" />
 
-            <!-- PAGE ICON TODO: Replace icon with 'About" icon -->
+            <!-- PAGE ICON -->
             <ImageView
                 android:id="@+id/ic_page"
                 android:layout_width="@dimen/size_page_icon"
@@ -80,7 +80,7 @@
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
 
-        <!-- TODO: Add content -->
+        <!-- TODO -->
 
     </LinearLayout>
 

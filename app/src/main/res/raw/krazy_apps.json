@@ -1,0 +1,16 @@
+{
+  "krazy_apps": [
+    {
+      "name": "The Alfredo",
+      "base": "Alfredo",
+      "top1": "Mozzarella",
+      "top2": "Chicken",
+      "top3": "Bacon",
+      "top4": "Mushrooms",
+      "top5": "",
+      "top6": "",
+      "top7": "",
+      "top8": "",
+      "top9": ""
+    },
+}

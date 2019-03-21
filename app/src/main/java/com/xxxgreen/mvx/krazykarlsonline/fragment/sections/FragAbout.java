@@ -62,7 +62,7 @@ public class FragAbout extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.frag_home, container,
+        View rootView = inflater.inflate(R.layout.frag_about, container,
                 false);
 
         // TODO: Instantiate elements

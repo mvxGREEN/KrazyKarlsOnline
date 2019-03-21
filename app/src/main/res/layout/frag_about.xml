@@ -18,7 +18,6 @@
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_header"
-        android:elevation="4dp"
         android:clipChildren="false"
         android:layout_gravity="center"
         android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
@@ -44,12 +43,12 @@
                 android:contentDescription="@string/cont_desc_rounded_rect"
                 android:background="@drawable/capsule_main_light" />
 
-            <!-- PAGE ICON TODO: Replace icon with 'About" icon -->
+            <!-- PAGE ICON -->
             <ImageView
                 android:id="@+id/ic_page"
                 android:layout_width="@dimen/size_page_icon"
                 android:layout_height="@dimen/size_page_icon"
-                android:layout_marginBottom="-16dp"
+                android:layout_marginBottom="0dp"
                 android:background="@drawable/ic_sketch_order_kkblueishwhite_88dp"
                 android:contentDescription="@string/page_tab_icon"/>
 
@@ -80,7 +79,7 @@
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
 
-        <!-- TODO: Add content -->
+        <!-- TODO -->
 
     </LinearLayout>
 

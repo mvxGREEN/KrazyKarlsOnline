@@ -82,9 +82,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         setContentView(R.layout.activity_map);
 
         // Init static colors
-        zone1filler = getContext().getResources().getColor(R.color.timberlineTransparent);
-        zone2filler = getContext().getResources().getColor(R.color.timberlineTransparent);
-        zoneStroke = getContext().getResources().getColor(R.color.colorAzureDarker);
+        zone1filler = getContext().getResources().getColor(R.color.kellyGreen);
+        zone2filler = getContext().getResources().getColor(R.color.kellyGreen);
+        zoneStroke = getContext().getResources().getColor(R.color.kellyGreen);
 
         // Init Google Map
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
