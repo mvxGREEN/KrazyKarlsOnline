@@ -74,7 +74,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     SectionsPagerAdapter mSectionsPagerAdapter;
     ViewPager panel;
 
-    private static int zone1filler, zone2filler, zoneStroke;
+    private static int zone1filler, zone2filler, zone1Stroke, zone2Stroke;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         // Init static colors
         //zone1filler = getContext().getResources().getColor(R.color.colorZoneFiller);
         //zone2filler = getContext().getResources().getColor(R.color.colorZoneFiller);
-        zoneStroke = getContext().getResources().getColor(R.color.colorZoneStroke);
+        zone1Stroke = getContext().getResources().getColor(R.color.elizabethLightTransparent);
+        zone2Stroke = getContext().getResources().getColor(R.color.colorPrimaryTransparent);
 
         // Init Google Map
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -299,7 +300,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
         PolygonOptions optionsZone1 = new PolygonOptions()
                 .addAll(zone1BoundsList)
-                .strokeColor(zoneStroke)
+                .strokeColor(zone1Stroke)
                 .strokeWidth(8.0f)
                 .clickable(false);
         qMap.addPolygon(optionsZone1);
@@ -311,7 +312,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
         PolygonOptions optionsZone2 = new PolygonOptions()
                 .addAll(zone2BoundsList)
-                .strokeColor(zoneStroke)
+                .strokeColor(zone2Stroke)
                 .strokeWidth(8.0f)
                 .clickable(false);
         qMap.addPolygon(optionsZone2);
