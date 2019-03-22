@@ -82,9 +82,9 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         setContentView(R.layout.activity_map);
 
         // Init static colors
-        zone1filler = getContext().getResources().getColor(R.color.kellyGreenTransparent);
-        zone2filler = getContext().getResources().getColor(R.color.kellyGreenTransparent);
-        zoneStroke = getContext().getResources().getColor(R.color.kellyGreen);
+        //zone1filler = getContext().getResources().getColor(R.color.colorZoneFiller);
+        //zone2filler = getContext().getResources().getColor(R.color.colorZoneFiller);
+        zoneStroke = getContext().getResources().getColor(R.color.colorZoneStroke);
 
         // Init Google Map
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -99,7 +99,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     @Override
     public void onMapReady(final GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         setMapFocus(null, mMap);
 
         // PANEL
@@ -300,7 +300,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         PolygonOptions optionsZone1 = new PolygonOptions()
                 .addAll(zone1BoundsList)
                 .strokeColor(zoneStroke)
-                .strokeWidth(1.0f)
+                .strokeWidth(8.0f)
                 .clickable(false);
         qMap.addPolygon(optionsZone1);
 
@@ -311,9 +311,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
         PolygonOptions optionsZone2 = new PolygonOptions()
                 .addAll(zone2BoundsList)
-                .fillColor(zone2filler)
                 .strokeColor(zoneStroke)
-                .strokeWidth(1.0f)
+                .strokeWidth(8.0f)
                 .clickable(false);
         qMap.addPolygon(optionsZone2);
 

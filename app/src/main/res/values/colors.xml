@@ -3,9 +3,12 @@
     <!-- Primary -->
     <color name="colorPrimaryWhite">#E8EFF1</color><color name="colorPrimaryVeryLight">#D2E0E4</color>
     <color name="colorPrimaryLighter">#AEDCE9</color><color name="colorPrimaryLight">#51b5d1</color>
-    <color name="colorPrimary">#206578</color>
-    <color name="colorPrimaryDark">#184B59</color>
+    <color name="colorPrimary">#206578</color>#0b242b
+    <color name="colorPrimaryDark">#184B59</color><color name="colorPrimaryVeryDark">#0b242b</color>
     <color name="colorAccent">#CA4827</color>
+
+    <!--  -->
+    <color name="colorZoneStroke">#783320</color><color name="colorZoneFiller">#5027A9CA</color>
 
     <!-- Karl's Colors -->
     <color name="elizabethWhite">#FFF6E5</color><color name="elizabethLighter">#FFE3B1</color><color name="elizabethLight">#FFC04C</color>

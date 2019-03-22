@@ -83,7 +83,7 @@
                 android:layout_height="48dp"
                 android:gravity="center_horizontal|center_vertical"
                 app:isShowState="true"
-                app:state_drawable="@drawable/ic_sketch_cloud_kkblueishwhite_bkg"
+                app:state_drawable="@drawable/bkg_sketch_cloud_kkblueishwhite_small"
                 app:state_drawable_mode="fill"
                 app:state_drawable_width="88dp"
                 app:state_drawable_height="48dp"
