@@ -1,16 +1,99 @@
 {
   "krazy_apps": [
     {
-      "name": "The Alfredo",
-      "base": "Alfredo",
-      "top1": "Mozzarella",
-      "top2": "Chicken",
-      "top3": "Bacon",
-      "top4": "Mushrooms",
-      "top5": "",
-      "top6": "",
-      "top7": "",
-      "top8": "",
-      "top9": ""
+      "name": "Mozzarella Sticks",
+      "types": "Regular",
+      "notes": "*Contains Dairy"
     },
+    {
+      "name": "Mac 'n Cheese Bites",
+      "types": "4-Piece, 8-Piece",
+      "notes": "*Contains Dairy"
+    },
+    {
+      "name": "Green Chili Queso Fries",
+      "types": "Regular, Half",
+      "notes": ""
+    },
+    {
+      "name": "Krazy Meatballs",
+      "types": "Regular",
+      "notes": ""
+    },
+    {
+      "name": "Jalapeño Caps",
+      "types": "Regular, Half",
+      "notes": ""
+    },
+    {
+      "name": "Jalapeño Poppers",
+      "types": "Regular, Half",
+      "notes": ""
+    },
+    {
+      "name": "Pizza Rolls",
+      "types": "1-Piece, 3-Piece",
+      "notes": "*Contains Dairy"
+    },
+    {
+      "name": "Garlic Parmesan Knots",
+      "types": "5-Piece, 10-Piece",
+      "notes": "*Contains Dairy"
+    },
+    {
+      "name": "4-Cheese Bread",
+      "types": "Regular",
+      "notes": "*Contains Dairy"
+    },
+    {
+      "name": "Garlic Bread",
+      "types": "Regular",
+      "notes": "*Contains Dairy"
+    },
+    {
+      "name": "Aztec Bread",
+      "types": "Regular",
+      "notes": "*Contains Dairy"
+    },
+    {
+      "name":"Boneless Wings",
+      "types": "8-Piece, 16-Piece",
+      "notes": ""
+    },
+    {
+      "name": "Bone-In Wings",
+      "types": "7-Piece, 14-Piece",
+      "notes": ""
+    },
+    {
+      "name": "Waffle Fries",
+      "types": "Regular, Half",
+      "notes": ""
+    },
+    {
+      "name": "Loaded Waffle Fries",
+      "types": "Regular, Half",
+      "notes": "*Contains Dairy"
+    },
+    {
+      "name": "Chicken Finger w/ Fries",
+      "types": "Regular, Half",
+      "notes": ""
+    },
+    {
+      "name": "Onion Rings",
+      "types": "Regular, Large",
+      "notes": "@Timberline Only"
+    },
+    {
+      "name": "Sauce Cup",
+      "types": "Mild, Hot, Extra Hot, BBQ, Honey Mustard, Thai, Sweet Chili, Teriyaki, Garlic Parm, Hot Garlic Parm, Mango Habanero, Sweet Caroline BBQ, Jamaican Jerk (Dry Rub), Ancho Citrus (Dry Rub)",
+      "notes": ""
+    },
+    {
+      "name": "Dressing Cup",
+      "types": "Ranch, Spicy Ranch, Italian, Honey Mustard, Bleu Cheese, Balsamic, Caesar, Greek, Marinara",
+      "notes": ""
+    }
+  ]
 }

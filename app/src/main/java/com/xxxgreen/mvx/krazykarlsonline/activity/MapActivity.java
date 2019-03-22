@@ -82,8 +82,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         setContentView(R.layout.activity_map);
 
         // Init static colors
-        zone1filler = getContext().getResources().getColor(R.color.kellyGreen);
-        zone2filler = getContext().getResources().getColor(R.color.kellyGreen);
+        zone1filler = getContext().getResources().getColor(R.color.kellyGreenTransparent);
+        zone2filler = getContext().getResources().getColor(R.color.kellyGreenTransparent);
         zoneStroke = getContext().getResources().getColor(R.color.kellyGreen);
 
         // Init Google Map
@@ -299,9 +299,8 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
         PolygonOptions optionsZone1 = new PolygonOptions()
                 .addAll(zone1BoundsList)
-                .fillColor(zone1filler)
                 .strokeColor(zoneStroke)
-                .strokeWidth(0.0f)
+                .strokeWidth(1.0f)
                 .clickable(false);
         qMap.addPolygon(optionsZone1);
 
@@ -314,7 +313,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
                 .addAll(zone2BoundsList)
                 .fillColor(zone2filler)
                 .strokeColor(zoneStroke)
-                .strokeWidth(0.0f)
+                .strokeWidth(1.0f)
                 .clickable(false);
         qMap.addPolygon(optionsZone2);
 

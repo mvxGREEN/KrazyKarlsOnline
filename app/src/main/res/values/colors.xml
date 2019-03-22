@@ -23,6 +23,7 @@
     <color name="colorVeryLightGrey">#F1F1F1</color>
     <!-- Transparents -->
     <color name="colorPrimaryTransparent">#9F206578</color>
+    <color name="kellyGreenTransparent">#9F4CBB17</color>
     <color name="colorPrimaryDarkTransparent">#A11E444F</color>
     <color name="timberlineTransparent">#A114674A</color>
 
