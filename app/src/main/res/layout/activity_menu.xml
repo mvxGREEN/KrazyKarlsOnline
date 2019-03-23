@@ -51,7 +51,7 @@
                     android:contentDescription="@string/cont_desc_kk_title"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/kk_title_kkblueishwhite"/>
+                    android:background="@drawable/kk_title_white"/>
 
                 <!-- SUBTITLE -->
                 <LinearLayout

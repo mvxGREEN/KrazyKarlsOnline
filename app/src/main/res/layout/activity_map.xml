@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:contentDescription="@string/cont_desc_kk_title"
-                android:background="@drawable/kk_title_kkblueishwhite"/>
+                android:background="@drawable/kk_title_white"/>
 
             <!-- SUBTITLE (LAYOUT) -->
             <LinearLayout
