@@ -10,11 +10,11 @@ public final class MenuUtils {
     public static int CATEGORY_PIZZA = 0, CATEGORY_APPS_SIDES = 1, CATEGORY_GRINDERS = 2,
             CATEGORY_SALADS = 3, CATEGORY_DRINKS_DESSERTS = 4;
     public static String[] MENU_PAGE_TITLES = {
-            "Pizza", "Apps & Sides", "Grinders", "Salads", "Drinks & Desserts"
+            "Pizza", "Appetizer & Sides", "Grinders", "Salads", "Drinks & Desserts"
     };
     private static int[][] sizes = {
         {10, 12, 14},   // Pizza (10, 12, or 14 inches)
-        {1, 3, 5, 6, 7, 8, 10, 12, 14, 16},     // Apps/Sides (all)
+        {1, 3, 5, 6, 7, 8, 10, 12, 14, 16},     // Appetizer/Sides (all)
         {10},           // Grinders (one-size)
         {1, 2, 8},     // Salads (Half, Full, Family)
         {1}             // Desserts/Drinks (one-size)
