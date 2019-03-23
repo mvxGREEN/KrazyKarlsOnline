@@ -1,21 +1,18 @@
 package com.xxxgreen.mvx.krazykarlsonline.data.parcels;
 
 import android.database.Cursor;
-import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
-
-import java.util.ArrayList;
 
 /**
  * Created by MVX on 12/22/2018.
  */
 
-public class MenuItem implements Parcelable {
+public class MainItem implements Parcelable {
     public final int id;
     public final String name, base, top1, top2, top3, top4, top5, top6;
 
-    public MenuItem(String name, String base, String top1,String top2, String top3,
+    public MainItem(String name, String base, String top1, String top2, String top3,
                     String top4, String top5, String top6) {
         this.id = 0;
         this.name = name;
@@ -28,7 +25,7 @@ public class MenuItem implements Parcelable {
         this.top6 = top6;
     }
 
-    public MenuItem(Cursor cursor) {
+    public MainItem(Cursor cursor) {
         this.id = cursor.getInt(0);
         this.name = cursor.getString(1);
         this.base = cursor.getString(2);
@@ -40,7 +37,7 @@ public class MenuItem implements Parcelable {
         this.top6 = cursor.getString(8);
     }
 
-    public MenuItem(Parcel in) {
+    public MainItem(Parcel in) {
         this.id = in.readInt();
         this.name = in.readString();
         this.base = in.readString();
@@ -52,15 +49,15 @@ public class MenuItem implements Parcelable {
         this.top6 = in.readString();
     }
 
-    public static final Creator<MenuItem> CREATOR = new Creator<MenuItem>() {
+    public static final Creator<MainItem> CREATOR = new Creator<MainItem>() {
         @Override
-        public MenuItem createFromParcel(Parcel in) {
-            return new MenuItem(in);
+        public MainItem createFromParcel(Parcel in) {
+            return new MainItem(in);
         }
 
         @Override
-        public MenuItem[] newArray(int size) {
-            return new MenuItem[size];
+        public MainItem[] newArray(int size) {
+            return new MainItem[size];
         }
     };
 

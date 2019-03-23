@@ -1,0 +1,44 @@
+{
+  "krazy_drinks_desserts": [
+    {
+      "name": "2-Liter Soda",
+      "sizes": "Pepsi, Diet Pepsi, Cherry Pepsi, Dr. Pepper, Sierra Mist, Mountain Dew, Mug Rootbeer, Orange Crush",
+      "notes": ""
+    },
+    {
+      "name": "Cinnamon Knots",
+      "sizes": "5-Piece, 10-Piece",
+      "notes": ""
+    },
+    {
+      "name": "Bavarian Creme Churros",
+      "sizes": "Regular",
+      "notes": ""
+    },
+    {
+      "name": "Oreo Churros",
+      "sizes": "Regular",
+      "notes": ""
+    },
+    {
+      "name": "Cherry Dessert Pizza",
+      "sizes": "12\"",
+      "notes": ""
+    },
+    {
+      "name": "Chocolate Dessert Pizza",
+      "sizes": "12\"",
+      "notes": ""
+    },
+    {
+      "name": "Apple Dessert Pizza",
+      "sizes": "12\"",
+      "notes": ""
+    },
+    {
+      "name": "Cinnaon Bread",
+      "sizes": "Regular",
+      "notes": ""
+    }
+  ]
+}
