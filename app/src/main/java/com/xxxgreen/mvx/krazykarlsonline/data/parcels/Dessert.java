@@ -2,7 +2,7 @@ package com.xxxgreen.mvx.krazykarlsonline.data.parcels;
 
 import android.database.Cursor;
 
-public class Dessert extends SideItem {
+public class Dessert extends ItemSide {
 
     public Dessert(String name, String types, String notes) {
         super(name, types, notes);

@@ -2,7 +2,7 @@ package com.xxxgreen.mvx.krazykarlsonline.data.parcels;
 
 import android.database.Cursor;
 
-public class Pizza extends MainItem {
+public class Pizza extends ItemEntree {
     public enum SIZE {
         GRINDER, SMALL, MEDIUM, LARGE,
     }

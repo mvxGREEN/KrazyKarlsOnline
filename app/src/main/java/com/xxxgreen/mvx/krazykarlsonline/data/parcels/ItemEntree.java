@@ -8,12 +8,12 @@ import android.os.Parcelable;
  * Created by MVX on 12/22/2018.
  */
 
-public class MainItem implements Parcelable {
+public class ItemEntree implements Parcelable {
     public final int id;
     public final String name, base, top1, top2, top3, top4, top5, top6;
 
-    public MainItem(String name, String base, String top1, String top2, String top3,
-                    String top4, String top5, String top6) {
+    public ItemEntree(String name, String base, String top1, String top2, String top3,
+                      String top4, String top5, String top6) {
         this.id = 0;
         this.name = name;
         this.base = base;
@@ -25,7 +25,7 @@ public class MainItem implements Parcelable {
         this.top6 = top6;
     }
 
-    public MainItem(Cursor cursor) {
+    public ItemEntree(Cursor cursor) {
         this.id = cursor.getInt(0);
         this.name = cursor.getString(1);
         this.base = cursor.getString(2);
@@ -37,7 +37,7 @@ public class MainItem implements Parcelable {
         this.top6 = cursor.getString(8);
     }
 
-    public MainItem(Parcel in) {
+    public ItemEntree(Parcel in) {
         this.id = in.readInt();
         this.name = in.readString();
         this.base = in.readString();
@@ -49,15 +49,15 @@ public class MainItem implements Parcelable {
         this.top6 = in.readString();
     }
 
-    public static final Creator<MainItem> CREATOR = new Creator<MainItem>() {
+    public static final Creator<ItemEntree> CREATOR = new Creator<ItemEntree>() {
         @Override
-        public MainItem createFromParcel(Parcel in) {
-            return new MainItem(in);
+        public ItemEntree createFromParcel(Parcel in) {
+            return new ItemEntree(in);
         }
 
         @Override
-        public MainItem[] newArray(int size) {
-            return new MainItem[size];
+        public ItemEntree[] newArray(int size) {
+            return new ItemEntree[size];
         }
     };
 

@@ -24,7 +24,7 @@ public class Customer implements Parcelable {
     }
 
     public Customer(String name, String phoneNumber, String address,
-                       String city, String zip_code, String notes, ArrayList<MainItem> favorites) {
+                       String city, String zip_code, String notes, ArrayList<ItemEntree> favorites) {
         this.id = 0;
         this.name = name;
         this.phoneNumber = phoneNumber;

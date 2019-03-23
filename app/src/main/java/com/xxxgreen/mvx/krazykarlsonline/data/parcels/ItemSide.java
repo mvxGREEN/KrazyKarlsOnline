@@ -9,40 +9,40 @@ import android.os.Parcelable;
  * Created by MVX on 12/22/2018.
  */
 
-public class SideItem implements Parcelable {
+public class ItemSide implements Parcelable {
     public final int id;
     public final String name, types, notes;
 
-    public SideItem(String name, String types, String notes) {
+    public ItemSide(String name, String types, String notes) {
         this.id = 0;
         this.name = name;
         this.types = types;
         this.notes = notes;
     }
 
-    public SideItem(Cursor cursor) {
+    public ItemSide(Cursor cursor) {
         this.id = cursor.getInt(0);
         this.name = cursor.getString(1);
         this.types = cursor.getString(2);
         this.notes = cursor.getString(3);
     }
 
-    public SideItem(Parcel in) {
+    public ItemSide(Parcel in) {
         this.id = in.readInt();
         this.name = in.readString();
         this.types = in.readString();
         this.notes = in.readString();
     }
 
-    public static final Creator<SideItem> CREATOR = new Creator<SideItem>() {
+    public static final Creator<ItemSide> CREATOR = new Creator<ItemSide>() {
         @Override
-        public SideItem createFromParcel(Parcel in) {
-            return new SideItem(in);
+        public ItemSide createFromParcel(Parcel in) {
+            return new ItemSide(in);
         }
 
         @Override
-        public SideItem[] newArray(int size) {
-            return new SideItem[size];
+        public ItemSide[] newArray(int size) {
+            return new ItemSide[size];
         }
     };
 
