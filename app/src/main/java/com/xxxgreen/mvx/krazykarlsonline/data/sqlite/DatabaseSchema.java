@@ -29,9 +29,8 @@ public final class DatabaseSchema {
         public static final String SIDE_SCHEMA = "sides";
         public static final String SIDE_1 = "id";
         public static final String SIDE_2 = "name";
-        public static final String SIDE_3 = "size";
-        public static final String SIDE_4 = "enable_flavor";
-        public static final String SIDE_5 = "enable_sauce";
+        public static final String PIZZA_4 = "sizes";
+        public static final String PIZZA_5 = "notes";
     }
 
     // GRINDER
@@ -49,15 +48,22 @@ public final class DatabaseSchema {
         public static final String SALAD_SCHEMA = "sides";
         public static final String SALAD_1 = "id";
         public static final String SALAD_2 = "name";
-        public static final String SALAD_3 = "size";
-        public static final String SALAD_4 = "greens";
-        public static final String SALAD_5 = "top1";
-        public static final String SALAD_6 = "top2";
-        public static final String SALAD_7 = "top3";
-        public static final String SALAD_8 = "top4";
-        public static final String SALAD_9 = "top5";
-        public static final String SALAD_10 = "top6";
-        public static final String SALAD_11 = "top7";
+        public static final String SALAD_3 = "base";
+        public static final String SALAD_4 = "top1";
+        public static final String SALAD_5 = "top2";
+        public static final String SALAD_6 = "top3";
+        public static final String SALAD_7 = "top4";
+        public static final String SALAD_8 = "top5";
+        public static final String SALAD_9 = "top6";
+    }
+
+    // DRINK/DESSERT
+    public static class DrinkDessertSchema implements BaseColumns {
+        public static final String DRINK_DESSERT_SCHEMA = "sides";
+        public static final String DRINK_DESSERT_1 = "id";
+        public static final String DRINK_DESSERT_2 = "name";
+        public static final String DRINK_DESSERT_4 = "sizes";
+        public static final String DRINK_DESSERT_5 = "notes";
     }
 
 }

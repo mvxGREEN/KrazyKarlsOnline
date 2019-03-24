@@ -8,7 +8,10 @@ import android.os.Parcelable;
  * Created by MVX on 12/22/2018.
  */
 
-public class ItemEntree implements Parcelable {
+public  class ItemEntree implements Parcelable {
+    public static final int TYPE_PIZZA = 0, TYPE_SIDE = 1, TYPE_GRINDER = 2, TYPE_SALAD = 3,
+        TYPE_DRINK_DESSERT = 4;
+
     public final int id;
     public final String name, base, top1, top2, top3, top4, top5, top6;
 

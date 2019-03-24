@@ -83,7 +83,7 @@
                     android:text="@string/toolbar_subtitle_online"
                     android:textSize="18sp"
                     android:fontFamily="@font/permanent_marker"
-                    android:textColor="@color/colorPrimaryVeryLight"
+                    android:textColor="@color/colorPrimaryWhite"
                     android:textAlignment="gravity"
                     tools:targetApi="lollipop" />
 

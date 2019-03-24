@@ -7,8 +7,11 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Pizza;
 
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_SCHEMA;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_SCHEMA;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_2;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_3;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_4;
@@ -18,6 +21,8 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Pizza
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_8;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_9;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_SCHEMA;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_SCHEMA;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_SCHEMA;
 
 /**
  * Created by MVX on 12/22/2018.
@@ -45,6 +50,31 @@ public class DatabaseManager {
     public Cursor queryAllPizzas() {
         SQLiteDatabase db = myDbHelper.getReadableDatabase();
         String query = "SELECT * FROM " + PIZZA_SCHEMA;
+        Cursor result = db.rawQuery(query, null);
+        Log.i(TAG, "query result count: " + result.getCount());
+
+        if (result.getCount() == 0) {
+            Log.i(TAG, "Result count: 0\nCalling mDbHelper.onCreate()");
+        }
+
+        return result;
+    }
+    public Cursor queryAllItems(int itemType) {
+        SQLiteDatabase db = myDbHelper.getReadableDatabase();
+        String tableName;
+        if (itemType == ItemEntree.TYPE_PIZZA) {
+            tableName = PIZZA_SCHEMA;
+        } else if (itemType == ItemEntree.TYPE_SIDE) {
+            tableName = SIDE_SCHEMA;
+        } else if (itemType == ItemEntree.TYPE_GRINDER) {
+            tableName = GRINDER_SCHEMA;
+        } else if (itemType == ItemEntree.TYPE_SALAD) {
+            tableName = SALAD_SCHEMA;
+        } else {
+            tableName = DRINK_DESSERT_SCHEMA;
+        }
+
+        String query = "SELECT * FROM " + tableName;
         Cursor result = db.rawQuery(query, null);
         Log.i(TAG, "query result count: " + result.getCount());
 

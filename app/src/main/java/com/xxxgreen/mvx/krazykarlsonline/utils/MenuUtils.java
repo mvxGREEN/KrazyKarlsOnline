@@ -10,7 +10,7 @@ public final class MenuUtils {
     public static int CATEGORY_PIZZA = 0, CATEGORY_APPS_SIDES = 1, CATEGORY_GRINDERS = 2,
             CATEGORY_SALADS = 3, CATEGORY_DRINKS_DESSERTS = 4;
     public static String[] MENU_PAGE_TITLES = {
-            "Pizza", "Appetizer & Sides", "Grinders", "Salads", "Drinks & Desserts"
+            "Pizza", "Sides", "Grinders", "Salads", "More"
     };
     private static int[][] sizes = {
         {10, 12, 14},   // Pizza (10, 12, or 14 inches)
