@@ -57,7 +57,7 @@
             <!-- DIVIDER -->
             <View
                 android:layout_width="0dp"
-                android:layout_height="3dp"
+                android:layout_height="@dimen/height_capsule"
                 android:layout_weight="0.76"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="4dp"

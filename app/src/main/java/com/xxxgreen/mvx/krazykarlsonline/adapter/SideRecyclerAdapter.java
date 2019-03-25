@@ -13,32 +13,34 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xxxgreen.mvx.krazykarlsonline.R;
+import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Appetizer;
 import com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseManager;
-import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Pizza;
 
-import java.util.List;
+import java.util.ArrayList;
 
-public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapter.PizzaHolder> {
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_SCHEMA;
+
+public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapter.AppetizerHolder> {
     private final String TAG = "PizzaRecyclerAdapter";
 
-    private List<Pizza> pizzaList;
+    private ArrayList<Appetizer> appList;
     private OnItemClickListener itemClickListener;
     Context context;
 
-    public SideRecyclerAdapter(List<Pizza> pizzaList, Context context) {
-        this.pizzaList = pizzaList;
+    public SideRecyclerAdapter(ArrayList<Appetizer> appList, Context context) {
+        this.appList = appList;
         this.context = context;
 
         DatabaseManager dbm = DatabaseManager.getInstance(this.context);
-        Cursor pizzaCursor = dbm.queryAllPizzas();
+        Cursor pizzaCursor = dbm.queryAllItems(SIDE_SCHEMA);
         fillList(pizzaCursor);
     }
 
-    public class PizzaHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class AppetizerHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView i_icon;
         public TextView t_title, t_subtitle;
 
-        public PizzaHolder(View itemView) {
+        public AppetizerHolder(View itemView) {
             super(itemView);
             this.i_icon = itemView.findViewById(R.id.icon_pizza);
             this.t_title = itemView.findViewById(R.id.title_pizza);
@@ -54,31 +56,31 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
 
     @NonNull
     @Override
-    public PizzaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SideRecyclerAdapter.AppetizerHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_pizza, parent, false);
 
-        return new PizzaHolder(view);
+        return new AppetizerHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PizzaHolder holder, int position) {
-        final Pizza pizza = pizzaList.get(position);
+    public void onBindViewHolder(@NonNull AppetizerHolder holder, int position) {
+        final Appetizer app = appList.get(position);
         Context ctx = holder.i_icon.getContext();
         Resources res = ctx.getResources();     // Get resources to access drawables
 
         holder.i_icon.setBackground(res.getDrawable(R.drawable.ic_specialty_pizza_white_128dp));
-        holder.t_title.setText(pizza.name);
+        holder.t_title.setText(app.name);
     }
 
     @Override
     public int getItemCount() {
-        return pizzaList.size();
+        return appList.size();
     }
 
-    public Pizza getItem(int index) {
+    public Appetizer getItem(int index) {
         if (index > -1 && index < getItemCount()) {
-            return pizzaList.get(index);
+            return appList.get(index);
         } else {
             return null;
         }
@@ -89,8 +91,8 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
             Log.e(TAG, "ERROR! fillList: cursor is closed!");
         } else if (cursor.moveToLast()) {
             do {
-                Pizza p = new Pizza(cursor);
-                this.pizzaList.add(p);
+                Appetizer app = new Appetizer(cursor);
+                this.appList.add(app);
             } while(cursor.moveToPrevious());
         } else {
             Log.e(TAG, "cursor failed to move to last");

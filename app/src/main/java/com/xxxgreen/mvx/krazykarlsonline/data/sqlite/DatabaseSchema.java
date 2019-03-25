@@ -57,6 +57,15 @@ public final class DatabaseSchema {
         public static final String SALAD_9 = "top6";
     }
 
+    // SIDE
+    public static class SideSchema implements BaseColumns {
+        public static final String SIDE_SCHEMA = "sides";
+        public static final String SIDE_1 = "id";
+        public static final String SIDE_2 = "name";
+        public static final String SIDE_4 = "sizes";
+        public static final String SIDE_5 = "notes";
+    }
+
     // DRINK/DESSERT
     public static class DrinkDessertSchema implements BaseColumns {
         public static final String DRINK_DESSERT_SCHEMA = "sides";

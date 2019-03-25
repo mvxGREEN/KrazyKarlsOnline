@@ -10,11 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xxxgreen.mvx.krazykarlsonline.R;
+import com.xxxgreen.mvx.krazykarlsonline.adapter.SideRecyclerAdapter;
+import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Appetizer;
+
+import java.util.ArrayList;
 
 public class PageSidesFragment extends Fragment {
     private static final String TAG = "PageSidesFragment";
     private static final String SECTION_NUMBER_KEY = "section_number";
+
     private RecyclerView appsRecycler;
+    private SideRecyclerAdapter sideRecyclerAdapter;
+    private ArrayList<Appetizer> appList;
 
     public PageSidesFragment() {
 
@@ -40,6 +47,9 @@ public class PageSidesFragment extends Fragment {
         Log.i(TAG, "Inflating layout #" + sectionNumber);
         View rootView = inflater.inflate(R.layout.fragment_menu_pizzas, container,
                 false);
+
+        appList = new ArrayList<>();
+        sideRecyclerAdapter = new SideRecyclerAdapter(appList, container.getContext());
 
         //TODO: inflate recycler
 

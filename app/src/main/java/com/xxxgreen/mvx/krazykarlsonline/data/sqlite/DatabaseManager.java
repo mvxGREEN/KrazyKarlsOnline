@@ -59,20 +59,8 @@ public class DatabaseManager {
 
         return result;
     }
-    public Cursor queryAllItems(int itemType) {
+    public Cursor queryAllItems(String tableName) {
         SQLiteDatabase db = myDbHelper.getReadableDatabase();
-        String tableName;
-        if (itemType == ItemEntree.TYPE_PIZZA) {
-            tableName = PIZZA_SCHEMA;
-        } else if (itemType == ItemEntree.TYPE_SIDE) {
-            tableName = SIDE_SCHEMA;
-        } else if (itemType == ItemEntree.TYPE_GRINDER) {
-            tableName = GRINDER_SCHEMA;
-        } else if (itemType == ItemEntree.TYPE_SALAD) {
-            tableName = SALAD_SCHEMA;
-        } else {
-            tableName = DRINK_DESSERT_SCHEMA;
-        }
 
         String query = "SELECT * FROM " + tableName;
         Cursor result = db.rawQuery(query, null);
