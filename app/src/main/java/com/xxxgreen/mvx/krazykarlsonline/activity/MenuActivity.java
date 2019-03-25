@@ -17,10 +17,11 @@ import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageDrinkDessertFragment;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageGrinderFragment;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageSaladFragment;
 
-import static com.xxxgreen.mvx.krazykarlsonline.utils.MenuUtils.MENU_PAGE_TITLES;
-
 public class MenuActivity extends AppCompatActivity {
     private static final String TAG = "MenuActivity";
+    public static String[] MENU_PAGE_TITLES = {
+            "Pizza", "Sides", "Grinders", "Salads", "More"
+    };
 
     private SectionsPagerAdapter mSectionsPagerAdapter;
     private ViewPager mViewPager;

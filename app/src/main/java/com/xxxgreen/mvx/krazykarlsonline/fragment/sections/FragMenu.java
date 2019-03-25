@@ -24,10 +24,11 @@ import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageSaladFragment;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageSidesFragment;
 import com.xxxgreen.mvx.krazykarlsonline.utils.MapUtils;
 
-import static com.xxxgreen.mvx.krazykarlsonline.utils.MenuUtils.MENU_PAGE_TITLES;
-
 public class FragMenu extends Fragment {
     private static final String TAG = "MapOverlayTopFragment";
+    public static String[] MENU_PAGE_TITLES = {
+            "Pizza", "Sides", "Grinders", "Salads", "More"
+    };
 
     FragmentManager fm;
     LinearLayout layoutPanel;
