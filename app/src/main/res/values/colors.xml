@@ -8,7 +8,7 @@
     <color name="colorAccent">#CA4827</color>
 
     <!--  -->
-    <color name="colorZoneStroke">#783320</color><color name="colorAccentLight">#e0795f</color><color name="colorZoneFiller">#5027A9CA</color>
+    <color name="colorZoneStroke">#783320</color><color name="colorAccentLight">#e0795f</color><color name="colorAccentDark">#571f11</color><color name="colorZoneFiller">#5027A9CA</color>
 
     <!-- Karl's Colors -->
     <color name="elizabethWhite">#FFF6E5</color><color name="elizabethLighter">#FFE3B1</color><color name="elizabethLight">#FFC04C</color>
