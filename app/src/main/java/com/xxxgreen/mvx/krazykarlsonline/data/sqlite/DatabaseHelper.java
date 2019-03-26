@@ -109,7 +109,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     SALAD_8 + " TEXT," +
                     SALAD_9 + " TEXT)";
 
-    private static final String SQL_CREATE_DRINKS_DESSERTS_TABLE =
+    private static final String SQL_CREATE_DRINK_DESSERT_TABLE =
             "CREATE TABLE " + DRINK_DESSERT_SCHEMA + " (" +
                     DRINK_DESSERT_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     DRINK_DESSERT_2 + " TEXT," +
@@ -122,6 +122,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String SQL_DELETE_PIZZA =
             "DELETE FROM " + PIZZA_SCHEMA + " WHERE ID = ";
+
+    private static final String SQL_DELETE_SIDE =
+            "DELETE FROM " + SIDE_SCHEMA + " WHERE ID = ";
+
+    private static final String SQL_DELETE_GRINDER =
+            "DELETE FROM " + GRINDER_SCHEMA + " WHERE ID = ";
+
+    private static final String SQL_DELETE_SALAD =
+            "DELETE FROM " + SALAD_SCHEMA + " WHERE ID = ";
+
+    private static final String SQL_DELETE_DRINK_DESSERT =
+            "DELETE FROM " + DRINK_DESSERT_SCHEMA + " WHERE ID = ";
 
     private Resources mResources;
 
