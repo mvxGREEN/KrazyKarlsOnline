@@ -18,6 +18,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_1;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_2;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_3;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_4;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_SCHEMA;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_1;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_2;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_3;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_4;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_5;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_6;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_7;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_8;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_SCHEMA;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_1;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_2;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_3;
@@ -28,6 +42,21 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Pizza
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_8;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_9;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_SCHEMA;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_1;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_2;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_3;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_4;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_5;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_6;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_7;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_8;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_9;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_SCHEMA;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_1;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_2;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_3;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_4;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_SCHEMA;
 
 /**
  * Created by MVX on 12/23/2017.
@@ -49,6 +78,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     PIZZA_7 + " TEXT," +
                     PIZZA_8 + " TEXT," +
                     PIZZA_9 + " TEXT)";
+
+    private static final String SQL_CREATE_SIDE_TABLE =
+            "CREATE TABLE " + SIDE_SCHEMA + " (" +
+                    SIDE_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    SIDE_2 + " TEXT," +
+                    SIDE_3 + " TEXT," +
+                    SIDE_4 + " TEXT)";
+
+    private static final String SQL_CREATE_GRINDER_TABLE =
+            "CREATE TABLE " + GRINDER_SCHEMA + " (" +
+                    GRINDER_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    GRINDER_2 + " TEXT," +
+                    GRINDER_3 + " TEXT," +
+                    GRINDER_4 + " TEXT," +
+                    GRINDER_5 + " TEXT," +
+                    GRINDER_6 + " TEXT," +
+                    GRINDER_7 + " TEXT," +
+                    GRINDER_8 + " TEXT)";
+
+    private static final String SQL_CREATE_SALAD_TABLE =
+            "CREATE TABLE " + SALAD_SCHEMA + " (" +
+                    SALAD_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    SALAD_2 + " TEXT," +
+                    SALAD_3 + " TEXT," +
+                    SALAD_4 + " TEXT," +
+                    SALAD_5 + " TEXT," +
+                    SALAD_6 + " TEXT," +
+                    SALAD_7 + " TEXT," +
+                    SALAD_8 + " TEXT," +
+                    SALAD_9 + " TEXT)";
+
+    private static final String SQL_CREATE_DRINKS_DESSERTS_TABLE =
+            "CREATE TABLE " + DRINK_DESSERT_SCHEMA + " (" +
+                    DRINK_DESSERT_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    DRINK_DESSERT_2 + " TEXT," +
+                    DRINK_DESSERT_3 + " TEXT," +
+                    DRINK_DESSERT_4 + " TEXT)";
 
 
     private static final String SQL_DELETE_PIZZAS =

@@ -29,8 +29,8 @@ public final class DatabaseSchema {
         public static final String SIDE_SCHEMA = "sides";
         public static final String SIDE_1 = "id";
         public static final String SIDE_2 = "name";
-        public static final String PIZZA_4 = "sizes";
-        public static final String PIZZA_5 = "notes";
+        public static final String SIDE_3 = "sizes";
+        public static final String SIDE_4 = "notes";
     }
 
     // GRINDER
@@ -38,9 +38,12 @@ public final class DatabaseSchema {
         public static final String GRINDER_SCHEMA = "grinders";
         public static final String GRINDER_1 = "id";
         public static final String GRINDER_2 = "name";
-        public static final String GRINDER_3 = "size";
-        public static final String GRINDER_4 = "enable_flavor";
-        public static final String GRINDER_5 = "enable_sauce";
+        public static final String GRINDER_3 = "top1";
+        public static final String GRINDER_4 = "top2";
+        public static final String GRINDER_5 = "top3";
+        public static final String GRINDER_6 = "top4";
+        public static final String GRINDER_7 = "top5";
+        public static final String GRINDER_8 = "top6";
     }
 
     // SALAD
@@ -57,22 +60,13 @@ public final class DatabaseSchema {
         public static final String SALAD_9 = "top6";
     }
 
-    // SIDE
-    public static class SideSchema implements BaseColumns {
-        public static final String SIDE_SCHEMA = "sides";
-        public static final String SIDE_1 = "id";
-        public static final String SIDE_2 = "name";
-        public static final String SIDE_4 = "sizes";
-        public static final String SIDE_5 = "notes";
-    }
-
     // DRINK/DESSERT
     public static class DrinkDessertSchema implements BaseColumns {
         public static final String DRINK_DESSERT_SCHEMA = "sides";
         public static final String DRINK_DESSERT_1 = "id";
         public static final String DRINK_DESSERT_2 = "name";
-        public static final String DRINK_DESSERT_4 = "sizes";
-        public static final String DRINK_DESSERT_5 = "notes";
+        public static final String DRINK_DESSERT_3 = "sizes";
+        public static final String DRINK_DESSERT_4 = "notes";
     }
 
 }
