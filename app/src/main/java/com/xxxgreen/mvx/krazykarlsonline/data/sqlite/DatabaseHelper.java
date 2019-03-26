@@ -221,7 +221,39 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
             long result = db.insert(PIZZA_SCHEMA, null, values);
             if (result == -1) {
-                Log.i(TAG, "Error loading data");
+                Log.i(TAG, "Error loading pizza data");
+            }
+        }
+    }
+
+    public void readSidesFromResources(SQLiteDatabase db) throws IOException, JSONException {
+        Log.i(TAG, "Reading side data from resources");
+        StringBuilder builder = new StringBuilder();
+        InputStream inputStream = mResources.openRawResource(R.raw.krazy_apps);
+        BufferedReader bfReader = new BufferedReader(new InputStreamReader(inputStream));
+
+        String line;
+        while ((line = bfReader.readLine()) != null) {
+            builder.append(line);
+        }
+
+        //Parse resource into key/values
+        final String rawJson = builder.toString();
+        // Parse JSON data and insert into the provided database instance
+        final JSONObject obj = new JSONObject(rawJson);
+        final JSONArray krazy_sides = obj.getJSONArray("krazy_apps");
+        final int n = krazy_sides.length();
+        Log.i(TAG, "length of sides table (json): " + n);
+        for (int i = 0; i < n; ++i) {
+            final JSONObject side = krazy_sides.getJSONObject(i);
+            ContentValues values = new ContentValues();
+            values.put(SIDE_2, side.getString("name"));
+            values.put(SIDE_3, side.getString("types"));
+            values.put(SIDE_4, side.getString("notes"));
+
+            long result = db.insert(SIDE_SCHEMA, null, values);
+            if (result == -1) {
+                Log.i(TAG, "Error loading side data");
             }
         }
     }
