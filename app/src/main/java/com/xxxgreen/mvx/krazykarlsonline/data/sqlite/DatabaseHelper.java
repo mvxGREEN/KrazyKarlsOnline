@@ -120,6 +120,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String SQL_DELETE_PIZZAS =
             "DROP TABLE IF EXISTS " + PIZZA_SCHEMA;
 
+    private static final String SQL_DELETE_SIDES =
+            "DROP TABLE IF EXISTS " + SIDE_SCHEMA;
+
+    private static final String SQL_DELETE_GRINDERS =
+            "DROP TABLE IF EXISTS " + GRINDER_SCHEMA;
+
+    private static final String SQL_DELETE_SALADS =
+            "DROP TABLE IF EXISTS " + SALAD_SCHEMA;
+
+    private static final String SQL_DELETE_DRINKS_DESSERTS =
+            "DROP TABLE IF EXISTS " + DRINK_DESSERT_SCHEMA;
+
     private static final String SQL_DELETE_PIZZA =
             "DELETE FROM " + PIZZA_SCHEMA + " WHERE ID = ";
 
