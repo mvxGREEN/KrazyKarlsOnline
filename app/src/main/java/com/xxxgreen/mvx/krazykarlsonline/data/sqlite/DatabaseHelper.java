@@ -24,6 +24,7 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Drink
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_4;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_SCHEMA;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_1;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_10;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_2;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_3;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_4;
@@ -31,6 +32,7 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Grind
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_6;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_7;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_8;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_9;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_SCHEMA;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_1;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_2;
@@ -65,7 +67,7 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Sides
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = DatabaseHelper.class.getSimpleName();
     private static final String DATABASE_NAME = "KKsDatabase.db";
-    private static final int DATABASE_VERSION = 23;
+    private static final int DATABASE_VERSION = 24;
 
     private static final String SQL_CREATE_PIZZA_TABLE =
             "CREATE TABLE " + PIZZA_SCHEMA + " (" +
@@ -161,12 +163,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         Log.i(TAG, "SQLiteDatabase.onCreate! " + DATABASE_NAME);
         db.execSQL(SQL_CREATE_PIZZA_TABLE);
+        db.execSQL(SQL_CREATE_SIDE_TABLE);
 
         try {
             readPizzasFromResources(db, "krazy_classics");
             readPizzasFromResources(db, "krazy_signatures");
+            readSidesFromResources(db);
         } catch (Exception e) {
-            Log.w(TAG, "Error storing pizza data" + e);
+            Log.w(TAG, "Error storing data" + e);
         }
     }
 
@@ -225,7 +229,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
     }
-
     public void readSidesFromResources(SQLiteDatabase db) throws IOException, JSONException {
         Log.i(TAG, "Reading side data from resources");
         StringBuilder builder = new StringBuilder();
@@ -254,6 +257,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long result = db.insert(SIDE_SCHEMA, null, values);
             if (result == -1) {
                 Log.i(TAG, "Error loading side data");
+            }
+        }
+    }
+    public void readGrindersFromResources(SQLiteDatabase db) throws IOException, JSONException {
+        Log.i(TAG, "Reading grinder data from resources");
+        StringBuilder builder = new StringBuilder();
+        InputStream inputStream = mResources.openRawResource(R.raw.krazy_grinders);
+        BufferedReader bfReader = new BufferedReader(new InputStreamReader(inputStream));
+
+        String line;
+        while ((line = bfReader.readLine()) != null) {
+            builder.append(line);
+        }
+
+        //Parse resource into key/values
+        final String rawJson = builder.toString();
+        // Parse JSON data and insert into the provided database instance
+        final JSONObject obj = new JSONObject(rawJson);
+        final JSONArray krazy_grinders = obj.getJSONArray("krazy_grinders");
+        final int n = krazy_grinders.length();
+        Log.i(TAG, "length of grinders table (json): " + n);
+        for (int i = 0; i < n; ++i) {
+            final JSONObject grinder = krazy_grinders.getJSONObject(i);
+            ContentValues values = new ContentValues();
+            values.put(GRINDER_2, grinder.getString("name"));
+            values.put(GRINDER_3, grinder.getString("top1"));
+            values.put(GRINDER_4, grinder.getString("top2"));
+            values.put(GRINDER_5, grinder.getString("top3"));
+            values.put(GRINDER_6, grinder.getString("top4"));
+            values.put(GRINDER_7, grinder.getString("top5"));
+            values.put(GRINDER_8, grinder.getString("top6"));
+            values.put(GRINDER_9, grinder.getString("top7"));
+            values.put(GRINDER_10, grinder.getString("top8"));
+
+            long result = db.insert(SIDE_SCHEMA, null, values);
+            if (result == -1) {
+                Log.i(TAG, "Error loading grinder data");
             }
         }
     }
