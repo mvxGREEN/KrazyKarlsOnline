@@ -25,6 +25,7 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Drink
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.DrinkDessertSchema.DRINK_DESSERT_SCHEMA;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_1;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_10;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_11;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_2;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_3;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_4;
@@ -169,6 +170,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             readPizzasFromResources(db, "krazy_classics");
             readPizzasFromResources(db, "krazy_signatures");
             readSidesFromResources(db);
+            readGrindersFromResources(db);
         } catch (Exception e) {
             Log.w(TAG, "Error storing data" + e);
         }
@@ -290,6 +292,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(GRINDER_8, grinder.getString("top6"));
             values.put(GRINDER_9, grinder.getString("top7"));
             values.put(GRINDER_10, grinder.getString("top8"));
+            values.put(GRINDER_11, grinder.getString("top9"));
 
             long result = db.insert(SIDE_SCHEMA, null, values);
             if (result == -1) {
