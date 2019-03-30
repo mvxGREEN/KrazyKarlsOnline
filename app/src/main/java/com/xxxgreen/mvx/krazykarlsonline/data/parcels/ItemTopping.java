@@ -4,12 +4,7 @@ package com.xxxgreen.mvx.krazykarlsonline.data.parcels;
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
 import android.util.Log;
-
-import java.util.ArrayList;
-
-import static com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree.PRICE_MOD.SIGNATURE;
 
 /**
  * Created by MVX on 12/22/2018.
@@ -80,6 +75,9 @@ public class ItemTopping implements Parcelable {
     }
 
     /*
+     *  Goal:
+     *      Generate price of any Entree
+     *
      *  Params:
      *      - Crust
      *      - Toppings
@@ -87,8 +85,8 @@ public class ItemTopping implements Parcelable {
      *      - Modified Toppings (Nullable)
      *
      */
-    public double getCrustPrice(ItemEntree.CRUST crust, ItemTopping.TYPE type,
-                            ItemTopping.PRICE_MOD mod) {
+    public double getPrice(ItemEntree.SUB_CATEGORY SUBCATEGORY, ItemTopping.TYPE type,
+                           ItemTopping.PRICE_MOD mod) {
         double toppingPrice = 0.00;
         switch (type) {
             case MEAT:
@@ -99,7 +97,7 @@ public class ItemTopping implements Parcelable {
             case OTHER:
         }
 
-        Log.i(TAG, "Generated crust price: " + toppingPrice);
+        Log.i(TAG, "Generated SUBCATEGORY price: " + toppingPrice);
         return toppingPrice;
     }
 

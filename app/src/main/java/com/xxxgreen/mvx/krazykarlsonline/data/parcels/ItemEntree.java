@@ -8,7 +8,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import static com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree.PRICE_MOD.SIGNATURE;
+import static com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree.MOD.SIGNATURE;
 
 /**
  * Created by MVX on 12/22/2018.
@@ -17,10 +17,11 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree.PRICE_MO
 public  class ItemEntree implements Parcelable {
     private static final String TAG = "ItemEntree";
 
-    public enum CRUST {
-        GRINDER, SMALL, SMALL_THIN, MEDIUM, MEDIUM_THIN, MEDIUM_GF, LARGE, LARGE_THIN
+    public enum SUB_CATEGORY {
+        SALAD_HALF, SALAD_FULL, GRINDER,
+        SMALL, SMALL_THIN, MEDIUM, MEDIUM_THIN, MEDIUM_GF, LARGE, LARGE_THIN
     }
-    public enum PRICE_MOD {
+    public enum MOD {
         BUILD_YOUR_OWN, SIGNATURE, BEAT_THE_CLOCK
     }
 
@@ -107,60 +108,96 @@ public  class ItemEntree implements Parcelable {
      *      - Modified Toppings (Nullable)
      *
      */
-    public double getCrustPrice(ItemEntree.CRUST crust, ArrayList<String> toppings,
-                                Pizza.PRICE_MOD mod, @Nullable ArrayList<String> modToppings) {
-        double crustPrice = 0.00;
-
+    public double getPrice(SUB_CATEGORY SUBCATEGORY, ArrayList<ItemTopping> toppings,
+                                MOD mod, String name) {
+        double price = 0.00;
         if (mod == SIGNATURE) {
             // Signature price
-            switch (crust) {
+            switch (SUBCATEGORY) {
+                case SALAD_HALF:
+                    if (name.equals("Kobb")) {
+                        price = 5.99;
+                    } else if (name.equals("House")) {
+                        price = 4.99;
+                    } else if (name.equals("Spinach")) {
+                        price = 5.99;
+                    } else if (name.equals("Caesar")) {
+                        price = 5.99;
+                    } else {
+                        Log.w(TAG, "Unknown salad name");
+                    }
+                    //TODO Add Greek salad
+                    break;
+                case SALAD_FULL:
+                    if (name.equals("Kobb")) {
+                        price = 8.99;
+                    } else if (name.equals("House")) {
+                        price = 6.99;
+                    } else if (name.equals("Spinach")) {
+                        price = 8.99;
+                    } else if (name.equals("Caesar")) {
+                        price = 7.99;
+                    } else {
+                        Log.w(TAG, "Unknown salad name");
+                    }
+                    //TODO Add Greek salad
+                    break;
                 case GRINDER:
-                    crustPrice = 7.99;
+                    price = 7.99;
                     break;
                 case SMALL:
                 case SMALL_THIN:
-                    crustPrice = 8.99;
+                    price = 8.99;
                     break;
                 case MEDIUM:
                 case MEDIUM_THIN:
-                    crustPrice = 5.99;
+                    price = 5.99;
                     break;
                 case MEDIUM_GF:
-                    crustPrice = 11.99;
+                    price = 11.99;
                     break;
                 case LARGE:
                 case LARGE_THIN:
-                    crustPrice = 7.99;
+                    price = 7.99;
                     break;
             }
         } else {
-            // Base crust price
-            switch (crust) {
+            // Base SUBCATEGORY price
+            switch (SUBCATEGORY) {
+                case SALAD_HALF:
+                    // TODO check for accuracy
+                    price = 2.99;
+                    break;
+                case SALAD_FULL:
+                    // TODO: check for accuracy
+                    price = 4.99;
+                    break;
                 case GRINDER:
-                    //TODO grinder BYcheck for accuracy
-                    crustPrice = 3.99;
+                    //TODO check for accuracy
+                    price = 3.99;
                     break;
                 case SMALL:
                 case SMALL_THIN:
-                    crustPrice = 4.99;
+                    price = 4.99;
                     break;
                 case MEDIUM:
                 case MEDIUM_THIN:
-                    crustPrice = 5.99;
+                    price = 5.99;
                     break;
                 case MEDIUM_GF:
-                    crustPrice = 11.99;
+                    price = 11.99;
                     break;
                 case LARGE:
                 case LARGE_THIN:
-                    crustPrice = 7.99;
+                    price = 7.99;
                     break;
             }
         }
 
 
-        Log.i(TAG, "Generated crust price: " + crustPrice);
-        return crustPrice;
+
+        Log.i(TAG, "Generated price: " + price);
+        return price;
     }
 
 }
