@@ -14,19 +14,19 @@ import android.widget.TextView;
 
 import com.xxxgreen.mvx.krazykarlsonline.R;
 import com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseManager;
-import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Pizza;
+import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree;
 
 import java.util.ArrayList;
 
-public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdapter.PizzaHolder> {
+public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdapter.ItemEntreeHolder> {
     private final String TAG = "PizzaRecyclerAdapter";
 
-    private ArrayList<Pizza> pizzaList;
+    private ArrayList<ItemEntree> pizzaList;
     private OnItemClickListener itemClickListener;
     private Context context;
 
-    public PizzaRecyclerAdapter(ArrayList<Pizza> pizzaList, Context context) {
-        Log.i(TAG, "PizzaRecyclerAdapter.onCreate");
+    public PizzaRecyclerAdapter(ArrayList<ItemEntree> pizzaList, Context context) {
+        Log.i(TAG, "ItemEntreeRecyclerAdapter.onCreate");
         this.pizzaList = pizzaList;
         this.context = context;
 
@@ -34,18 +34,18 @@ public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdap
         Cursor cursor = dbm.queryAllPizzas();
 
         while (cursor.moveToNext()) {
-            Pizza pizza = new Pizza(cursor);
+            ItemEntree pizza = new ItemEntree(cursor);
             Log.i(TAG, pizza.name);
             pizzaList.add(pizza);
         }
-        Log.i(TAG, "Pizza list length: " + pizzaList.size());
+        Log.i(TAG, "ItemEntree list length: " + pizzaList.size());
     }
 
-    public class PizzaHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ItemEntreeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView i_icon;
         public TextView t_title, t_toppings;
 
-        public PizzaHolder(View itemView) {
+        public ItemEntreeHolder(View itemView) {
             super(itemView);
             this.i_icon = itemView.findViewById(R.id.icon_pizza);
             this.t_title = itemView.findViewById(R.id.title_pizza);
@@ -61,16 +61,16 @@ public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdap
 
     @NonNull
     @Override
-    public PizzaHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ItemEntreeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.item_pizza, parent, false);
 
-        return new PizzaHolder(view);
+        return new ItemEntreeHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PizzaHolder holder, int position) {
-        final Pizza pizza = pizzaList.get(position);
+    public void onBindViewHolder(@NonNull ItemEntreeHolder holder, int position) {
+        final ItemEntree pizza = pizzaList.get(position);
         Context ctx = holder.i_icon.getContext();
         Resources res = ctx.getResources();     // Get resources to access drawables
 
@@ -85,7 +85,7 @@ public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdap
         return pizzaList.size();
     }
 
-    public Pizza getPizza(int index) {
+    public ItemEntree getItemEntree(int index) {
         if (index > -1 && index < getItemCount()) {
             return pizzaList.get(index);
         } else {

@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 
 import com.xxxgreen.mvx.krazykarlsonline.R;
 import com.xxxgreen.mvx.krazykarlsonline.adapter.PizzaRecyclerAdapter;
-import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Pizza;
+import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree;
 
 import java.util.ArrayList;
 
@@ -52,12 +52,12 @@ public class PagePizzaFragment extends Fragment {
         pizzaRecycler.setHasFixedSize(true);
         pizzaRecycler.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 
-        final ArrayList<Pizza> pizzaList = new ArrayList<>();
+        final ArrayList<ItemEntree> pizzaList = new ArrayList<>();
         pizzaRecyclerAdapter = new PizzaRecyclerAdapter(pizzaList, rootView.getContext());
         pizzaRecyclerAdapter.setOnItemClickListener(new PizzaRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Pizza clickedPizza = pizzaList.get(position);
+                ItemEntree clickedPizza = pizzaList.get(position);
                 Log.i(TAG, "clicked pizza: " + clickedPizza.name);
             }
         });
