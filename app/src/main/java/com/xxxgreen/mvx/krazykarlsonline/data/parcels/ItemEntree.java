@@ -3,14 +3,26 @@ package com.xxxgreen.mvx.krazykarlsonline.data.parcels;
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.Nullable;
+import android.util.Log;
+
+import java.util.ArrayList;
+
+import static com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree.PRICE_MOD.SIGNATURE;
 
 /**
  * Created by MVX on 12/22/2018.
  */
 
 public  class ItemEntree implements Parcelable {
-    public static final int TYPE_PIZZA = 0, TYPE_SIDE = 1, TYPE_GRINDER = 2, TYPE_SALAD = 3,
-        TYPE_DRINK_DESSERT = 4;
+    private static final String TAG = "ItemEntree";
+
+    public enum CRUST {
+        GRINDER, SMALL, SMALL_THIN, MEDIUM, MEDIUM_THIN, MEDIUM_GF, LARGE, LARGE_THIN
+    }
+    public enum PRICE_MOD {
+        BUILD_YOUR_OWN, SIGNATURE, BEAT_THE_CLOCK
+    }
 
     public final int id;
     public final String name, base, top1, top2, top3, top4, top5, top6;
@@ -85,6 +97,70 @@ public  class ItemEntree implements Parcelable {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    /*
+     *  Params:
+     *      - Crust
+     *      - Toppings
+     *      - Price Modifier
+     *      - Modified Toppings (Nullable)
+     *
+     */
+    public double getCrustPrice(ItemEntree.CRUST crust, ArrayList<String> toppings,
+                                Pizza.PRICE_MOD mod, @Nullable ArrayList<String> modToppings) {
+        double crustPrice = 0.00;
+
+        if (mod == SIGNATURE) {
+            // Signature price
+            switch (crust) {
+                case GRINDER:
+                    crustPrice = 7.99;
+                    break;
+                case SMALL:
+                case SMALL_THIN:
+                    crustPrice = 8.99;
+                    break;
+                case MEDIUM:
+                case MEDIUM_THIN:
+                    crustPrice = 5.99;
+                    break;
+                case MEDIUM_GF:
+                    crustPrice = 11.99;
+                    break;
+                case LARGE:
+                case LARGE_THIN:
+                    crustPrice = 7.99;
+                    break;
+            }
+        } else {
+            // Base crust price
+            switch (crust) {
+                case GRINDER:
+                    //TODO grinder BYcheck for accuracy
+                    crustPrice = 3.99;
+                    break;
+                case SMALL:
+                case SMALL_THIN:
+                    crustPrice = 4.99;
+                    break;
+                case MEDIUM:
+                case MEDIUM_THIN:
+                    crustPrice = 5.99;
+                    break;
+                case MEDIUM_GF:
+                    crustPrice = 11.99;
+                    break;
+                case LARGE:
+                case LARGE_THIN:
+                    crustPrice = 7.99;
+                    break;
+            }
+        }
+
+
+        Log.i(TAG, "Generated crust price: " + crustPrice);
+        return crustPrice;
     }
 
 }

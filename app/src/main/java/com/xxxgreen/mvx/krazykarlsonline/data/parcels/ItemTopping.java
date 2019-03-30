@@ -4,14 +4,29 @@ package com.xxxgreen.mvx.krazykarlsonline.data.parcels;
 import android.database.Cursor;
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.support.annotation.Nullable;
+import android.util.Log;
+
+import java.util.ArrayList;
+
+import static com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree.PRICE_MOD.SIGNATURE;
 
 /**
  * Created by MVX on 12/22/2018.
  */
 
 public class ItemTopping implements Parcelable {
+    private static final String TAG = "ItemTopping";
     public final int id;
     public final String name, types, notes;
+
+    public enum TYPE {
+        MEAT, CHEESE, VEGGIE, SAUCE, OTHER
+    }
+
+    public enum PRICE_MOD {
+        STANDARD, PREMIUM, FREE
+    }
 
     public ItemTopping(String name, String types, String notes) {
         this.id = 0;
@@ -62,6 +77,30 @@ public class ItemTopping implements Parcelable {
     @Override
     public String toString() {
         return this.name;
+    }
+
+    /*
+     *  Params:
+     *      - Crust
+     *      - Toppings
+     *      - Price Modifier
+     *      - Modified Toppings (Nullable)
+     *
+     */
+    public double getCrustPrice(ItemEntree.CRUST crust, ItemTopping.TYPE type,
+                            ItemTopping.PRICE_MOD mod) {
+        double toppingPrice = 0.00;
+        switch (type) {
+            case MEAT:
+
+            case VEGGIE:
+            case CHEESE:
+            case SAUCE:
+            case OTHER:
+        }
+
+        Log.i(TAG, "Generated crust price: " + toppingPrice);
+        return toppingPrice;
     }
 
 }
