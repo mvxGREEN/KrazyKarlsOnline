@@ -22,6 +22,9 @@ public final class DatabaseSchema {
         public static final String PIZZA_7 = "top4";
         public static final String PIZZA_8 = "top5";
         public static final String PIZZA_9 = "top6";
+        public static final String PIZZA_10 = "top7";
+        public static final String PIZZA_11 = "top8";
+        public static final String PIZZA_12 = "top9";
     }
 
     // SIDE

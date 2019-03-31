@@ -69,7 +69,7 @@
                         android:layout_marginEnd="4dp"
                         android:layout_marginBottom="4dp"
                         android:contentDescription="@string/cont_desc_rounded_rect"
-                        android:background="@drawable/capsule_main_light" />
+                        android:background="@drawable/capsule_kkorange" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -92,7 +92,7 @@
                         android:layout_marginEnd="4dp"
                         android:layout_marginBottom="4dp"
                         android:contentDescription="@string/cont_desc_rounded_rect"
-                        android:background="@drawable/capsule_main_light" />
+                        android:background="@drawable/capsule_kkorange" />
 
                 </LinearLayout>
 

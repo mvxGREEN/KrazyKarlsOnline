@@ -82,10 +82,10 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         setContentView(R.layout.activity_map);
 
         // Init static colors
-        //zone1filler = getContext().getResources().getColor(R.color.colorZoneFiller);
-        //zone2filler = getContext().getResources().getColor(R.color.colorZoneFiller);
+        zone1filler = getContext().getResources().getColor(R.color.elizabethLightTransparent);
+        zone2filler = getContext().getResources().getColor(R.color.timberlineGreenTransparent);
         zone1Stroke = getContext().getResources().getColor(R.color.elizabethLightTransparent);
-        zone2Stroke = getContext().getResources().getColor(R.color.colorPrimaryTransparent);
+        zone2Stroke = getContext().getResources().getColor(R.color.timberlineGreenTransparent);
 
         // Init Google Map
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -300,6 +300,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
         PolygonOptions optionsZone1 = new PolygonOptions()
                 .addAll(zone1BoundsList)
+                .fillColor(zone1filler)
                 .strokeColor(zone1Stroke)
                 .strokeWidth(8.0f)
                 .clickable(false);
@@ -312,6 +313,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         }
         PolygonOptions optionsZone2 = new PolygonOptions()
                 .addAll(zone2BoundsList)
+                .fillColor(zone2filler)
                 .strokeColor(zone2Stroke)
                 .strokeWidth(8.0f)
                 .clickable(false);

@@ -26,7 +26,10 @@
     <!-- Transparents -->
     <color name="colorPrimaryTransparent">#9F206578</color>
     <color name="colorPrimaryDarkTransparent">#A11E444F</color>
+    <color name="colorPrimaryVeryLightTransparent">#9FD2E0E4</color>
+    <color name="colorPrimaryWhiteTransparent">#9FE8EFF1</color>
     <color name="elizabethLightTransparent">#A1FFC04C</color>
+    <color name="timberlineGreenTransparent">#A114674A</color>
     <color name="timberlineLightTransparent">#A12ED69C</color>
 
 </resources>

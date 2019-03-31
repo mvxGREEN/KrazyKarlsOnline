@@ -36,6 +36,9 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Grind
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_9;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.GrinderSchema.GRINDER_SCHEMA;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_1;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_10;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_11;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_12;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_2;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_3;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_4;
@@ -68,7 +71,7 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Sides
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = DatabaseHelper.class.getSimpleName();
     private static final String DATABASE_NAME = "KKsDatabase.db";
-    private static final int DATABASE_VERSION = 24;
+    private static final int DATABASE_VERSION = 27;
 
     private static final String SQL_CREATE_PIZZA_TABLE =
             "CREATE TABLE " + PIZZA_SCHEMA + " (" +
@@ -80,7 +83,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     PIZZA_6 + " TEXT," +
                     PIZZA_7 + " TEXT," +
                     PIZZA_8 + " TEXT," +
-                    PIZZA_9 + " TEXT)";
+                    PIZZA_9 + " TEXT," +
+                    PIZZA_10 + " TEXT," +
+                    PIZZA_11 + " TEXT," +
+                    PIZZA_12 + " TEXT)";
 
     private static final String SQL_CREATE_SIDE_TABLE =
             "CREATE TABLE " + SIDE_SCHEMA + " (" +
@@ -98,7 +104,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     GRINDER_5 + " TEXT," +
                     GRINDER_6 + " TEXT," +
                     GRINDER_7 + " TEXT," +
-                    GRINDER_8 + " TEXT)";
+                    GRINDER_8 + " TEXT," +
+                    GRINDER_9 + " TEXT," +
+                    GRINDER_10 + " TEXT," +
+                    GRINDER_11 + " TEXT)";
 
     private static final String SQL_CREATE_SALAD_TABLE =
             "CREATE TABLE " + SALAD_SCHEMA + " (" +
@@ -165,6 +174,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Log.i(TAG, "SQLiteDatabase.onCreate! " + DATABASE_NAME);
         db.execSQL(SQL_CREATE_PIZZA_TABLE);
         db.execSQL(SQL_CREATE_SIDE_TABLE);
+        db.execSQL(SQL_CREATE_GRINDER_TABLE);
 
         try {
             readPizzasFromResources(db, "krazy_classics");
@@ -180,6 +190,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.i(TAG, "SQLiteDatabase.onUpgrade! " + DATABASE_NAME);
         db.execSQL(SQL_DELETE_PIZZAS);
+        db.execSQL(SQL_DELETE_SIDES);
+        db.execSQL(SQL_DELETE_GRINDERS);
         onCreate(db);
     }
 
@@ -224,6 +236,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(PIZZA_7, pizza.getString("top4"));
             values.put(PIZZA_8, pizza.getString("top5"));
             values.put(PIZZA_9, pizza.getString("top6"));
+            values.put(PIZZA_10, pizza.getString("top7"));
+            values.put(PIZZA_11, pizza.getString("top8"));
+            values.put(PIZZA_12, pizza.getString("top9"));
 
             long result = db.insert(PIZZA_SCHEMA, null, values);
             if (result == -1) {

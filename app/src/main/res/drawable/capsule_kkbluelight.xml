@@ -8,6 +8,6 @@
         android:width="52dp"
         android:height="12dp" />
     <stroke
-        android:color="@color/colorPrimaryLighter"
+        android:color="@color/colorPrimaryVeryLight"
         android:width="1dp" />
 </shape>

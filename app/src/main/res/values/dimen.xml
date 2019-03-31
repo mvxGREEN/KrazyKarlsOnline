@@ -20,7 +20,7 @@
     <dimen name="padding_panel">4dp</dimen>
     <dimen name="size_page_icon">40dp</dimen>
     <dimen name="size_action_button">40dp</dimen>
-    <dimen name="height_capsule">6dp</dimen>
+    <dimen name="height_capsule">4dp</dimen>
 
     <!-- SECTION HOME -->
 
