@@ -88,8 +88,8 @@
             android:theme="@style/AppTheme.PopupOverlay"
             app:tabGravity="center"
             app:tabMode="scrollable"
-            app:tabIndicatorColor="@color/colorAccentLight"
-            app:tabSelectedTextColor="@color/colorAccentLight"
+            app:tabIndicatorColor="@color/colorPrimaryDark"
+            app:tabSelectedTextColor="@color/colorPrimaryDark"
             app:tabTextColor="@color/colorVeryLightGrey" />
 
     </LinearLayout>

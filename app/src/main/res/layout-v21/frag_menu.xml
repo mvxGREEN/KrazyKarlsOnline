@@ -99,9 +99,9 @@
             app:tabTextAppearance="@style/Base.TextAppearance.KKTabText"
             app:tabGravity="center"
             app:tabMode="scrollable"
-            app:tabIndicatorColor="@color/colorAccentLight"
-            app:tabSelectedTextColor="@color/colorAccentLight"
-            app:tabTextColor="@color/colorVeryLightGrey" />
+            app:tabIndicatorColor="@color/elizabethDark"
+            app:tabSelectedTextColor="@color/elizabethDark"
+            app:tabTextColor="@color/elizabethOrange" />
 
     </LinearLayout>
 

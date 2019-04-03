@@ -33,7 +33,8 @@
             android:layout_height="wrap_content"
             android:text="@string/example_pizza_name"
             android:textSize="18sp"
-            android:textColor="@color/colorWhite"/>
+            android:textColor="@color/colorWhite"
+            android:fontFamily="@font/permanent_marker"/>
 
         <TextView
             android:id="@+id/toppings_pizza"
