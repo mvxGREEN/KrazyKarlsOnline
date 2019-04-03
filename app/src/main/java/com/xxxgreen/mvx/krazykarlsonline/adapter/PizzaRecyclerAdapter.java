@@ -74,7 +74,7 @@ public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdap
         Context ctx = holder.i_icon.getContext();
         Resources res = ctx.getResources();     // Get resources to access drawables
 
-        holder.i_icon.setBackground(res.getDrawable(R.drawable.ic_specialty_pizza_white_128dp));
+        //holder.i_icon.setBackground(res.getDrawable(R.drawable.ic_specialty_pizza_white_128dp));
         holder.t_title.setText(pizza.name);
         String toppings = pizza.base + ", " + pizza.top1 + ", " + pizza.top2 + ", " + pizza.top3;
         holder.t_toppings.setText(toppings);

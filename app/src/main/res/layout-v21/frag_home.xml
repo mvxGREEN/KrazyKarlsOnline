@@ -48,7 +48,7 @@
             <ImageView
                 android:layout_width="@dimen/size_page_icon"
                 android:layout_height="@dimen/size_page_icon"
-                android:background="@drawable/ic_sketch_home_kkwhiteishblue_64dp"
+                android:background="@drawable/ic_sketch_home_kkorange_64dp"
                 android:contentDescription="@string/page_tab_icon" />
 
             <!-- DIVIDER -->
@@ -107,7 +107,7 @@
                 app:corner="@dimen/corner_superbtn"
                 app:pressBgColor="@color/elizabethOrange"
                 app:isShowState="true"
-                app:state_drawable="@drawable/ic_sketch_settings_kkorange_56dp"
+                app:state_drawable="@drawable/ic_sketch_settings_kkblueishwhite_64dp"
                 app:state_drawable_mode="center"
                 app:state_drawable_height="@dimen/size_action_button"
                 app:state_drawable_width="@dimen/size_action_button"

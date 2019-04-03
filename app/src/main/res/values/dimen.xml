@@ -32,6 +32,7 @@
 
     <!-- SECTION MENU -->
     <dimen name="height_menu_tab">56dp</dimen>
+    <dimen name="stroke_width_menu_item">2dp</dimen>
 
     <!-- SECTION ORDER -->
 

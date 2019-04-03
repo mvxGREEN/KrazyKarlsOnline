@@ -49,7 +49,7 @@
                 android:layout_width="@dimen/size_page_icon"
                 android:layout_height="@dimen/size_page_icon"
                 android:layout_marginTop="4dp"
-                android:background="@drawable/ic_sketch_order_kkblueishwhite_88dp"
+                android:background="@drawable/ic_sketch_order_kkorange_88dp"
                 android:contentDescription="@string/page_tab_icon"/>
 
             <!-- DIVIDER -->
