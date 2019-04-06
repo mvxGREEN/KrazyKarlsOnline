@@ -64,6 +64,9 @@ public final class DatabaseSchema {
         public static final String SALAD_7 = "top4";
         public static final String SALAD_8 = "top5";
         public static final String SALAD_9 = "top6";
+        public static final String SALAD_10 = "top7";
+        public static final String SALAD_11 = "top8";
+        public static final String SALAD_12 = "top9";
     }
 
     // DRINK/DESSERT

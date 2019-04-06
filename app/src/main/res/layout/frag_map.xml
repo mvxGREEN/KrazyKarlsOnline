@@ -102,7 +102,7 @@
                 app:corner="@dimen/corner_superbtn"
                 app:pressBgColor="@color/colorPrimary"
                 app:isShowState="true"
-                app:state_drawable="@drawable/ic_sketchy_add_location_red_72dp"
+                app:state_drawable="@drawable/ic_sketch_add_location_red_72dp"
                 app:state_drawable_mode="fill"
                 tools:ignore="RelativeOverlap" />
 

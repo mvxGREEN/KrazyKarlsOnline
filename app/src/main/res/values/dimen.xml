@@ -20,7 +20,8 @@
     <dimen name="padding_panel">4dp</dimen>
     <dimen name="size_page_icon">40dp</dimen>
     <dimen name="size_action_button">40dp</dimen>
-    <dimen name="height_capsule">4dp</dimen>
+    <dimen name="corner_action_button">16dp</dimen>
+    <dimen name="height_capsule">3dp</dimen>
 
     <!-- SECTION HOME -->
 
@@ -29,6 +30,8 @@
     <dimen name="width_my_location_panel">144dp</dimen>
     <dimen name="height_store_location_panel">72dp</dimen>
     <dimen name="width_store_location_panel">232dp</dimen>
+    <dimen name="corner_map_item">16dp</dimen>
+    <dimen name="stroke_width_map_item">2dp</dimen>
 
     <!-- SECTION MENU -->
     <dimen name="height_menu_tab">56dp</dimen>

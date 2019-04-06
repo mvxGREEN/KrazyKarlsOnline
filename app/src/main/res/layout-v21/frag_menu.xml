@@ -41,15 +41,6 @@
                 android:contentDescription="@string/cont_desc_rounded_rect"
                 android:background="@drawable/capsule_kkorange" />
 
-            <!-- DIVIDER -->
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/height_capsule"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:contentDescription="@string/cont_desc_rounded_rect"
-                android:background="@drawable/capsule_kkorange" />
-
 
         </LinearLayout>
 

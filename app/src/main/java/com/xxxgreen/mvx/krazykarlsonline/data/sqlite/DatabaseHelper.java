@@ -49,6 +49,9 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Pizza
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_9;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_SCHEMA;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_1;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_10;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_11;
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_12;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_2;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_3;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SaladSchema.SALAD_4;
@@ -71,7 +74,7 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Sides
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = DatabaseHelper.class.getSimpleName();
     private static final String DATABASE_NAME = "KKsDatabase.db";
-    private static final int DATABASE_VERSION = 27;
+    private static final int DATABASE_VERSION = 28;
 
     private static final String SQL_CREATE_PIZZA_TABLE =
             "CREATE TABLE " + PIZZA_SCHEMA + " (" +
@@ -175,12 +178,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_CREATE_PIZZA_TABLE);
         db.execSQL(SQL_CREATE_SIDE_TABLE);
         db.execSQL(SQL_CREATE_GRINDER_TABLE);
+        db.execSQL(SQL_CREATE_SALAD_TABLE);
+        db.execSQL(SQL_CREATE_DRINK_DESSERT_TABLE);
 
         try {
             readPizzasFromResources(db, "krazy_classics");
             readPizzasFromResources(db, "krazy_signatures");
             readSidesFromResources(db);
             readGrindersFromResources(db);
+            readSaladsFromResources(db);
         } catch (Exception e) {
             Log.w(TAG, "Error storing data" + e);
         }
@@ -192,6 +198,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(SQL_DELETE_PIZZAS);
         db.execSQL(SQL_DELETE_SIDES);
         db.execSQL(SQL_DELETE_GRINDERS);
+        db.execSQL(SQL_DELETE_SALADS);
+        db.execSQL(SQL_DELETE_DRINKS_DESSERTS);
         onCreate(db);
     }
 
@@ -315,6 +323,77 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
     }
+    public void readSaladsFromResources(SQLiteDatabase db) throws IOException, JSONException {
+        Log.i(TAG, "Reading grinder data from resources");
+        StringBuilder builder = new StringBuilder();
+        InputStream inputStream = mResources.openRawResource(R.raw.krazy_grinders);
+        BufferedReader bfReader = new BufferedReader(new InputStreamReader(inputStream));
+
+        String line;
+        while ((line = bfReader.readLine()) != null) {
+            builder.append(line);
+        }
+
+        //Parse resource into key/values
+        final String rawJson = builder.toString();
+        // Parse JSON data and insert into the provided database instance
+        final JSONObject obj = new JSONObject(rawJson);
+        final JSONArray krazy_salads = obj.getJSONArray("krazy_salads");
+        final int n = krazy_salads.length();
+        Log.i(TAG, "length of salads table (json): " + n);
+        for (int i = 0; i < n; ++i) {
+            final JSONObject salad = krazy_salads.getJSONObject(i);
+            ContentValues values = new ContentValues();
+            values.put(SALAD_2, salad.getString("name"));
+            values.put(SALAD_3, salad.getString("base"));
+            values.put(SALAD_4, salad.getString("top1"));
+            values.put(SALAD_5, salad.getString("top2"));
+            values.put(SALAD_6, salad.getString("top3"));
+            values.put(SALAD_7, salad.getString("top4"));
+            values.put(SALAD_8, salad.getString("top5"));
+            values.put(SALAD_9, salad.getString("top6"));
+            values.put(SALAD_10, salad.getString("top7"));
+            values.put(SALAD_11, salad.getString("top8"));
+            values.put(SALAD_12, salad.getString("top9"));
+
+
+            long result = db.insert(SIDE_SCHEMA, null, values);
+            if (result == -1) {
+                Log.i(TAG, "Error loading salad data");
+            }
+        }
+    }
+    public void readDessertsDrinksResources(SQLiteDatabase db) throws IOException, JSONException {
+        Log.i(TAG, "Reading drink/dessert data from resources");
+        StringBuilder builder = new StringBuilder();
+        InputStream inputStream = mResources.openRawResource(R.raw.krazy_drinks_desserts);
+        BufferedReader bfReader = new BufferedReader(new InputStreamReader(inputStream));
+
+        String line;
+        while ((line = bfReader.readLine()) != null) {
+            builder.append(line);
+        }
+
+        //Parse resource into key/values
+        final String rawJson = builder.toString();
+        // Parse JSON data and insert into the provided database instance
+        final JSONObject obj = new JSONObject(rawJson);
+        final JSONArray krazy_dds = obj.getJSONArray("krazy_drinks_desserts");
+        final int n = krazy_dds.length();
+        Log.i(TAG, "length of drink/desserts table (json): " + n);
+        for (int i = 0; i < n; ++i) {
+            final JSONObject side = krazy_dds.getJSONObject(i);
+            ContentValues values = new ContentValues();
+            values.put(SIDE_2, side.getString("name"));
+            values.put(SIDE_3, side.getString("types"));
+            values.put(SIDE_4, side.getString("notes"));
+
+            long result = db.insert(DRINK_DESSERT_SCHEMA, null, values);
+            if (result == -1) {
+                Log.i(TAG, "Error loading drink/dessert data");
+            }
+        }
+    };
 
     protected void deletePizza(SQLiteDatabase db, int i) {
         db.execSQL(SQL_DELETE_PIZZA + i);
