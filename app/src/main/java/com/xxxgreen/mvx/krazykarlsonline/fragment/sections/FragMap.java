@@ -80,7 +80,7 @@ public class FragMap extends Fragment {
         autocompleteFragment = (PlaceAutocompleteFragment)
                 getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
         //autocompleteFragment.setOnPlaceSelectedListener(this);
-        autocompleteFragment.setHint("Search Fort Collins");
+        autocompleteFragment.setHint(getResources().getString(R.string.autocomplete_search_hint));
         LatLngBounds fortcollinsSearchBounds = new LatLngBounds(MapUtils.SEARCH_CORNER_SOUTHWEST,
                 MapUtils.SEARCH_CORNER_NORTHEAST);
         autocompleteFragment.setBoundsBias(fortcollinsSearchBounds);

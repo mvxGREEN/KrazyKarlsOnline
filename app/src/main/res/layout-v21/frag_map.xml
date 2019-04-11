@@ -184,7 +184,7 @@
                 android:textSize="17sp"
                 app:text_fill_color="@color/elizabethWhite"
                 app:text_stroke="true"
-                app:text_stroke_color="@color/elizabethDark"
+                app:text_stroke_color="@color/elizabethOrange"
                 app:text_stroke_width="3dp"/>
             <!-- STORE LOCATION #2 (TIMBERLINE) -->
             <com.coorchice.library.SuperTextView
@@ -213,12 +213,12 @@
                 android:textSize="17sp"
                 app:text_fill_color="@color/timberlineWhite"
                 app:text_stroke="true"
-                app:text_stroke_color="@color/timberlineDark"
+                app:text_stroke_color="@color/timberlineGreen"
                 app:text_stroke_width="3dp" />
 
         </LinearLayout>
 
-        <!-- LAYOUT CUSTOM LOCATIONS -->
+        <!-- LAYOUT SAVED LOCATIONS -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -234,17 +234,17 @@
                 android:layout_height="@dimen/height_my_location_panel"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginBottom="8dp"
                 android:padding="4dp"
                 android:alpha="0.80"
                 android:gravity="center_horizontal|bottom"
                 app:shaderEnable="true"
                 app:shaderMode="topToBottom"
-                app:shaderStartColor="@color/elizabethDark"
-                app:shaderEndColor="@color/elizabethDarker"
+                app:shaderStartColor="@color/colorPrimary"
+                app:shaderEndColor="@color/colorPrimaryDark"
                 app:corner="@dimen/corner_map_item"
                 app:stroke_width="@dimen/stroke_width_map_item"
-                app:stroke_color="@color/elizabethDarker"
+                app:stroke_color="@color/colorPrimaryWhite"
                 app:isShowState2="true"
                 app:state_drawable2="@drawable/ic_sketch_home_kkblueishwhite_64dp"
                 app:state_drawable2_width="32dp"
@@ -256,7 +256,7 @@
                 android:fontFamily="@font/permanent_marker"
                 android:textAlignment="gravity"
                 android:textSize="15sp"
-                android:shadowColor="@color/colorPrimaryDark"
+                android:shadowColor="@color/colorPrimaryVeryDark"
                 android:shadowDx="-1"
                 android:shadowDy="-1"
                 android:shadowRadius="1"/>
@@ -269,6 +269,13 @@
                 android:padding="2dp"
                 android:alpha="0.80"
                 android:gravity="center_horizontal|bottom"
+                app:shaderEnable="true"
+                app:shaderMode="topToBottom"
+                app:shaderStartColor="@color/colorPrimary"
+                app:shaderEndColor="@color/colorPrimaryDark"
+                app:corner="@dimen/corner_map_item"
+                app:stroke_width="@dimen/stroke_width_map_item"
+                app:stroke_color="@color/colorPrimaryWhite"
                 app:isShowState2="true"
                 app:state_drawable2="@drawable/ic_sketch_work_kkblueishwhite_64dp"
                 app:state_drawable2_width="32dp"
@@ -276,12 +283,14 @@
                 app:state_drawable2_mode="top"
                 app:state_drawable2_padding_top="8dp"
                 android:text="@string/location_title_custom_location_workschool"
+                android:textColor="@color/colorWhite"
                 android:fontFamily="@font/permanent_marker"
                 android:textAlignment="gravity"
                 android:textSize="15sp"
-                app:text_fill_color="@color/colorPrimaryWhite"
-                app:text_stroke="true"
-                app:text_stroke_color="@color/colorPrimaryDark" />
+                android:shadowColor="@color/colorPrimaryVeryDark"
+                android:shadowDx="-1"
+                android:shadowDy="-1"
+                android:shadowRadius="1" />
 
 
         </LinearLayout>
