@@ -48,7 +48,7 @@
             <ImageView
                 android:layout_width="@dimen/size_page_icon"
                 android:layout_height="@dimen/size_page_icon"
-                android:background="@drawable/ic_sketch_map_kkorange_kkred_88dp"
+                android:background="@drawable/ic_sketch_map_kkblueishwhite_88dp"
                 android:contentDescription="@string/page_tab_icon" />
 
             <!-- DIVIDER -->
@@ -216,7 +216,7 @@
                 app:state_drawable="@drawable/bkg_sketch_rectangle_kkblueishwhite_2x1_large"
                 app:state_drawable_mode="fill"
                 app:isShowState2="true"
-                app:state_drawable2="@drawable/ic_sketch_home_kkorange_64dp"
+                app:state_drawable2="@drawable/ic_sketch_home_kkblueishwhite_64dp"
                 app:state_drawable2_width="32dp"
                 app:state_drawable2_height="32dp"
                 app:state_drawable2_mode="top"

@@ -4,9 +4,6 @@
     <corners
         android:topLeftRadius="@dimen/corner_map_overlay"
         android:topRightRadius="@dimen/corner_map_overlay" />
-    <gradient
-        android:type="linear"
-        android:angle="-45"
-        android:startColor="@color/colorPrimaryVeryLightTransparent"
-        android:endColor="@color/colorPrimaryWhiteTransparent" />
+    <solid
+        android:color="@color/colorPrimary" />
 </shape>

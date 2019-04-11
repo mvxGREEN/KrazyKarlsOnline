@@ -48,7 +48,7 @@
             <ImageView
                 android:layout_width="@dimen/size_page_icon"
                 android:layout_height="@dimen/size_page_icon"
-                android:background="@drawable/ic_sketch_home_kkorange_64dp"
+                android:background="@drawable/ic_sketch_home_kkblueishwhite_64dp"
                 android:contentDescription="@string/page_tab_icon" />
 
             <!-- DIVIDER -->
