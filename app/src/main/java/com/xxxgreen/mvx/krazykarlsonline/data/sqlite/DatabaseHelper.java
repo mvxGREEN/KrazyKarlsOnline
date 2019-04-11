@@ -74,7 +74,7 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Sides
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = DatabaseHelper.class.getSimpleName();
     private static final String DATABASE_NAME = "KKsDatabase.db";
-    private static final int DATABASE_VERSION = 28;
+    private static final int DATABASE_VERSION = 3;
 
     private static final String SQL_CREATE_PIZZA_TABLE =
             "CREATE TABLE " + PIZZA_SCHEMA + " (" +
@@ -90,14 +90,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     PIZZA_10 + " TEXT," +
                     PIZZA_11 + " TEXT," +
                     PIZZA_12 + " TEXT)";
-
     private static final String SQL_CREATE_SIDE_TABLE =
             "CREATE TABLE " + SIDE_SCHEMA + " (" +
                     SIDE_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     SIDE_2 + " TEXT," +
                     SIDE_3 + " TEXT," +
                     SIDE_4 + " TEXT)";
-
     private static final String SQL_CREATE_GRINDER_TABLE =
             "CREATE TABLE " + GRINDER_SCHEMA + " (" +
                     GRINDER_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -111,7 +109,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     GRINDER_9 + " TEXT," +
                     GRINDER_10 + " TEXT," +
                     GRINDER_11 + " TEXT)";
-
     private static final String SQL_CREATE_SALAD_TABLE =
             "CREATE TABLE " + SALAD_SCHEMA + " (" +
                     SALAD_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -123,7 +120,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     SALAD_7 + " TEXT," +
                     SALAD_8 + " TEXT," +
                     SALAD_9 + " TEXT)";
-
     private static final String SQL_CREATE_DRINK_DESSERT_TABLE =
             "CREATE TABLE " + DRINK_DESSERT_SCHEMA + " (" +
                     DRINK_DESSERT_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -134,31 +130,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String SQL_DELETE_PIZZAS =
             "DROP TABLE IF EXISTS " + PIZZA_SCHEMA;
-
     private static final String SQL_DELETE_SIDES =
             "DROP TABLE IF EXISTS " + SIDE_SCHEMA;
-
     private static final String SQL_DELETE_GRINDERS =
             "DROP TABLE IF EXISTS " + GRINDER_SCHEMA;
-
     private static final String SQL_DELETE_SALADS =
             "DROP TABLE IF EXISTS " + SALAD_SCHEMA;
-
     private static final String SQL_DELETE_DRINKS_DESSERTS =
             "DROP TABLE IF EXISTS " + DRINK_DESSERT_SCHEMA;
 
+
     private static final String SQL_DELETE_PIZZA =
             "DELETE FROM " + PIZZA_SCHEMA + " WHERE ID = ";
-
     private static final String SQL_DELETE_SIDE =
             "DELETE FROM " + SIDE_SCHEMA + " WHERE ID = ";
-
     private static final String SQL_DELETE_GRINDER =
             "DELETE FROM " + GRINDER_SCHEMA + " WHERE ID = ";
-
     private static final String SQL_DELETE_SALAD =
             "DELETE FROM " + SALAD_SCHEMA + " WHERE ID = ";
-
     private static final String SQL_DELETE_DRINK_DESSERT =
             "DELETE FROM " + DRINK_DESSERT_SCHEMA + " WHERE ID = ";
 
@@ -187,6 +176,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             readSidesFromResources(db);
             readGrindersFromResources(db);
             readSaladsFromResources(db);
+            readDessertsDrinksResources(db);
         } catch (Exception e) {
             Log.w(TAG, "Error storing data" + e);
         }
@@ -317,16 +307,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(GRINDER_10, grinder.getString("top8"));
             values.put(GRINDER_11, grinder.getString("top9"));
 
-            long result = db.insert(SIDE_SCHEMA, null, values);
+            long result = db.insert(GRINDER_SCHEMA, null, values);
             if (result == -1) {
                 Log.i(TAG, "Error loading grinder data");
             }
         }
     }
     public void readSaladsFromResources(SQLiteDatabase db) throws IOException, JSONException {
-        Log.i(TAG, "Reading grinder data from resources");
+        Log.i(TAG, "Reading salad data from resources");
         StringBuilder builder = new StringBuilder();
-        InputStream inputStream = mResources.openRawResource(R.raw.krazy_grinders);
+        InputStream inputStream = mResources.openRawResource(R.raw.krazy_salads);
         BufferedReader bfReader = new BufferedReader(new InputStreamReader(inputStream));
 
         String line;
@@ -357,7 +347,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             values.put(SALAD_12, salad.getString("top9"));
 
 
-            long result = db.insert(SIDE_SCHEMA, null, values);
+            long result = db.insert(SALAD_SCHEMA, null, values);
             if (result == -1) {
                 Log.i(TAG, "Error loading salad data");
             }
@@ -397,6 +387,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     protected void deletePizza(SQLiteDatabase db, int i) {
         db.execSQL(SQL_DELETE_PIZZA + i);
+    }
+    protected void deleteSide(SQLiteDatabase db, int i) {
+        db.execSQL(SQL_DELETE_SIDE + i);
+    }
+    protected void deleteGrinder(SQLiteDatabase db, int i) {
+        db.execSQL(SQL_DELETE_GRINDER + i);
+    }
+    protected void deleteSalad(SQLiteDatabase db, int i) {
+        db.execSQL(SQL_DELETE_SALAD + i);
     }
 
 }

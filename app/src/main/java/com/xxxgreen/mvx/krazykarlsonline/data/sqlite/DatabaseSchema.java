@@ -54,7 +54,7 @@ public final class DatabaseSchema {
 
     // SALAD
     public static class SaladSchema implements BaseColumns {
-        public static final String SALAD_SCHEMA = "sides";
+        public static final String SALAD_SCHEMA = "salads";
         public static final String SALAD_1 = "id";
         public static final String SALAD_2 = "name";
         public static final String SALAD_3 = "base";
@@ -71,7 +71,7 @@ public final class DatabaseSchema {
 
     // DRINK/DESSERT
     public static class DrinkDessertSchema implements BaseColumns {
-        public static final String DRINK_DESSERT_SCHEMA = "sides";
+        public static final String DRINK_DESSERT_SCHEMA = "drinks_desserts";
         public static final String DRINK_DESSERT_1 = "id";
         public static final String DRINK_DESSERT_2 = "name";
         public static final String DRINK_DESSERT_3 = "sizes";
