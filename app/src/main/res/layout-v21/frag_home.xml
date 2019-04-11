@@ -147,10 +147,10 @@
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
 
-        <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
+        <!--    <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
             android:id="@+id/featured_view_pager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" /> -->
 
     </LinearLayout>
 

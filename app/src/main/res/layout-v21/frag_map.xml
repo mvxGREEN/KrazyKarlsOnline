@@ -79,13 +79,31 @@
             android:gravity="end|bottom"
             android:orientation="horizontal">
 
+            <!-- SEARCH BOX -->
+            <RelativeLayout
+                android:id="@+id/layout_searchbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bkg_places_autocomplete_fragment"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp">
+
+                <!-- PLACES AUTOCOMPLETE FRAGMENT -->
+                <fragment
+                    android:id="@+id/place_autocomplete_fragment"
+                    android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                    android:layout_width="224dp"
+                    android:layout_height="@dimen/size_action_button" />
+
+            </RelativeLayout>
+
             <!-- MY LOCATION SUPERBUTTON    TODO: XML, JAVA -> onClick="getUserLocation" -->
             <com.coorchice.library.SuperTextView
                 android:id="@+id/superbutton_user"
                 android:layout_width="@dimen/size_action_button"
                 android:layout_height="@dimen/size_action_button"
                 android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
+                android:layout_marginEnd="8dp"
                 android:gravity="center"
                 app:solid="@color/colorPrimary"
                 app:corner="@dimen/corner_action_button"
@@ -96,7 +114,7 @@
                 app:state_drawable_padding_top="4dp"
                 tools:ignore="RelativeOverlap" />
 
-            <!-- ADD LOCATION SUPERBUTTON -->
+            <!-- ADD LOCATION SUPERBUTTON
             <com.coorchice.library.SuperTextView
                 android:layout_width="@dimen/size_action_button"
                 android:layout_height="@dimen/size_action_button"
@@ -109,7 +127,7 @@
                 app:isShowState="true"
                 app:state_drawable="@drawable/ic_sketch_add_location_kkblueishwhite_72dp"
                 app:state_drawable_mode="fill"
-                tools:ignore="RelativeOverlap" />
+                tools:ignore="RelativeOverlap" />   -->
 
         </LinearLayout>
 

@@ -10,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.coorchice.library.SuperTextView;
+import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.xxxgreen.mvx.krazykarlsonline.R;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Location;
 import com.xxxgreen.mvx.krazykarlsonline.utils.MapUtils;
@@ -18,14 +20,14 @@ import com.xxxgreen.mvx.krazykarlsonline.utils.MapUtils;
 public class FragMap extends Fragment {
     private static final String TAG = "MapOverlayTopFragment";
 
-    private Location selectedStore;
     public LayoutInflater layoutInflater;
     private GoogleMap gMap;
 
-    // Containers
-    View rootView;
+    // Fragments
+    public PlaceAutocompleteFragment autocompleteFragment;
 
     // Views
+    View rootView;
     SuperTextView supertextElizabeth, supertextTimberline;
 
     public FragMap() {
@@ -47,7 +49,6 @@ public class FragMap extends Fragment {
         fragment.rootView = rootView;
         fragment.layoutInflater = layoutInflater;
         fragment.gMap = gMap;
-
         /*
         fragment.supertextElizabeth = rootView.findViewById(R.id.supertext_elizabeth);
         fragment.supertextTimberline = rootView.findViewById(R.id.supertext_timberline);
@@ -76,6 +77,13 @@ public class FragMap extends Fragment {
 
         RelativeLayout layoutHeader = rootView.findViewById(R.id.layout_header);
         ImageView imgSectionIcon = rootView.findViewById(R.id.img_section_icon);
+        autocompleteFragment = (PlaceAutocompleteFragment)
+                getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+        //autocompleteFragment.setOnPlaceSelectedListener(this);
+        autocompleteFragment.setHint("Search Fort Collins");
+        LatLngBounds fortcollinsSearchBounds = new LatLngBounds(MapUtils.SEARCH_CORNER_SOUTHWEST,
+                MapUtils.SEARCH_CORNER_NORTHEAST);
+        autocompleteFragment.setBoundsBias(fortcollinsSearchBounds);
 
         /*
         supertextElizabeth = rootView.findViewById(R.id.supertext_elizabeth);

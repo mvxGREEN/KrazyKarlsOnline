@@ -52,9 +52,6 @@ public class FragAbout extends Fragment {
         fragment.gMap = gMap;
         fragment.superbtnUser = rootView.findViewById(R.id.superbutton_user);
         fragment.icSketchHome = rootView.findViewById(R.id.ic_page);
-        fragment.autoScrollViewPager = rootView.findViewById(R.id.featured_view_pager);
-
-        //TODO fragment.featurePagerAdapter = new FeaturePagerAdapter(rootView.getParent().getFragmentManager())
 
         return fragment;
     }
