@@ -78,7 +78,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.35"
                     android:gravity="center"
-                    android:letterSpacing="@dimen/letter_spacing_toolbar"
+                    android:letterSpacing="@dimen/letter_spacing_toolbar_subtitle"
                     android:text="@string/toolbar_subtitle_online"
                     android:textSize="@dimen/text_size_toolbar_subtitle"
                     android:fontFamily="@font/permanent_marker"

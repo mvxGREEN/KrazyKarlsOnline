@@ -59,19 +59,20 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
     @Override
     public SideRecyclerAdapter.AppetizerHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.item_pizza, parent, false);
+        View view = inflater.inflate(R.layout.menu_item, parent, false);
 
         return new AppetizerHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AppetizerHolder holder, int position) {
-        final ItemSide app = sideList.get(position);
+        final ItemSide zide = sideList.get(position);
         Context ctx = holder.i_icon.getContext();
         Resources res = ctx.getResources();     // Get resources to access drawables
 
-        holder.i_icon.setBackground(res.getDrawable(R.drawable.ic_specialty_pizza_white_128dp));
-        holder.t_title.setText(app.name);
+        //holder.i_icon.setBackground(res.getDrawable(R.drawable.ic_specialty_pizza_white_128dp));
+        holder.t_title.setText(zide.name);
+        holder.t_subtitle.setText(zide.notes);
     }
 
     @Override

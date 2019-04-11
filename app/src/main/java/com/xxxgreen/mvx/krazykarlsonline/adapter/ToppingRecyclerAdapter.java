@@ -57,7 +57,7 @@ public class ToppingRecyclerAdapter extends RecyclerView.Adapter<ToppingRecycler
     @Override
     public ItemEntreeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view = inflater.inflate(R.layout.item_pizza, parent, false);
+        View view = inflater.inflate(R.layout.menu_item, parent, false);
 
         return new ItemEntreeHolder(view);
     }

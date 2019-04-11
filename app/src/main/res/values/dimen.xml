@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- TEXT -->
+    <!-- TOOLBAR -->
     <dimen name="text_size_toolbar_subtitle">19sp</dimen>
+    <dimen name="letter_spacing_toolbar_subtitle">0.04</dimen>
     <dimen name="text_size_inner_tab">18sp</dimen>
-    <dimen name="text_size_username">15sp</dimen>
-    <dimen name="letter_spacing_toolbar">0.04</dimen>
 
     <!-- MAP -->
     <dimen name="corner_map_overlay">24dp</dimen>
     <dimen name="corner_superbtn">16dp</dimen>
     <dimen name="stroke_width_map_overlay">2dp</dimen>
 
-    <!-- PANEL (ALL SECTIONS) -->
+    <!-- PANEL/OVERLAY -->
     <dimen name="height_panel_header">44dp</dimen>
     <dimen name="height_panel_middle">152dp</dimen>
-
     <dimen name="height_panel_footer">40dp</dimen>
-    <dimen name="x_margin_panel">16dp</dimen>
-    <dimen name="padding_panel">4dp</dimen>
+    <dimen name="margin_panel">16dp</dimen>
+    <dimen name="padding_panel_middle">4dp</dimen>
     <dimen name="size_page_icon">40dp</dimen>
-    <dimen name="size_action_button">40dp</dimen>
-    <dimen name="corner_action_button">16dp</dimen>
+    <dimen name="size_action_button">44dp</dimen>
+    <dimen name="corner_action_button">12dp</dimen>
     <dimen name="height_capsule">3dp</dimen>
 
+
     <!-- SECTION HOME -->
+    <dimen name="text_size_username">15sp</dimen>
 
     <!-- SECTION MAP -->
     <dimen name="height_panel_header_menu">48dp</dimen>
@@ -37,9 +37,13 @@
     <dimen name="stroke_width_map_item">2dp</dimen>
 
     <!-- SECTION MENU -->
-    <dimen name="height_menu_tab">56dp</dimen>
+    <dimen name="height_menu_tab">48dp</dimen>
     <dimen name="stroke_width_menu_item">2dp</dimen>
+    <dimen name="text_size_menu_item_title">18sp</dimen>
+    <dimen name="text_size_menu_item_subtitle">16sp</dimen>
 
     <!-- SECTION ORDER -->
+
+    <!-- SECTION ABOUT -->
 
 </resources>
