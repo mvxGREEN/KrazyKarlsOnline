@@ -18,16 +18,16 @@ import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree;
 
 import java.util.ArrayList;
 
-public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdapter.ItemEntreeHolder> {
-    private final String TAG = "PizzaRecyclerAdapter";
+public class EntreeRecyclerAdapter extends RecyclerView.Adapter<EntreeRecyclerAdapter.ItemEntreeHolder> {
+    private final String TAG = "EntreeRecyclerAdapter";
 
-    private ArrayList<ItemEntree> pizzaList;
+    private ArrayList<ItemEntree> entreeList;
     private OnItemClickListener itemClickListener;
     private Context context;
 
-    public PizzaRecyclerAdapter(ArrayList<ItemEntree> pizzaList, Context context) {
+    public EntreeRecyclerAdapter(ArrayList<ItemEntree> entreeList, Context context) {
         Log.i(TAG, "ItemEntreeRecyclerAdapter.onCreate");
-        this.pizzaList = pizzaList;
+        this.entreeList = entreeList;
         this.context = context;
 
         DatabaseManager dbm = DatabaseManager.getInstance(this.context);
@@ -36,9 +36,9 @@ public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdap
         while (cursor.moveToNext()) {
             ItemEntree pizza = new ItemEntree(cursor);
             Log.i(TAG, pizza.name);
-            pizzaList.add(pizza);
+            entreeList.add(pizza);
         }
-        Log.i(TAG, "ItemEntree list length: " + pizzaList.size());
+        Log.i(TAG, "ItemEntree list length: " + entreeList.size());
     }
 
     public class ItemEntreeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -70,7 +70,7 @@ public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdap
 
     @Override
     public void onBindViewHolder(@NonNull ItemEntreeHolder holder, int position) {
-        final ItemEntree pizza = pizzaList.get(position);
+        final ItemEntree pizza = entreeList.get(position);
         Context ctx = holder.i_icon.getContext();
         Resources res = ctx.getResources();     // Get resources to access drawables
 
@@ -82,12 +82,12 @@ public class PizzaRecyclerAdapter extends RecyclerView.Adapter<PizzaRecyclerAdap
 
     @Override
     public int getItemCount() {
-        return pizzaList.size();
+        return entreeList.size();
     }
 
     public ItemEntree getItemEntree(int index) {
         if (index > -1 && index < getItemCount()) {
-            return pizzaList.get(index);
+            return entreeList.get(index);
         } else {
             return null;
         }

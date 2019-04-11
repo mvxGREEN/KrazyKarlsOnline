@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xxxgreen.mvx.krazykarlsonline.R;
-import com.xxxgreen.mvx.krazykarlsonline.adapter.PizzaRecyclerAdapter;
+import com.xxxgreen.mvx.krazykarlsonline.adapter.EntreeRecyclerAdapter;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class PagePizzaFragment extends Fragment {
     private static final String SECTION_NUMBER_KEY = "section_number";
 
     RecyclerView pizzaRecycler;
-    PizzaRecyclerAdapter pizzaRecyclerAdapter;
+    EntreeRecyclerAdapter entreeRecyclerAdapter;
 
     public PagePizzaFragment() {
 
@@ -53,15 +53,15 @@ public class PagePizzaFragment extends Fragment {
         pizzaRecycler.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 
         final ArrayList<ItemEntree> pizzaList = new ArrayList<>();
-        pizzaRecyclerAdapter = new PizzaRecyclerAdapter(pizzaList, rootView.getContext());
-        pizzaRecyclerAdapter.setOnItemClickListener(new PizzaRecyclerAdapter.OnItemClickListener() {
+        entreeRecyclerAdapter = new EntreeRecyclerAdapter(pizzaList, rootView.getContext());
+        entreeRecyclerAdapter.setOnItemClickListener(new EntreeRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 ItemEntree clickedPizza = pizzaList.get(position);
                 Log.i(TAG, "clicked pizza: " + clickedPizza.name);
             }
         });
-        pizzaRecycler.setAdapter(pizzaRecyclerAdapter);
+        pizzaRecycler.setAdapter(entreeRecyclerAdapter);
 
         return rootView;
     }

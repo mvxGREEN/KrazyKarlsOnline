@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_SCHEMA;
 
 public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapter.AppetizerHolder> {
-    private final String TAG = "PizzaRecyclerAdapter";
+    private final String TAG = "EntreeRecyclerAdapter";
 
     private ArrayList<Appetizer> appList;
     private OnItemClickListener itemClickListener;
