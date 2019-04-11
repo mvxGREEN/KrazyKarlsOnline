@@ -17,7 +17,7 @@
     <RelativeLayout
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_panel_header"
+        android:layout_height="@dimen/height_panel_header_menu"
         android:elevation="4dp"
         android:clipChildren="false"
         android:layout_gravity="center">
@@ -31,15 +31,19 @@
             android:orientation="vertical"
             android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
 
-            <!-- CAPSULE EXPANDABLE -->
-            <View
-                android:layout_width="40dp"
-                android:layout_height="@dimen/height_capsule"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="16dp"
-                android:contentDescription="@string/cont_desc_rounded_rect"
-                android:background="@drawable/capsule_kkorange" />
+            <!-- LAYOUT TABS -->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout_menu"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_menu_tab"
+                android:background="@null"
+                android:theme="@style/AppTheme.PopupOverlay"
+                app:tabTextAppearance="@style/Base.TextAppearance.KKTabText"
+                app:tabGravity="center"
+                app:tabMode="scrollable"
+                app:tabIndicatorColor="@color/elizabethLight"
+                app:tabSelectedTextColor="@color/elizabethLight"
+                app:tabTextColor="@color/colorPrimaryWhite" />
 
 
         </LinearLayout>
@@ -79,20 +83,7 @@
             android:background="@drawable/capsule_kkorange"
             android:contentDescription="@string/cont_desc_rounded_rect" />
 
-        <!-- LAYOUT TABS -->
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tab_layout_menu"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_menu_tab"
-            android:layout_marginTop="-12dp"
-            android:background="@null"
-            android:theme="@style/AppTheme.PopupOverlay"
-            app:tabTextAppearance="@style/Base.TextAppearance.KKTabText"
-            app:tabGravity="center"
-            app:tabMode="scrollable"
-            app:tabIndicatorColor="@color/elizabethDarker"
-            app:tabSelectedTextColor="@color/elizabethDarker"
-            app:tabTextColor="@color/elizabethLighter" />
+
 
     </LinearLayout>
 

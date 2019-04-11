@@ -2,6 +2,7 @@
 <resources>
 
     <!-- TEXT -->
+    <dimen name="text_size_toolbar_subtitle">19sp</dimen>
     <dimen name="text_size_inner_tab">18sp</dimen>
     <dimen name="text_size_username">15sp</dimen>
     <dimen name="letter_spacing_toolbar">0.04</dimen>
@@ -12,9 +13,9 @@
     <dimen name="stroke_width_map_overlay">2dp</dimen>
 
     <!-- PANEL (ALL SECTIONS) -->
-    <dimen name="height_panel_header">40dp</dimen>
+    <dimen name="height_panel_header">44dp</dimen>
     <dimen name="height_panel_middle">152dp</dimen>
-    <dimen name="height_panel_middle_menu">184dp</dimen>
+
     <dimen name="height_panel_footer">40dp</dimen>
     <dimen name="x_margin_panel">16dp</dimen>
     <dimen name="padding_panel">4dp</dimen>
@@ -26,6 +27,8 @@
     <!-- SECTION HOME -->
 
     <!-- SECTION MAP -->
+    <dimen name="height_panel_header_menu">48dp</dimen>
+    <dimen name="height_panel_middle_menu">184dp</dimen>
     <dimen name="height_my_location_panel">64dp</dimen>
     <dimen name="width_my_location_panel">144dp</dimen>
     <dimen name="height_store_location_panel">72dp</dimen>

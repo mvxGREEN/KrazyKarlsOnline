@@ -2,10 +2,10 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <gradient
         android:type="linear"
-        android:startColor="@color/elizabethDark"
-        android:endColor="@color/elizabethDarker"
+        android:startColor="@color/colorPrimary"
+        android:endColor="@color/colorPrimaryDark"
         android:angle="-45"/>
-    <stroke android:width="@dimen/stroke_width_menu_item" android:color="@color/elizabethDarker" />
+    <stroke android:width="@dimen/stroke_width_menu_item" android:color="@color/elizabethOrange" />
     <corners android:radius="8dp"/>
     <padding android:left="8dp" android:top="8dp" android:right="8dp" android:bottom="8dp" />
 </shape>

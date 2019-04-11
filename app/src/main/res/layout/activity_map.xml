@@ -49,6 +49,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginBottom="-4dp"
                 android:contentDescription="@string/cont_desc_kk_title"
                 android:background="@drawable/kk_title_white"/>
 
@@ -67,8 +68,6 @@
                     android:layout_marginTop="14dp"
                     android:layout_marginStart="0dp"
                     android:layout_marginLeft="0dp"
-                    android:layout_marginEnd="2dp"
-                    android:layout_marginRight="2dp"
                     android:layout_marginBottom="4dp"
                     android:contentDescription="@string/cont_desc_rounded_rect"
                     android:background="@drawable/capsule_kkbluelight" />
@@ -81,7 +80,7 @@
                     android:gravity="center"
                     android:letterSpacing="@dimen/letter_spacing_toolbar"
                     android:text="@string/toolbar_subtitle_online"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/text_size_toolbar_subtitle"
                     android:fontFamily="@font/permanent_marker"
                     android:textColor="@color/colorPrimaryWhite"
                     android:textAlignment="gravity"
@@ -93,8 +92,6 @@
                     android:layout_height="2dp"
                     android:layout_weight="0.28"
                     android:layout_marginTop="15dp"
-                    android:layout_marginStart="2dp"
-                    android:layout_marginLeft="2dp"
                     android:layout_marginEnd="0dp"
                     android:layout_marginRight="0dp"
                     android:layout_marginBottom="4dp"
