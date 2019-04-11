@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.xxxgreen.mvx.krazykarlsonline.R;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Appetizer;
+import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemSide;
 import com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseManager;
 
 import java.util.ArrayList;
@@ -21,14 +22,14 @@ import java.util.ArrayList;
 import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_SCHEMA;
 
 public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapter.AppetizerHolder> {
-    private final String TAG = "EntreeRecyclerAdapter";
+    private final String TAG = "SideRecyclerAdapter";
 
-    private ArrayList<Appetizer> appList;
+    private ArrayList<ItemSide> sideList;
     private OnItemClickListener itemClickListener;
     Context context;
 
-    public SideRecyclerAdapter(ArrayList<Appetizer> appList, Context context) {
-        this.appList = appList;
+    public SideRecyclerAdapter(ArrayList<ItemSide> sideList, Context context) {
+        this.sideList = sideList;
         this.context = context;
 
         DatabaseManager dbm = DatabaseManager.getInstance(this.context);
@@ -65,7 +66,7 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull AppetizerHolder holder, int position) {
-        final Appetizer app = appList.get(position);
+        final ItemSide app = sideList.get(position);
         Context ctx = holder.i_icon.getContext();
         Resources res = ctx.getResources();     // Get resources to access drawables
 
@@ -75,12 +76,12 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
 
     @Override
     public int getItemCount() {
-        return appList.size();
+        return sideList.size();
     }
 
-    public Appetizer getItem(int index) {
+    public ItemSide getItem(int index) {
         if (index > -1 && index < getItemCount()) {
-            return appList.get(index);
+            return sideList.get(index);
         } else {
             return null;
         }
@@ -92,7 +93,7 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
         } else if (cursor.moveToLast()) {
             do {
                 Appetizer app = new Appetizer(cursor);
-                this.appList.add(app);
+                this.sideList.add(app);
             } while(cursor.moveToPrevious());
         } else {
             Log.e(TAG, "cursor failed to move to last");
@@ -102,5 +103,9 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
     // Click listener callback & setter
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
+    }
+
+    public void setOnItemClickListener(final SideRecyclerAdapter.OnItemClickListener mItemClickListener) {
+        this.itemClickListener = mItemClickListener;
     }
 }
