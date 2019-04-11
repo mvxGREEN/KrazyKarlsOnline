@@ -18,9 +18,9 @@
     <dimen name="margin_panel">16dp</dimen>
     <dimen name="padding_panel_middle">4dp</dimen>
     <dimen name="size_page_icon">40dp</dimen>
-    <dimen name="size_action_button">44dp</dimen>
-    <dimen name="corner_action_button">12dp</dimen>
     <dimen name="height_capsule">3dp</dimen>
+    <dimen name="size_action_button">44dp</dimen>
+    <dimen name="corner_action_button">16dp</dimen>
 
 
     <!-- SECTION HOME -->
