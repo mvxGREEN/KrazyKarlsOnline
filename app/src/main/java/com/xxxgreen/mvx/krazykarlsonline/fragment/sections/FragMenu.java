@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import com.xxxgreen.mvx.krazykarlsonline.R;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageDrinkDessertFragment;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageGrinderFragment;
-import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PagePizzaFragment;
+import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageEntreeFragment;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageSaladFragment;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.menu.PageSidesFragment;
 import com.xxxgreen.mvx.krazykarlsonline.utils.MapUtils;
@@ -103,7 +103,7 @@ public class FragMenu extends Fragment {
             Log.i(TAG, "Instantiating fragment for page #" + (position+1));
 
             if (position == 0) {
-                return PagePizzaFragment.newInstance(position);
+                return PageEntreeFragment.newInstance(position);
             } else if (position == 1){
                 return PageSidesFragment.newInstance(position);
             } else if (position == 2){
@@ -114,7 +114,7 @@ public class FragMenu extends Fragment {
                 return PageDrinkDessertFragment.newInstance(position);
             } else {
                 Log.w(TAG, "Unhandled section #: " + position);
-                return PagePizzaFragment.newInstance(0);
+                return PageEntreeFragment.newInstance(0);
             }
         }
 

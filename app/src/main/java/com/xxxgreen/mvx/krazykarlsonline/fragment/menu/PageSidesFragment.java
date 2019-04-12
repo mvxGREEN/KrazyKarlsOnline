@@ -54,7 +54,7 @@ public class PageSidesFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_menu_pizzas, container,
                 false);
 
-        sideRecycler = rootView.findViewById(R.id.pizza_recycler);
+        sideRecycler = rootView.findViewById(R.id.entree_recycler);
         sideRecycler.setHasFixedSize(true);
         sideRecycler.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 

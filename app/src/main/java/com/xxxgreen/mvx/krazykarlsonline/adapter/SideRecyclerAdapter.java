@@ -72,7 +72,7 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
 
         //holder.i_icon.setBackground(res.getDrawable(R.drawable.ic_specialty_pizza_white_128dp));
         holder.t_title.setText(zide.name);
-        holder.t_subtitle.setText(zide.notes);
+        holder.t_subtitle.setText(zide.types);
     }
 
     @Override

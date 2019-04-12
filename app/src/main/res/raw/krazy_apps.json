@@ -3,12 +3,12 @@
     {
       "name": "Mozzarella Sticks",
       "types": "Regular",
-      "notes": "*Contains Dairy"
+      "notes": ""
     },
     {
       "name": "Mac 'n Cheese Bites",
       "types": "4-Piece, 8-Piece",
-      "notes": "*Contains Dairy"
+      "notes": ""
     },
     {
       "name": "Green Chili Queso Fries",
@@ -33,27 +33,27 @@
     {
       "name": "Pizza Rolls",
       "types": "1-Piece, 3-Piece",
-      "notes": "*Contains Dairy"
+      "notes": ""
     },
     {
       "name": "Garlic Parmesan Knots",
       "types": "5-Piece, 10-Piece",
-      "notes": "*Contains Dairy"
+      "notes": ""
     },
     {
       "name": "4-Cheese Bread",
       "types": "Regular",
-      "notes": "*Contains Dairy"
+      "notes": ""
     },
     {
       "name": "Garlic Bread",
       "types": "Regular",
-      "notes": "*Contains Dairy"
+      "notes": ""
     },
     {
       "name": "Aztec Bread",
       "types": "Regular",
-      "notes": "*Contains Dairy"
+      "notes": ""
     },
     {
       "name":"Boneless Wings",
@@ -73,7 +73,7 @@
     {
       "name": "Loaded Waffle Fries",
       "types": "Regular, Half",
-      "notes": "*Contains Dairy"
+      "notes": ""
     },
     {
       "name": "Chicken Finger w/ Fries",

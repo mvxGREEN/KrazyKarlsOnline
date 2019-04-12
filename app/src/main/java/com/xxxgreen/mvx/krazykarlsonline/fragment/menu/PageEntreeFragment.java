@@ -16,20 +16,20 @@ import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree;
 
 import java.util.ArrayList;
 
-public class PagePizzaFragment extends Fragment {
+public class PageEntreeFragment extends Fragment {
     private static final String TAG = "PizzaFragment";
     private static final String SECTION_NUMBER_KEY = "section_number";
 
     RecyclerView pizzaRecycler;
     EntreeRecyclerAdapter entreeRecyclerAdapter;
 
-    public PagePizzaFragment() {
+    public PageEntreeFragment() {
 
     }
 
     // Returns new instance of this fragment for the given section number.
-    public static PagePizzaFragment newInstance(int sectionNumber) {
-        PagePizzaFragment fragment = new PagePizzaFragment();
+    public static PageEntreeFragment newInstance(int sectionNumber) {
+        PageEntreeFragment fragment = new PageEntreeFragment();
         Bundle args = new Bundle();
         args.putInt(SECTION_NUMBER_KEY, sectionNumber);
         fragment.setArguments(args);
@@ -48,17 +48,17 @@ public class PagePizzaFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_menu_pizzas, container,
                 false);
 
-        pizzaRecycler = rootView.findViewById(R.id.pizza_recycler);
+        pizzaRecycler = rootView.findViewById(R.id.entree_recycler);
         pizzaRecycler.setHasFixedSize(true);
         pizzaRecycler.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 
-        final ArrayList<ItemEntree> pizzaList = new ArrayList<>();
-        entreeRecyclerAdapter = new EntreeRecyclerAdapter(pizzaList, rootView.getContext());
+        final ArrayList<ItemEntree> entreeList = new ArrayList<>();
+        entreeRecyclerAdapter = new EntreeRecyclerAdapter(entreeList, rootView.getContext());
         entreeRecyclerAdapter.setOnItemClickListener(new EntreeRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                ItemEntree clickedPizza = pizzaList.get(position);
-                Log.i(TAG, "clicked pizza: " + clickedPizza.name);
+                ItemEntree clickedEntree = entreeList.get(position);
+                Log.i(TAG, "clicked item: " + clickedEntree.name);
             }
         });
         pizzaRecycler.setAdapter(entreeRecyclerAdapter);
