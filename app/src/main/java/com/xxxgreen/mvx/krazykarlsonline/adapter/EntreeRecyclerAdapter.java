@@ -21,18 +21,25 @@ import java.util.ArrayList;
 public class EntreeRecyclerAdapter extends RecyclerView.Adapter<EntreeRecyclerAdapter.ItemEntreeHolder> {
     private final String TAG = "EntreeRecyclerAdapter";
 
+    public enum ITEM_TYPE {
+        PIZZA, GRINDER, SALAD
+    }
+
     private ArrayList<ItemEntree> entreeList;
     private OnItemClickListener itemClickListener;
     private Context context;
 
-    public EntreeRecyclerAdapter(ArrayList<ItemEntree> entreeList, Context context) {
+    public EntreeRecyclerAdapter(ArrayList<ItemEntree> entreeList, Context context,
+                                 String tableName) {
         Log.i(TAG, "ItemEntreeRecyclerAdapter.onCreate");
         this.entreeList = entreeList;
         this.context = context;
 
+        // Fill cursor with query results from given table
         DatabaseManager dbm = DatabaseManager.getInstance(this.context);
-        Cursor cursor = dbm.queryAllPizzas();
+        Cursor cursor = dbm.queryAllItems(tableName);
 
+        // Fill list with items (parcels)
         while (cursor.moveToNext()) {
             ItemEntree pizza = new ItemEntree(cursor);
             Log.i(TAG, pizza.name);

@@ -42,18 +42,7 @@ public class DatabaseManager {
         myDbHelper = new DatabaseHelper(context);
     }
 
-    public Cursor queryAllPizzas() {
-        SQLiteDatabase db = myDbHelper.getReadableDatabase();
-        String query = "SELECT * FROM " + PIZZA_SCHEMA;
-        Cursor result = db.rawQuery(query, null);
-        Log.i(TAG, "query result count: " + result.getCount());
 
-        if (result.getCount() == 0) {
-            Log.i(TAG, "Result count: 0\nCalling mDbHelper.onCreate()");
-        }
-
-        return result;
-    }
     public Cursor queryAllItems(String tableName) {
         SQLiteDatabase db = myDbHelper.getReadableDatabase();
 

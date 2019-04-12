@@ -31,8 +31,6 @@ public class ToppingRecyclerAdapter extends RecyclerView.Adapter<ToppingRecycler
 
         // Fill list with pizza data
         DatabaseManager dbm = DatabaseManager.getInstance(this.context);
-        Cursor pizzaCursor = dbm.queryAllPizzas();
-        fillList(pizzaCursor);
     }
 
     public class ItemEntreeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

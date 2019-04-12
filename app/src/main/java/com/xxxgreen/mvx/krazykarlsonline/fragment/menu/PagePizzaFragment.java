@@ -16,6 +16,8 @@ import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree;
 
 import java.util.ArrayList;
 
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.PizzaSchema.PIZZA_SCHEMA;
+
 public class PagePizzaFragment extends Fragment {
     private static final String TAG = "PizzaFragment";
     private static final String SECTION_NUMBER_KEY = "section_number";
@@ -53,7 +55,7 @@ public class PagePizzaFragment extends Fragment {
         pizzaRecycler.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 
         final ArrayList<ItemEntree> pizzaList = new ArrayList<>();
-        pizzaRecyclerAdapter = new EntreeRecyclerAdapter(pizzaList, rootView.getContext());
+        pizzaRecyclerAdapter = new EntreeRecyclerAdapter(pizzaList, rootView.getContext(), PIZZA_SCHEMA);
         pizzaRecyclerAdapter.setOnItemClickListener(new EntreeRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
