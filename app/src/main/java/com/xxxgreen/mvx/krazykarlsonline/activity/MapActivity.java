@@ -396,49 +396,4 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             return "";
         }
     }
-
-    // Adapter instantiates proper fragment, given index of page
-    public class FeaturePagerAdapter extends FragmentPagerAdapter {
-
-        public FeaturePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a Fragment (defined as a static inner class below).
-            Log.i(TAG, "Instantiating overlay for page #" + (position+1));
-
-            if (position == 0) {
-                return FeatureFrag.newInstance(position);
-            } else if (position == 1) {
-                return FeatureFrag.newInstance(position);
-            } else if (position == 2) {
-                return FeatureFrag.newInstance(position);
-            } else {
-                return FeatureFrag.newInstance(position);
-            }
-        }
-
-        @Override
-        public int getCount() {
-            return 4;
-        }
-
-        @Override
-        public CharSequence getPageTitle(int position) {
-            if (position == 0) {
-                return "Main";
-            } else if (position == 1) {
-                return "POW";
-            } else if (position == 2) {
-                return "Specials";
-            } else if (position == 3) {
-                return "News";
-            }
-            Log.w(TAG, "Index, " + position + ", is outside array length: " + 2);
-            return "";
-        }
-    }
 }

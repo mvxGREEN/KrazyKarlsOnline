@@ -29,7 +29,6 @@ public class FragHome extends Fragment {
     public SuperTextView superbtnUser;
     ImageView icSketchHome;
     AutoScrollViewPager autoScrollViewPager;
-    MapActivity.FeaturePagerAdapter featurePagerAdapter;
 
     public FragHome() {
 

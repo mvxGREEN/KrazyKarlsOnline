@@ -19,13 +19,15 @@ import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemSide;
 
 import java.util.ArrayList;
 
+import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_SCHEMA;
+
 public class PageSidesFragment extends Fragment {
     private static final String TAG = "PageSidesFragment";
     private static final String SECTION_NUMBER_KEY = "section_number";
 
     private RecyclerView sideRecycler;
     private SideRecyclerAdapter sideRecyclerAdapter;
-    private ArrayList<Appetizer> appList;
+    private ArrayList<ItemSide> sideList;
 
     public PageSidesFragment() {
 
@@ -59,7 +61,7 @@ public class PageSidesFragment extends Fragment {
         sideRecycler.setLayoutManager(new LinearLayoutManager(rootView.getContext()));
 
         final ArrayList<ItemSide> sideList = new ArrayList<>();
-        sideRecyclerAdapter = new SideRecyclerAdapter(sideList, rootView.getContext());
+        sideRecyclerAdapter = new SideRecyclerAdapter(sideList, rootView.getContext(), SIDE_SCHEMA);
         sideRecyclerAdapter.setOnItemClickListener(new SideRecyclerAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {

@@ -28,12 +28,12 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
     private OnItemClickListener itemClickListener;
     Context context;
 
-    public SideRecyclerAdapter(ArrayList<ItemSide> sideList, Context context) {
+    public SideRecyclerAdapter(ArrayList<ItemSide> sideList, Context context, String tableName) {
         this.sideList = sideList;
         this.context = context;
 
         DatabaseManager dbm = DatabaseManager.getInstance(this.context);
-        Cursor pizzaCursor = dbm.queryAllItems(SIDE_SCHEMA);
+        Cursor pizzaCursor = dbm.queryAllItems(tableName);
         fillList(pizzaCursor);
     }
 

@@ -99,11 +99,7 @@ public class Location implements Parcelable {
         dest.writeDouble(this.latitude);
         dest.writeDouble(this.longitude);
         dest.writeString(this.address_2);
-        if (this.isStore) {
-            dest.writeInt(1);
-        } else {
-            dest.writeInt(0);
-        }
+        if (this.isStore) { dest.writeInt(1); } else { dest.writeInt(0); }
         dest.writeInt(this.iconDrawableId);
         dest.writeInt(this.storefrontDrawableId);
         dest.writeInt(this.interiorDrawableId);
