@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.xxxgreen.mvx.krazykarlsonline.activity.MenuActivity;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Location;
 
 public final class MapUtils {
@@ -104,14 +103,5 @@ public final class MapUtils {
     public static Location getMyLocation() {
         return MY_LOCATION;
     }
-
-    public static void startMenu(Context ctx, @Nullable Location location) {
-        Intent menuIntent = new Intent(ctx, MenuActivity.class);
-        Bundle extras = new Bundle();
-        extras.putString(MapUtils.SELECTED_STORE_LOCATION_KEY, location.title);
-        menuIntent.putExtras(extras);
-        ctx.startActivity(menuIntent);
-    }
-
 
 }
