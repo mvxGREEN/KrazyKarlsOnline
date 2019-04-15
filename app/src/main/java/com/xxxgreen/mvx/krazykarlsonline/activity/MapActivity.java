@@ -36,7 +36,6 @@ import com.google.android.gms.maps.model.PolygonOptions;
 import com.xxxgreen.mvx.krazykarlsonline.R;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Location;
 import com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseManager;
-import com.xxxgreen.mvx.krazykarlsonline.fragment.home.FeatureFrag;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.sections.FragAbout;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.sections.FragHome;
 import com.xxxgreen.mvx.krazykarlsonline.fragment.sections.FragMap;
