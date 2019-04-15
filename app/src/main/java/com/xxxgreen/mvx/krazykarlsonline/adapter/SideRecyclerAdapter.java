@@ -19,9 +19,7 @@ import com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseManager;
 
 import java.util.ArrayList;
 
-import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.SidesSchema.SIDE_SCHEMA;
-
-public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapter.AppetizerHolder> {
+public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapter.SideHolder> {
     private final String TAG = "SideRecyclerAdapter";
 
     private ArrayList<ItemSide> sideList;
@@ -37,11 +35,11 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
         fillList(pizzaCursor);
     }
 
-    public class AppetizerHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class SideHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView i_icon;
         public TextView t_title, t_subtitle;
 
-        public AppetizerHolder(View itemView) {
+        public SideHolder(View itemView) {
             super(itemView);
             this.i_icon = itemView.findViewById(R.id.icon_pizza);
             this.t_title = itemView.findViewById(R.id.title_pizza);
@@ -57,15 +55,15 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
 
     @NonNull
     @Override
-    public SideRecyclerAdapter.AppetizerHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public SideHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.menu_item, parent, false);
 
-        return new AppetizerHolder(view);
+        return new SideHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AppetizerHolder holder, int position) {
+    public void onBindViewHolder(@NonNull SideHolder holder, int position) {
         final ItemSide zide = sideList.get(position);
         Context ctx = holder.i_icon.getContext();
         Resources res = ctx.getResources();     // Get resources to access drawables
@@ -93,8 +91,8 @@ public class SideRecyclerAdapter extends RecyclerView.Adapter<SideRecyclerAdapte
             Log.e(TAG, "ERROR! fillList: cursor is closed!");
         } else if (cursor.moveToLast()) {
             do {
-                Appetizer app = new Appetizer(cursor);
-                this.sideList.add(app);
+                ItemSide item = new ItemSide(cursor);
+                this.sideList.add(item);
             } while(cursor.moveToPrevious());
         } else {
             Log.e(TAG, "cursor failed to move to last");

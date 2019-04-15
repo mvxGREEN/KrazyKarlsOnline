@@ -74,7 +74,7 @@ import static com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseSchema.Sides
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String TAG = DatabaseHelper.class.getSimpleName();
     private static final String DATABASE_NAME = "KKsDatabase.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 6;
 
     private static final String SQL_CREATE_PIZZA_TABLE =
             "CREATE TABLE " + PIZZA_SCHEMA + " (" +
@@ -119,7 +119,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     SALAD_6 + " TEXT," +
                     SALAD_7 + " TEXT," +
                     SALAD_8 + " TEXT," +
-                    SALAD_9 + " TEXT)";
+                    SALAD_9 + " TEXT," +
+                    SALAD_10 + " TEXT," +
+                    SALAD_11 + " TEXT," +
+                    SALAD_12 + " TEXT)";
     private static final String SQL_CREATE_DRINK_DESSERT_TABLE =
             "CREATE TABLE " + DRINK_DESSERT_SCHEMA + " (" +
                     DRINK_DESSERT_1 + " INTEGER PRIMARY KEY AUTOINCREMENT," +

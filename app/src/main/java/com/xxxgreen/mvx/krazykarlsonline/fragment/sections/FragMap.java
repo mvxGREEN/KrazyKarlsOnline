@@ -72,6 +72,7 @@ public class FragMap extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //TODO prevent inflation when frag_map is already inflated OR destroy old frag & reinflate
         View rootView = inflater.inflate(R.layout.frag_map, container,
                 false);
 

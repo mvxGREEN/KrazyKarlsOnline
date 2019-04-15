@@ -51,7 +51,7 @@ public class DatabaseManager {
         Log.i(TAG, "query result count: " + result.getCount());
 
         if (result.getCount() == 0) {
-            Log.i(TAG, "Result count: 0\nCalling mDbHelper.onCreate()");
+            Log.i(TAG, "Result count: 0");
         }
 
         return result;
