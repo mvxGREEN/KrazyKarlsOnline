@@ -86,28 +86,7 @@ public class FragMap extends Fragment {
                 MapUtils.SEARCH_CORNER_NORTHEAST);
         autocompleteFragment.setBoundsBias(fortcollinsSearchBounds);
 
-        /*
-        supertextElizabeth = rootView.findViewById(R.id.supertext_elizabeth);
-        supertextTimberline = rootView.findViewById(R.id.supertext_timberline);
 
-
-        ArrayList<Integer> photoIdList = new ArrayList<>();
-        PhotosRecyclerAdapter adapter = new PhotosRecyclerAdapter(photoIdList,
-                container.getContext());
-
-        supertextElizabeth.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startMenu(v.getContext(), MapUtils.ELIZABETH);
-            }
-        });
-        supertextTimberline.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startMenu(v.getContext(), MapUtils.TIMBERLINE);
-            }
-        });
-        */
 
         return rootView;
     }
