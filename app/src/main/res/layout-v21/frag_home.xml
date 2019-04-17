@@ -18,7 +18,8 @@
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_header"
-        android:elevation="4dp"
+        android:elevation="@dimen/elevation_panel_header"
+        android:layout_marginTop="16dp"
         android:clipChildren="false"
         android:layout_gravity="center">
 
@@ -37,7 +38,7 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.08"
+                android:layout_weight="0.16"
                 android:layout_marginBottom="4dp"
                 android:layout_marginStart="4dp"
                 android:layout_marginEnd="0dp"
@@ -55,7 +56,7 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.70"
+                android:layout_weight="0.67"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"

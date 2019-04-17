@@ -79,7 +79,7 @@ public class FragMap extends Fragment {
         RelativeLayout layoutHeader = rootView.findViewById(R.id.layout_header);
         ImageView imgSectionIcon = rootView.findViewById(R.id.img_section_icon);
         autocompleteFragment = (PlaceAutocompleteFragment)
-                getActivity().getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+                getActivity().getFragmentManager().findFragmentById(R.id.search_box);
         //autocompleteFragment.setOnPlaceSelectedListener(this);
         autocompleteFragment.setHint(getResources().getString(R.string.autocomplete_search_hint));
         LatLngBounds fortcollinsSearchBounds = new LatLngBounds(MapUtils.SEARCH_CORNER_SOUTHWEST,

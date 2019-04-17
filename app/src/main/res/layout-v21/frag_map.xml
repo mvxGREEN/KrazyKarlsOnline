@@ -18,8 +18,8 @@
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_header"
+        android:elevation="@dimen/elevation_panel_header"
         android:layout_marginTop="16dp"
-        android:elevation="4dp"
         android:clipChildren="false"
         android:layout_gravity="center"
         android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
@@ -36,8 +36,8 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.08"
-                android:layout_marginTop="16dp"
+                android:elevation="4dp"
+                android:layout_weight="0.16"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginEnd="4dp"
@@ -58,76 +58,13 @@
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.76"
-                android:layout_marginTop="16dp"
+                android:layout_weight="0.66"
                 android:layout_marginStart="4dp"
                 android:layout_marginLeft="4dp"
                 android:layout_marginEnd="4dp"
                 android:layout_marginRight="4dp"
                 android:contentDescription="@string/cont_desc_rounded_rect"
                 android:background="@drawable/capsule_kkorange" />
-
-        </LinearLayout>
-
-        <!-- LAYOUT ACTION BUTTONS -->
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_alignParentEnd="true"
-            android:gravity="end|bottom"
-            android:orientation="horizontal">
-
-            <!-- SEARCH BOX -->
-            <RelativeLayout
-                android:id="@+id/layout_searchbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bkg_places_autocomplete_fragment"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="4dp">
-
-                <!-- PLACES AUTOCOMPLETE FRAGMENT -->
-                <fragment
-                    android:id="@+id/place_autocomplete_fragment"
-                    android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
-                    android:layout_width="224dp"
-                    android:layout_height="@dimen/size_action_button" />
-
-            </RelativeLayout>
-
-            <!-- MY LOCATION SUPERBUTTON    TODO: XML, JAVA -> onClick="getUserLocation" -->
-            <com.coorchice.library.SuperTextView
-                android:id="@+id/superbutton_user"
-                android:layout_width="@dimen/size_action_button"
-                android:layout_height="@dimen/size_action_button"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="8dp"
-                android:gravity="center"
-                app:solid="@color/colorPrimary"
-                app:corner="@dimen/corner_action_button"
-                app:pressBgColor="@color/colorAccent"
-                app:isShowState="true"
-                app:state_drawable="@drawable/ic_sketch_current_location_kkblueishwhite_128dp"
-                app:state_drawable_mode="fill"
-                app:state_drawable_padding_top="4dp"
-                tools:ignore="RelativeOverlap" />
-
-            <!-- ADD LOCATION SUPERBUTTON
-            <com.coorchice.library.SuperTextView
-                android:layout_width="@dimen/size_action_button"
-                android:layout_height="@dimen/size_action_button"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="4dp"
-                android:gravity="center"
-                app:solid="@color/colorPrimary"
-                app:corner="@dimen/corner_superbtn"
-                app:pressBgColor="@color/colorAccent"
-                app:isShowState="true"
-                app:state_drawable="@drawable/ic_sketch_add_location_kkblueishwhite_72dp"
-                app:state_drawable_mode="fill"
-                tools:ignore="RelativeOverlap" />   -->
 
         </LinearLayout>
 
@@ -138,14 +75,14 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_middle"
         android:padding="@dimen/padding_panel_middle"
-        android:gravity="bottom"
+        android:gravity="top|end"
         android:orientation="horizontal"
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
 
-        <!-- LAYOUT STORE LOCATIONS -->
+        <!-- STORE LOCATIONS -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
@@ -155,101 +92,145 @@
             android:orientation="vertical"
             android:clipChildren="false">
 
-            <!-- STORE LOCATION #1 (ELIZABETH) -->
+            <!-- STORE LOCATION #1 (Elizabeth) -->
             <com.coorchice.library.SuperTextView
-                android:layout_width="@dimen/width_store_location_panel"
-                android:layout_height="@dimen/height_store_location_panel"
-                android:layout_margin="4dp"
-                android:padding="4dp"
+                android:layout_width="@dimen/width_store_location"
+                android:layout_height="@dimen/height_location"
+                android:layout_margin="@dimen/margin_location"
+                android:padding="@dimen/padding_location"
                 android:gravity="start|bottom"
                 app:shaderEnable="true"
                 app:shaderMode="topToBottom"
                 app:shaderStartColor="@color/elizabethOrange"
                 app:shaderEndColor="@color/elizabethDark"
-                app:corner="@dimen/corner_map_item"
-                app:stroke_width="@dimen/stroke_width_map_item"
-                app:stroke_color="@color/elizabethDark"
+                app:pressBgColor="@color/colorPrimaryLight"
+                app:corner="@dimen/corner_location"
+                app:stroke_width="@dimen/stroke_width_location"
+                app:stroke_color="@color/elizabethDarker"
                 android:text="@string/title_map_location_elizabeth"
                 android:fontFamily="@font/permanent_marker"
                 android:textAlignment="gravity"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 app:text_fill_color="@color/elizabethWhite"
                 app:text_stroke="true"
                 app:text_stroke_color="@color/elizabethDarker"
                 app:text_stroke_width="3dp"/>
-            <!-- STORE LOCATION #2 (TIMBERLINE) -->
+            <!-- STORE LOCATION #2 (Timberline) -->
             <com.coorchice.library.SuperTextView
-                android:layout_width="@dimen/width_store_location_panel"
-                android:layout_height="@dimen/height_store_location_panel"
-                android:layout_margin="4dp"
-                android:padding="4dp"
-                android:gravity="start|bottom"
+                android:layout_width="@dimen/width_store_location"
+                android:layout_height="@dimen/height_location"
+                android:layout_margin="@dimen/margin_location"
+                android:padding="@dimen/padding_location"
+                android:textSize="@dimen/text_size_location"
+                app:corner="@dimen/corner_location"
+                app:stroke_width="@dimen/stroke_width_location"
                 app:shaderEnable="true"
                 app:shaderMode="topToBottom"
                 app:shaderStartColor="@color/timberlineGreen"
                 app:shaderEndColor="@color/timberlineDark"
-                app:corner="@dimen/corner_map_item"
-                app:stroke_width="@dimen/stroke_width_map_item"
-                app:stroke_color="@color/timberlineDark"
+                app:stroke_color="@color/timberlineDarker"
+                app:pressBgColor="@color/colorPrimaryLight"
+                app:text_fill_color="@color/timberlineWhite"
+                app:text_stroke_color="@color/timberlineDarker"
+                android:gravity="start|bottom"
                 android:text="@string/title_map_location_timberline"
                 android:fontFamily="@font/permanent_marker"
                 android:textAlignment="gravity"
-                android:textSize="18sp"
-                app:text_fill_color="@color/timberlineWhite"
                 app:text_stroke="true"
-                app:text_stroke_color="@color/timberlineDarker"
                 app:text_stroke_width="3dp" />
 
         </LinearLayout>
 
-        <!-- LAYOUT SAVED LOCATIONS -->
+        <!-- CUSTOM LOCATIONS -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/layout_custom_locations"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:gravity="bottom|end"
-            android:orientation="vertical"
-            android:clipChildren="false">
+            android:clipChildren="false"
+            android:orientation="vertical">
 
-            <!-- HOME -->
-            <com.coorchice.library.SuperTextView
-                android:layout_width="@dimen/size_custom_location"
-                android:layout_height="@dimen/size_custom_location"
-                android:layout_margin="4dp"
-                android:padding="4dp"
-                android:gravity="center_horizontal|bottom"
-                app:shaderEnable="true"
-                app:shaderMode="topToBottom"
-                app:shaderStartColor="@color/colorPrimary"
-                app:shaderEndColor="@color/colorPrimaryDark"
-                app:corner="@dimen/corner_map_item"
-                app:stroke_width="@dimen/stroke_width_map_item"
-                app:stroke_color="@color/colorPrimaryWhite"
-                app:isShowState2="true"
-                app:state_drawable2="@drawable/ic_sketch_home_kkblueishwhite_64dp"
-                app:state_drawable2_width="@dimen/size_custom_location_icon"
-                app:state_drawable2_height="@dimen/size_custom_location_icon"
-                app:state_drawable2_mode="center" />
-            <!-- WORK/SCHOOL -->
-            <com.coorchice.library.SuperTextView
-                android:layout_width="@dimen/size_custom_location"
-                android:layout_height="@dimen/size_custom_location"
-                android:layout_margin="4dp"
-                android:padding="4dp"
-                android:gravity="center_horizontal|bottom"
-                app:shaderEnable="true"
-                app:shaderMode="topToBottom"
-                app:shaderStartColor="@color/colorPrimary"
-                app:shaderEndColor="@color/colorPrimaryDark"
-                app:corner="@dimen/corner_map_item"
-                app:stroke_width="@dimen/stroke_width_map_item"
-                app:stroke_color="@color/colorPrimaryWhite"
-                app:isShowState2="true"
-                app:state_drawable2="@drawable/ic_sketch_work_kkblueishwhite_64dp"
-                app:state_drawable2_width="@dimen/size_custom_location_icon"
-                app:state_drawable2_height="@dimen/size_custom_location_icon"
-                app:state_drawable2_mode="center" />
+            <RelativeLayout
+                android:id="@+id/layout_search_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="@dimen/elevation_search_box"
+                android:layout_margin="@dimen/margin_location"
+                android:background="@drawable/bkg_search_box">
 
+                <!-- SEARCH BOX -->
+                <fragment
+                    android:id="@+id/search_box"
+                    android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                    android:layout_width="@dimen/width_search_box"
+                    android:layout_height="@dimen/height_search_box" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="-4dp"
+                android:clipChildren="false"
+                android:gravity="top|end"
+                android:orientation="horizontal">
+
+                <!-- HOME TODO: onClick="getHomeLocation" -->
+                <com.coorchice.library.SuperTextView
+                    android:layout_width="@dimen/width_location"
+                    android:layout_height="@dimen/height_location"
+                    android:layout_margin="@dimen/margin_location"
+                    app:corner="@dimen/corner_location"
+                    app:stroke_width="@dimen/stroke_width_location"
+                    app:isShowState2="true"
+                    app:shaderEnable="true"
+                    app:shaderMode="topToBottom"
+                    app:shaderStartColor="@color/colorPrimary"
+                    app:shaderEndColor="@color/colorPrimaryDark"
+                    app:pressBgColor="@color/colorPrimaryLight"
+                    app:stroke_color="@color/colorPrimaryWhite"
+                    app:state_drawable2="@drawable/ic_sketch_home_kkblueishwhite_64dp"
+                    app:state_drawable2_height="@dimen/icon_size_location"
+                    app:state_drawable2_mode="center"
+                    app:state_drawable2_width="@dimen/icon_size_location" />
+                <!-- WORK/SCHOOL TODO: onClick="getWorkSchoolLocation" -->
+                <com.coorchice.library.SuperTextView
+                    android:layout_width="@dimen/width_location"
+                    android:layout_height="@dimen/height_location"
+                    android:layout_margin="@dimen/margin_location"
+                    app:corner="@dimen/corner_location"
+                    app:stroke_width="@dimen/stroke_width_location"
+                    app:state_drawable2="@drawable/ic_sketch_work_kkblueishwhite_64dp"
+                    app:state_drawable2_height="@dimen/icon_size_location"
+                    app:state_drawable2_width="@dimen/icon_size_location"
+                    app:isShowState2="true"
+                    app:state_drawable2_mode="center"
+                    app:shaderEnable="true"
+                    app:shaderMode="topToBottom"
+                    app:shaderStartColor="@color/colorPrimary"
+                    app:shaderEndColor="@color/colorPrimaryDark"
+                    app:pressBgColor="@color/colorPrimaryLight"
+                    app:stroke_color="@color/colorPrimaryWhite" />
+                <!-- CURRENT LOCATION    TODO: onClick="getUserLocation" -->
+                <com.coorchice.library.SuperTextView
+                    android:id="@+id/superbutton_user"
+                    android:layout_width="@dimen/height_location"
+                    android:layout_height="@dimen/width_location"
+                    android:layout_margin="@dimen/margin_location"
+                    app:corner="@dimen/corner_action_button"
+                    app:stroke_width="@dimen/stroke_width_location"
+                    app:state_drawable_height="@dimen/icon_size_location"
+                    app:state_drawable_width="@dimen/icon_size_location"
+                    app:isShowState="true"
+                    app:shaderEnable="true"
+                    app:shaderMode="topToBottom"
+                    app:shaderStartColor="@color/colorPrimary"
+                    app:shaderEndColor="@color/colorPrimaryDark"
+                    app:pressBgColor="@color/colorPrimaryLight"
+                    app:stroke_color="@color/colorPrimaryWhite"
+                    app:state_drawable="@drawable/ic_sketch_current_location_kkblueishwhite_128dp"
+                    app:state_drawable_mode="center" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -262,14 +243,6 @@
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_footer_kkdarkblue_transparent"
         android:orientation="horizontal">
-
-        <!--View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_capsule"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:background="@drawable/capsule_kkorange"
-            android:contentDescription="@string/cont_desc_rounded_rect" /-->
 
     </LinearLayout>
 
