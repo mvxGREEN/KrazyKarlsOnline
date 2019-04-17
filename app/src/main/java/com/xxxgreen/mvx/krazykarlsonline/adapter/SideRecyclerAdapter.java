@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xxxgreen.mvx.krazykarlsonline.R;
-import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Appetizer;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemSide;
 import com.xxxgreen.mvx.krazykarlsonline.data.sqlite.DatabaseManager;
 

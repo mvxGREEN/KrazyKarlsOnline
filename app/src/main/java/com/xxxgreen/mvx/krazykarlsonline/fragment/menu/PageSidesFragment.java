@@ -11,10 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xxxgreen.mvx.krazykarlsonline.R;
-import com.xxxgreen.mvx.krazykarlsonline.adapter.EntreeRecyclerAdapter;
 import com.xxxgreen.mvx.krazykarlsonline.adapter.SideRecyclerAdapter;
-import com.xxxgreen.mvx.krazykarlsonline.data.parcels.Appetizer;
-import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemEntree;
 import com.xxxgreen.mvx.krazykarlsonline.data.parcels.ItemSide;
 
 import java.util.ArrayList;
