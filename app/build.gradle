@@ -1,3 +1,4 @@
+
 apply plugin: 'com.android.application'
 
 android {
@@ -32,17 +33,18 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:16.0.0'
     implementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation 'com.google.android.gms:play-services-places:16.0.0'
-    // Github Classics
+    // Github Classics (stable)
     implementation 'org.jsoup:jsoup:1.11.3'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'com.sackcentury:shinebutton:0.2.0'
-    // Github Experimental
+    implementation 'com.github.chenBingX:SuperTextView:v3.0.0'
+    // Github NEW (unstable)
     implementation 'com.daimajia.easing:library:2.0@aar'
     implementation 'com.daimajia.androidanimations:library:2.3@aar'
     implementation 'com.hyman:flowlayout-lib:1.1.2'
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
     implementation 'com.nightonke:boommenu:2.1.1'
-    implementation 'com.github.chenBingX:SuperTextView:v3.0.0'
+    implementation 'com.github.bosphere.android-fadingedgelayout:fadingedgelayout:1.0.0'
     implementation ('cn.trinea.android.view.autoscrollviewpager:android-auto-scroll-view-pager:1.1.2') {
         exclude module: 'support-v4'
     }

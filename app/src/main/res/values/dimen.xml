@@ -27,8 +27,6 @@
     <dimen name="text_size_username">15sp</dimen>
 
     <!-- SECTION MAP -->
-    <dimen name="height_panel_header_menu">48dp</dimen>
-    <dimen name="height_panel_middle_menu">184dp</dimen>
     <dimen name="height_my_location_panel">64dp</dimen>
     <dimen name="width_my_location_panel">144dp</dimen>
     <dimen name="height_store_location_panel">72dp</dimen>
@@ -37,10 +35,15 @@
     <dimen name="stroke_width_map_item">2dp</dimen>
 
     <!-- SECTION MENU -->
-    <dimen name="height_menu_tab">48dp</dimen>
+    <dimen name="height_menu_tab">44dp</dimen>
+    <dimen name="height_panel_header_menu">44dp</dimen>
+    <dimen name="height_panel_middle_menu">216dp</dimen>
+    <dimen name="height_panel_footer_menu">20dp</dimen>
     <dimen name="stroke_width_menu_item">2dp</dimen>
     <dimen name="text_size_menu_item_title">18sp</dimen>
     <dimen name="text_size_menu_item_subtitle">16sp</dimen>
+    <dimen name="fading_edge_top_menu">4dp</dimen>
+    <dimen name="fading_edge_btm_menu">20dp</dimen>
 
     <!-- SECTION ORDER -->
 

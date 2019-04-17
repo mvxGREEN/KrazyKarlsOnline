@@ -34,17 +34,22 @@
             app:tabMode="scrollable"
             app:tabIndicatorColor="@color/elizabethLight"
             app:tabSelectedTextColor="@color/elizabethLight"
-            app:tabTextColor="@color/colorPrimaryWhite" />
+            app:tabTextColor="@color/colorPrimaryVeryLight" />
 
     </RelativeLayout>
 
     <!-- MIDDLE (CONTENT) -->
-    <LinearLayout
+    <com.bosphere.fadingedgelayout.FadingEdgeLayout
+        android:id="@+id/fading_edge_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_middle_menu"
+        android:padding="4dp"
         android:orientation="vertical"
         android:clipChildren="false"
-        android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
+        android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent"
+        app:fel_edge="top|bottom"
+        app:fel_size_top="@dimen/fading_edge_top_menu"
+        app:fel_size_bottom="@dimen/fading_edge_btm_menu">
 
         <!--  PAGE CONTENT  -->
         <com.xxxgreen.mvx.krazykarlsonline.ui.NonSwipeViewPager
@@ -53,24 +58,16 @@
             android:layout_height="wrap_content"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    </LinearLayout>
+    </com.bosphere.fadingedgelayout.FadingEdgeLayout>
 
 
     <!-- FOOTER -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height_panel_footer"
+        android:layout_height="@dimen/height_panel_footer_menu"
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_footer_kkdarkblue_transparent"
         android:orientation="vertical">
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_capsule"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/capsule_kkorange"
-            android:contentDescription="@string/cont_desc_rounded_rect" />
 
 
     </LinearLayout>
