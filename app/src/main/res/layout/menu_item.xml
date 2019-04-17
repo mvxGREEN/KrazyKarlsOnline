@@ -22,23 +22,23 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/title_pizza"
+            android:id="@+id/title_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/example_pizza_name"
             android:textSize="@dimen/text_size_menu_item_title"
-            android:textColor="@color/colorWhite"
+            android:textColor="@color/colorPrimaryWhite"
             android:fontFamily="@font/permanent_marker"/>
 
         <TextView
-            android:id="@+id/toppings_pizza"
+            android:id="@+id/toppings_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-4dp"
             android:text="@string/example_pizza_toppings"
             android:textSize="@dimen/text_size_menu_item_subtitle"
             android:textStyle="italic"
-            android:textColor="@color/colorVeryLightGrey"
+            android:textColor="@color/colorPrimaryVeryLight"
             android:ellipsize="end"
             android:maxLines="1"/>
 

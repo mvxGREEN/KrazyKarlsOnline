@@ -55,8 +55,8 @@ public class EntreeRecyclerAdapter extends RecyclerView.Adapter<EntreeRecyclerAd
         public ItemEntreeHolder(View itemView) {
             super(itemView);
             this.i_icon = itemView.findViewById(R.id.icon_pizza);
-            this.t_title = itemView.findViewById(R.id.title_pizza);
-            this.t_toppings = itemView.findViewById(R.id.toppings_pizza);
+            this.t_title = itemView.findViewById(R.id.title_item);
+            this.t_toppings = itemView.findViewById(R.id.toppings_item);
             itemView.setOnClickListener(this);
         }
 

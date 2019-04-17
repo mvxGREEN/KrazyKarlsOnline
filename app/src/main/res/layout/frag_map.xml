@@ -44,17 +44,19 @@
                 android:contentDescription="@string/cont_desc_rounded_rect"
                 android:background="@drawable/capsule_kkorange" />
 
-            <!-- PAGE ICON -->
+            <!-- SECTION ICON -->
             <ImageView
+                android:id="@+id/img_section_icon"
                 android:layout_width="@dimen/size_page_icon"
                 android:layout_height="@dimen/size_page_icon"
+                android:layout_marginBottom="-8dp"
                 android:background="@drawable/ic_sketch_map_kkblueishwhite_88dp"
                 android:contentDescription="@string/page_tab_icon" />
 
             <!-- DIVIDER -->
             <View
                 android:layout_width="0dp"
-                android:layout_height="3dp"
+                android:layout_height="@dimen/height_capsule"
                 android:layout_weight="0.76"
                 android:layout_marginTop="16dp"
                 android:layout_marginStart="4dp"
@@ -130,10 +132,9 @@
                 app:isShowState="true"
                 app:state_drawable="@drawable/ic_sketch_add_location_kkblueishwhite_72dp"
                 app:state_drawable_mode="fill"
-                tools:ignore="RelativeOverlap" />    -->
+                tools:ignore="RelativeOverlap" />   -->
 
         </LinearLayout>
-
 
     </RelativeLayout>
 
@@ -153,9 +154,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="8dp"
             android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginEnd="@dimen/width_my_location_panel"
-            android:layout_marginRight="@dimen/width_my_location_panel"
+            android:layout_marginEnd="4dp"
             android:layout_marginBottom="4dp"
             android:gravity="start|bottom"
             android:orientation="vertical"
@@ -165,52 +164,45 @@
             <com.coorchice.library.SuperTextView
                 android:layout_width="@dimen/width_store_location_panel"
                 android:layout_height="@dimen/height_store_location_panel"
-                android:paddingTop="0dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:paddingBottom="2dp"
-                android:layout_marginBottom="-12dp"
-                android:alpha="0.80"
+                android:layout_margin="4dp"
+                android:padding="4dp"
                 android:gravity="start|bottom"
-                app:isShowState="true"
-                app:state_drawable="@drawable/photo_elizabeth_storefront_sketch_border_kkorangeishwhite"
-                app:state_drawable_mode="fill"
+                app:shaderEnable="true"
+                app:shaderMode="topToBottom"
+                app:shaderStartColor="@color/elizabethOrange"
+                app:shaderEndColor="@color/elizabethDark"
+                app:corner="@dimen/corner_map_item"
+                app:stroke_width="@dimen/stroke_width_map_item"
+                app:stroke_color="@color/elizabethDark"
                 android:text="@string/title_map_location_elizabeth"
                 android:fontFamily="@font/permanent_marker"
                 android:textAlignment="gravity"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 app:text_fill_color="@color/elizabethWhite"
                 app:text_stroke="true"
-                app:text_stroke_color="@color/elizabethOrange"
+                app:text_stroke_color="@color/elizabethDarker"
                 app:text_stroke_width="3dp"/>
             <!-- STORE LOCATION #2 (TIMBERLINE) -->
             <com.coorchice.library.SuperTextView
                 android:layout_width="@dimen/width_store_location_panel"
                 android:layout_height="@dimen/height_store_location_panel"
-                android:paddingTop="0dp"
-                android:paddingStart="20dp"
-                android:paddingEnd="20dp"
-                android:paddingBottom="2dp"
-                android:layout_marginBottom="-4dp"
-                android:alpha="0.80"
+                android:layout_margin="4dp"
+                android:padding="4dp"
                 android:gravity="start|bottom"
-                app:isShowState="true"
-                app:state_drawable="@drawable/photo_timberline_storefront_sketch_border_kkgreenishwhite"
-                app:state_drawable_mode="fill"
-                app:isShowState2="false"
-                app:state_drawable2="@drawable/ic_sketch_store_location_kkblueihwhite_88dp"
-                app:state_drawable2_width="20dp"
-                app:state_drawable2_height="20dp"
-                app:state_drawable2_mode="leftBottom"
-                app:state_drawable2_padding_top="-8dp"
-                app:state_drawable2_padding_left="20dp"
+                app:shaderEnable="true"
+                app:shaderMode="topToBottom"
+                app:shaderStartColor="@color/timberlineGreen"
+                app:shaderEndColor="@color/timberlineDark"
+                app:corner="@dimen/corner_map_item"
+                app:stroke_width="@dimen/stroke_width_map_item"
+                app:stroke_color="@color/timberlineDark"
                 android:text="@string/title_map_location_timberline"
                 android:fontFamily="@font/permanent_marker"
                 android:textAlignment="gravity"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 app:text_fill_color="@color/timberlineWhite"
                 app:text_stroke="true"
-                app:text_stroke_color="@color/timberlineGreen"
+                app:text_stroke_color="@color/timberlineDarker"
                 app:text_stroke_width="3dp" />
 
         </LinearLayout>
@@ -219,27 +211,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginEnd="@dimen/width_my_location_panel"
-            android:layout_marginRight="@dimen/width_my_location_panel"
-            android:layout_marginBottom="4dp"
-            android:gravity="end|bottom"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="bottom|end"
             android:orientation="vertical"
             android:clipChildren="false">
 
             <!-- HOME -->
             <com.coorchice.library.SuperTextView
-                android:layout_width="@dimen/width_my_location_panel"
-                android:layout_height="@dimen/height_my_location_panel"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_width="@dimen/size_custom_location"
+                android:layout_height="@dimen/size_custom_location"
+                android:layout_margin="4dp"
                 android:padding="4dp"
-                android:alpha="0.80"
                 android:gravity="center_horizontal|bottom"
                 app:shaderEnable="true"
                 app:shaderMode="topToBottom"
@@ -250,27 +233,15 @@
                 app:stroke_color="@color/colorPrimaryWhite"
                 app:isShowState2="true"
                 app:state_drawable2="@drawable/ic_sketch_home_kkblueishwhite_64dp"
-                app:state_drawable2_width="32dp"
-                app:state_drawable2_height="32dp"
-                app:state_drawable2_mode="top"
-                app:state_drawable2_padding_top="8dp"
-                android:text="@string/location_title_custom_location_home"
-                android:textColor="@color/colorWhite"
-                android:fontFamily="@font/permanent_marker"
-                android:textAlignment="gravity"
-                android:textSize="15sp"
-                android:shadowColor="@color/colorPrimaryVeryDark"
-                android:shadowDx="-1"
-                android:shadowDy="-1"
-                android:shadowRadius="1"/>
+                app:state_drawable2_width="@dimen/size_custom_location_icon"
+                app:state_drawable2_height="@dimen/size_custom_location_icon"
+                app:state_drawable2_mode="center" />
             <!-- WORK/SCHOOL -->
             <com.coorchice.library.SuperTextView
-                android:layout_width="@dimen/width_my_location_panel"
-                android:layout_height="@dimen/height_my_location_panel"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:padding="2dp"
-                android:alpha="0.80"
+                android:layout_width="@dimen/size_custom_location"
+                android:layout_height="@dimen/size_custom_location"
+                android:layout_margin="4dp"
+                android:padding="4dp"
                 android:gravity="center_horizontal|bottom"
                 app:shaderEnable="true"
                 app:shaderMode="topToBottom"
@@ -281,20 +252,9 @@
                 app:stroke_color="@color/colorPrimaryWhite"
                 app:isShowState2="true"
                 app:state_drawable2="@drawable/ic_sketch_work_kkblueishwhite_64dp"
-                app:state_drawable2_width="32dp"
-                app:state_drawable2_height="32dp"
-                app:state_drawable2_mode="top"
-                app:state_drawable2_padding_top="8dp"
-                android:text="@string/location_title_custom_location_workschool"
-                android:textColor="@color/colorWhite"
-                android:fontFamily="@font/permanent_marker"
-                android:textAlignment="gravity"
-                android:textSize="15sp"
-                android:shadowColor="@color/colorPrimaryVeryDark"
-                android:shadowDx="-1"
-                android:shadowDy="-1"
-                android:shadowRadius="1" />
-
+                app:state_drawable2_width="@dimen/size_custom_location_icon"
+                app:state_drawable2_height="@dimen/size_custom_location_icon"
+                app:state_drawable2_mode="center" />
 
 
         </LinearLayout>
