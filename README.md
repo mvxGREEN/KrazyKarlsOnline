@@ -21,12 +21,12 @@ _ By Mvx Green _
   - Access information about stores (wait time, hours, address, phone #, upcoming events, etc.)
 
 
-  ### TODO:
+### TODO:
   - Register OnClickListeners for locations & map markers
   - Create **FragDetails** class + layout
 
 
 
-  ### KNOWN BUGS:
+### KNOWN BUGS:
   - **FragMenu** header & content sections don't respond when trying to swipe left (should scroll to next frag)
   - When scrolling to **FragMenu** from **FragOrder**,
