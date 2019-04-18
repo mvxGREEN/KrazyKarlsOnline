@@ -5,8 +5,8 @@
     android:id="@+id/layout_panel"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="@dimen/margin_panel"
-    android:paddingEnd="@dimen/margin_panel"
+    android:paddingStart="@dimen/x_padding_panel"
+    android:paddingEnd="@dimen/x_padding_panel"
     android:orientation="vertical"
     android:gravity="bottom"
     android:layout_gravity="start|bottom"
@@ -20,7 +20,7 @@
         android:layout_height="@dimen/height_panel_header_menu"
         android:clipChildren="false"
         android:layout_gravity="center_horizontal|bottom"
-        android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
+        android:background="@drawable/bkg_panel_header">
 
         <!-- LAYOUT TABS -->
         <android.support.design.widget.TabLayout

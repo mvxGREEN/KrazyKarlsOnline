@@ -12,13 +12,14 @@
     <dimen name="stroke_width_map_overlay">2dp</dimen>
 
     <!-- PANEL -->
-    <dimen name="margin_panel">16dp</dimen>
+    <dimen name="x_padding_panel">16dp</dimen>
         <!-- Header -->
         <dimen name="height_panel_header">44dp</dimen>
         <dimen name="elevation_panel_header">4dp</dimen>
         <dimen name="size_page_icon">40dp</dimen>
         <dimen name="size_action_button">40dp</dimen>
         <dimen name="height_capsule">3dp</dimen>
+        <dimen name="x_margin_capsule">16dp</dimen>
         <dimen name="corner_action_button">16dp</dimen>
         <dimen name="stroke_width_action_button">1dp</dimen>
         <!-- Middle -->

@@ -5,8 +5,6 @@
     android:id="@+id/layout_panel"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="@dimen/margin_panel"
-    android:paddingEnd="@dimen/margin_panel"
     android:orientation="vertical"
     android:gravity="bottom"
     android:layout_gravity="start|bottom"
@@ -17,7 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_middle"
-        android:padding="@dimen/margin_panel"
+        android:padding="@dimen/x_padding_panel"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         android:clipChildren="false"
@@ -30,87 +28,88 @@
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_header"
-        android:elevation="@dimen/elevation_panel_header"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="@dimen/x_padding_panel"
+        android:layout_marginEnd="@dimen/x_padding_panel"
         android:clipChildren="false"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:background="@drawable/bkg_panel_header_home">
 
         <!-- LAYOUT DIVIDER & ICON -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="-20dp"
+            android:layout_alignParentBottom="true"
             android:gravity="start|bottom"
             android:clipChildren="false"
-            android:orientation="horizontal"
-            android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.17"
+                android:clipChildren="false">
+
+                <!-- SECTION ICON -->
+                <ImageView
+                    android:id="@+id/img_section_icon"
+                    android:layout_width="@dimen/size_page_icon"
+                    android:layout_height="@dimen/size_page_icon"
+                    android:elevation="4dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="-8dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/ic_sketch_home_kkblueishwhite_64dp"
+                    android:contentDescription="@string/page_tab_icon" />
+
+            </RelativeLayout>
 
             <!-- DIVIDER -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.16"
-                android:layout_marginBottom="4dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="0dp"
+                android:layout_weight="0.83"
+                android:layout_marginStart="@dimen/x_margin_capsule"
+                android:layout_marginLeft="@dimen/x_margin_capsule"
+                android:layout_marginEnd="@dimen/x_margin_capsule"
+                android:layout_marginRight="@dimen/x_margin_capsule"
                 android:contentDescription="@string/cont_desc_rounded_rect"
-                android:background="@drawable/capsule_kkorange" />
-
-            <!-- PAGE ICON -->
-            <ImageView
-                android:layout_width="@dimen/size_page_icon"
-                android:layout_height="@dimen/size_page_icon"
-                android:background="@drawable/ic_sketch_home_kkblueishwhite_64dp"
-                android:contentDescription="@string/page_tab_icon" />
-
-            <!-- DIVIDER -->
-            <View
-                android:layout_width="0dp"
-                android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.67"
-                android:layout_marginStart="0dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="4dp"
-                android:contentDescription="@string/cont_desc_rounded_rect"
-                android:background="@drawable/capsule_kkorange" />
+                android:background="@null" />
 
         </LinearLayout>
 
-        <!-- LAYOUT ACTION BUTTONS -->
+        <!-- ACTION BUTTONS -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
+            android:layout_marginTop="-24dp"
+            android:layout_marginEnd="-22dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
             android:gravity="end|bottom"
+            android:clipChildren="false"
             android:orientation="horizontal">
 
-            <!-- USER SUPERBUTTON -->
+            <!-- USER SUPERBUTTON (CLOUD) -->
             <com.coorchice.library.SuperTextView
                 android:id="@+id/superbutton_user"
                 android:layout_width="88dp"
-                android:layout_height="48dp"
+                android:layout_height="44dp"
                 android:gravity="center_horizontal|center_vertical"
                 app:isShowState="true"
                 app:state_drawable="@drawable/bkg_sketch_cloud_kkblueishwhite_small"
                 app:state_drawable_mode="fill"
                 app:state_drawable_width="88dp"
-                app:state_drawable_height="48dp"
+                app:state_drawable_height="@dimen/size_action_button"
                 app:state_drawable_padding_top="4dp"
                 android:text="@string/default_user_name"
                 android:textColor="@color/colorPrimaryDark"
-                app:text_fill_color="@color/colorPrimaryDark"
                 app:pressTextColor="@color/elizabethOrange"
                 android:textSize="@dimen/text_size_username"
                 android:textAlignment="gravity"
                 android:fontFamily="@font/permanent_marker"
                 tools:ignore="RelativeOverlap" />
 
-            <!-- SETTINGS SUPERBUTTON -->
+            <!-- SETTINGS SUPERBUTTON (SUN) -->
             <com.coorchice.library.SuperTextView
                 android:layout_width="@dimen/size_action_button"
                 android:layout_height="@dimen/size_action_button"
@@ -118,13 +117,15 @@
                 android:layout_marginEnd="4dp"
                 android:gravity="center"
                 app:corner="@dimen/corner_superbtn"
-                app:pressBgColor="@color/elizabethOrange"
-                app:isShowState="true"
-                app:state_drawable="@drawable/ic_sketch_settings_kkblueishwhite_64dp"
-                app:state_drawable_mode="center"
                 app:state_drawable_height="@dimen/size_action_button"
                 app:state_drawable_width="@dimen/size_action_button"
+                android:alpha="0.83"
+                app:pressBgColor="@color/elizabethOrange"
+                app:isShowState="true"
+                app:state_drawable="@drawable/ic_sketch_settings_64dp"
+                app:state_drawable_mode="center"
                 tools:ignore="RelativeOverlap" />
+
 
         </LinearLayout>
 
@@ -134,6 +135,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_footer"
+        android:layout_marginStart="@dimen/x_padding_panel"
+        android:layout_marginEnd="@dimen/x_padding_panel"
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_footer_kkdarkblue_transparent"
         android:orientation="horizontal">

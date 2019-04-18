@@ -4,6 +4,11 @@
     <corners
         android:topLeftRadius="@dimen/corner_map_overlay"
         android:topRightRadius="@dimen/corner_map_overlay" />
-    <solid
-        android:color="@color/colorPrimary" />
+    <gradient
+        android:type="radial"
+        android:gradientRadius="32dp"
+        android:centerX="0.99"
+        android:centerY="0.01"
+        android:startColor="@color/elizabethLight"
+        android:endColor="@color/colorPrimary"/>
 </shape>

@@ -5,8 +5,8 @@
     android:id="@+id/layout_panel"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="@dimen/margin_panel"
-    android:paddingEnd="@dimen/margin_panel"
+    android:paddingStart="@dimen/x_padding_panel"
+    android:paddingEnd="@dimen/x_padding_panel"
     android:orientation="vertical"
     android:gravity="bottom"
     android:layout_gravity="start|bottom"
@@ -20,7 +20,7 @@
         android:layout_height="@dimen/height_panel_header"
         android:clipChildren="false"
         android:layout_gravity="center"
-        android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
+        android:background="@drawable/bkg_panel_header">
 
         <!-- LAYOUT PANEL TITLE -->
         <LinearLayout
@@ -74,7 +74,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_middle"
-        android:padding="@dimen/margin_panel"
+        android:padding="@dimen/x_padding_panel"
         android:orientation="vertical"
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">

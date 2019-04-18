@@ -5,8 +5,8 @@
     android:id="@+id/layout_panel"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="@dimen/margin_panel"
-    android:paddingEnd="@dimen/margin_panel"
+    android:paddingStart="@dimen/x_padding_panel"
+    android:paddingEnd="@dimen/x_padding_panel"
     android:orientation="vertical"
     android:gravity="bottom"
     android:layout_gravity="start|bottom"
@@ -22,7 +22,7 @@
         android:layout_marginTop="16dp"
         android:clipChildren="false"
         android:layout_gravity="center"
-        android:background="@drawable/bkg_panel_header_kkdarkblue_transparent">
+        android:background="@drawable/bkg_panel_header">
 
         <!-- LAYOUT ICON & DIVIDER -->
         <LinearLayout
@@ -176,6 +176,7 @@
 
                 <!-- HOME TODO: onClick="getHomeLocation" -->
                 <com.coorchice.library.SuperTextView
+                    android:id="@+id/superbtn_home_location"
                     android:layout_width="@dimen/width_location"
                     android:layout_height="@dimen/height_location"
                     android:layout_margin="@dimen/margin_location"
@@ -194,6 +195,7 @@
                     app:state_drawable2_mode="center" />
                 <!-- WORK/SCHOOL TODO: onClick="getWorkSchoolLocation" -->
                 <com.coorchice.library.SuperTextView
+                    android:id="@+id/superbtn_workschool_location"
                     android:layout_width="@dimen/width_location"
                     android:layout_height="@dimen/height_location"
                     android:layout_margin="@dimen/margin_location"
@@ -212,7 +214,7 @@
                     app:stroke_color="@color/colorPrimaryWhite" />
                 <!-- CURRENT LOCATION    TODO: onClick="getUserLocation" -->
                 <com.coorchice.library.SuperTextView
-                    android:id="@+id/superbutton_user"
+                    android:id="@+id/superbtn_current_location"
                     android:layout_width="@dimen/height_location"
                     android:layout_height="@dimen/width_location"
                     android:layout_margin="@dimen/margin_location"
