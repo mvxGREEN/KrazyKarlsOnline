@@ -1,5 +1,6 @@
 # KrazyKarlsOnline
 **Android client for Krazy Karl's Pizza**
+_ By Mvx Green _
 
 ### SCREENSHOTS:
 
