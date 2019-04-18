@@ -16,7 +16,7 @@
         <!-- Header -->
         <dimen name="height_panel_header">44dp</dimen>
         <dimen name="elevation_panel_header">4dp</dimen>
-        <dimen name="size_page_icon">44dp</dimen>
+        <dimen name="size_page_icon">40dp</dimen>
         <dimen name="size_action_button">40dp</dimen>
         <dimen name="height_capsule">3dp</dimen>
         <dimen name="corner_action_button">16dp</dimen>

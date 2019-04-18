@@ -13,6 +13,18 @@
     android:clipChildren="false"
     tools:context=".fragment.sections.FragHome">
 
+    <!-- MIDDLE -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_panel_middle"
+        android:padding="@dimen/margin_panel"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:clipChildren="false"
+        android:background="@null">
+
+    </LinearLayout>
+
     <!-- HEADER -->
     <RelativeLayout
         android:id="@+id/layout_header"
@@ -114,46 +126,9 @@
                 app:state_drawable_width="@dimen/size_action_button"
                 tools:ignore="RelativeOverlap" />
 
-            <!-- HELP SUPERBUTTON
-            <com.coorchice.library.SuperTextView
-                android:id="@+id/superbutton_help"
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:padding="4dp"
-                android:gravity="center"
-                app:corner="@dimen/corner_superbtn"
-                app:stroke_width="@dimen/stroke_width_map_overlay"
-                app:stroke_color="@color/colorPrimaryDark"
-                app:solid="@color/colorWhite"
-                app:pressBgColor="@color/colorGrey"
-                app:isShowState="true"
-                app:state_drawable="@drawable/ic_sketch_help_kkdarkblue_64dp"
-                app:state_drawable_mode="center"
-                app:state_drawable_height="32dp"
-                app:state_drawable_width="32dp"
-                tools:ignore="RelativeOverlap" /> -->
-
-
         </LinearLayout>
 
     </RelativeLayout>
-
-    <!-- MIDDLE -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/height_panel_middle"
-        android:padding="@dimen/margin_panel"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:clipChildren="false"
-        android:background="@drawable/bkg_panel_middle_kkdarkblue_transparent">
-
-        <!--    <cn.trinea.android.view.autoscrollviewpager.AutoScrollViewPager
-            android:id="@+id/featured_view_pager"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" /> -->
-
-    </LinearLayout>
 
     <!-- FOOTER -->
     <LinearLayout
