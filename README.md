@@ -11,19 +11,28 @@ _ By Mvx Green _
 
 - Online ordering & billing system (pickup or delivery)
   - Customization: user should be able to add/remove/sub ingredients from all items, and include other preferences such as cook time (reg. or crispy), thin or gluten-free crust, number of slices, slice shape (reg. or square), etc.
-- Access to detailed menu information
-  - Include photos and/or generated graphics
+- Detailed menu info
+  - Photos and/or generated graphics
   - Highlight common allergens
-- Provide a UI that is user-friendly and efficient
-- Interactive map leveraging Google Maps and Google Places
-  APIs
-  - Markers on store locations, accurate delivery zones, custom markers for quick-access to common locations, & 'current location' button
-  - Access information about stores (wait time, hours, address, phone #, upcoming events, etc.)
+  - Highlight vegetarian, vegan, dairy-free, and gluten-free options
+- Friendly and efficient UI
+- Interactive map (Google Maps and Google Places
+  APIs)
+  - Delivery zones, store locations (fixed)
+  - Store info: wait time, hours, address, phone #, upcoming events...
+  - Custom location markers & current location button (dynamic)
+
 
 
 ### TODO:
-  - Register OnClickListeners for locations & map markers
-  - Create **FragDetails** class + layout
+  - Register OnClickListeners for locations (markers & buttons)
+  - Create **LocationDetails** class & layout; inflate when location is clicked (button or marker)
+    - Bind store data; incl. images from Google Places
+    - 'Order Now' button
+  - Create **ItemDetails** class & layout; inflate when item is clicked
+    - Bind detailed item data
+    - Customize toppings
+    - 'Add to cart' button
 
 
 
