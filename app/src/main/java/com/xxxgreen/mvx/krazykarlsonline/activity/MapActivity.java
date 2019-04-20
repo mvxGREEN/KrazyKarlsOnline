@@ -18,6 +18,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -394,5 +396,29 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
             Log.w(TAG, "Index, " + position + ", is outside array length: " + 2);
             return "";
         }
+    }
+
+    public void getLocationDetails(View v) {
+        int viewId = v.getId();
+        String locationName;
+        switch (viewId) {
+            case (R.id.superbtn_home_location):
+                locationName = "Home";
+                //TODO check for saved location in prefs; display details OR ask user to save new location
+                break;
+            case (R.id.superbtn_workschool_location):
+                locationName = "Work/School";
+                //TODO **
+                break;
+            case (R.id.superbtn_current_location):
+                locationName = "Current Location";
+                //TODO locate user on map & display details, next actions
+                break;
+            default:
+                locationName = "Unknown";
+                break;
+        }
+        Log.i(TAG,"Clicked location: " + locationName);
+        Toast.makeText(v.getContext(), "Clicked location: " + locationName, Toast.LENGTH_SHORT).show();
     }
 }

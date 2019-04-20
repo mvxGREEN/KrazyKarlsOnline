@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.coorchice.library.SuperTextView;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
@@ -87,7 +88,5 @@ public class FragMap extends Fragment {
 
         return rootView;
     }
-
-
 
 }

@@ -15,15 +15,17 @@
     <dimen name="x_padding_panel">16dp</dimen>
         <!-- Header -->
         <dimen name="height_panel_header">44dp</dimen>
-        <dimen name="elevation_panel_header">4dp</dimen>
+        <dimen name="elevation_panel_header">6dp</dimen>
         <dimen name="size_page_icon">40dp</dimen>
         <dimen name="size_action_button">40dp</dimen>
         <dimen name="height_capsule">3dp</dimen>
         <dimen name="x_margin_capsule">16dp</dimen>
         <dimen name="corner_action_button">16dp</dimen>
         <dimen name="stroke_width_action_button">1dp</dimen>
+        <dimen name="elevation_section_icon">8dp</dimen>
         <!-- Middle -->
         <dimen name="height_panel_middle">152dp</dimen>
+        <dimen name="elevation_panel_middle">4dp</dimen>
         <dimen name="padding_panel_middle">8dp</dimen>
         <!-- Footer -->
         <dimen name="height_panel_footer">32dp</dimen>
@@ -37,10 +39,13 @@
             <dimen name="width_search_box">176dp</dimen>
             <dimen name="height_search_box">56dp</dimen>
             <dimen name="elevation_search_box">4dp</dimen>
+            <dimen name="margin_search_box">4dp</dimen>
+            <dimen name="padding_search_box">4dp</dimen>
             <!-- Location -->
             <dimen name="width_location">56dp</dimen>
             <dimen name="width_store_location">160dp</dimen>
             <dimen name="height_location">56dp</dimen>
+            <dimen name="elevation_location_button">8dp</dimen>
             <dimen name="margin_location">4dp</dimen>
             <dimen name="padding_location">4dp</dimen>
             <dimen name="icon_size_location">32dp</dimen>
@@ -51,6 +56,7 @@
 
         <!-- Menu -->
         <dimen name="height_menu_tab">44dp</dimen>
+        <dimen name="corner_menu_item">16dp</dimen>
         <dimen name="height_panel_header_menu">44dp</dimen>
         <dimen name="height_panel_middle_menu">216dp</dimen>
         <dimen name="height_panel_footer_menu">20dp</dimen>

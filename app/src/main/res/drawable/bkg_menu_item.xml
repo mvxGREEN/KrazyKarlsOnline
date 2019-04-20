@@ -5,6 +5,6 @@
         android:endColor="@color/colorPrimaryDark"
         android:angle="-45"/>
     <stroke android:width="@dimen/stroke_width_menu_item" android:color="@color/colorPrimaryWhite" />
-    <corners android:radius="8dp"/>
+    <corners android:radius="@dimen/corner_menu_item"/>
     <padding android:left="8dp" android:top="8dp" android:right="8dp" android:bottom="8dp" />
 </shape>

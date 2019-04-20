@@ -11,7 +11,7 @@
     android:gravity="bottom"
     android:layout_gravity="start|bottom"
     android:clipChildren="false"
-    tools:context=".fragment.sections.FragMap">
+    tools:context=".activity.MapActivity">
 
     <!-- HEADER -->
     <RelativeLayout
@@ -31,36 +31,32 @@
             android:clipChildren="false"
             android:orientation="horizontal">
 
-            <!-- DIVIDER -->
-            <View
+            <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.16"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
-                android:contentDescription="@string/cont_desc_rounded_rect"
-                android:background="@drawable/capsule_kkorange" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.17">
 
-            <!-- SECTION ICON -->
-            <ImageView
-                android:id="@+id/img_section_icon"
-                android:layout_width="@dimen/size_page_icon"
-                android:layout_height="@dimen/size_page_icon"
-                android:layout_marginBottom="-8dp"
-                android:background="@drawable/ic_sketch_map_kkblueishwhite_88dp"
-                android:contentDescription="@string/page_tab_icon" />
+                <!-- SECTION ICON -->
+                <ImageView
+                    android:id="@+id/img_section_icon"
+                    android:layout_width="@dimen/size_page_icon"
+                    android:layout_height="@dimen/size_page_icon"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/ic_sketch_map_kkblueishwhite_88dp"
+                    android:contentDescription="@string/page_tab_icon" />
+
+            </RelativeLayout>
 
             <!-- DIVIDER -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.66"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginRight="4dp"
+                android:layout_weight="0.83"
+                android:layout_marginStart="@dimen/x_margin_capsule"
+                android:layout_marginLeft="@dimen/x_margin_capsule"
+                android:layout_marginEnd="@dimen/x_margin_capsule"
+                android:layout_marginRight="@dimen/x_margin_capsule"
                 android:contentDescription="@string/cont_desc_rounded_rect"
                 android:background="@drawable/capsule_kkorange" />
 
@@ -172,63 +168,51 @@
                 android:gravity="top|end"
                 android:orientation="horizontal">
 
-                <!-- HOME TODO: onClick="getHomeLocation" -->
+                <!-- HOME -->
                 <com.coorchice.library.SuperTextView
                     android:id="@+id/superbtn_home_location"
                     android:layout_width="@dimen/width_location"
                     android:layout_height="@dimen/height_location"
                     android:layout_margin="@dimen/margin_location"
-                    app:corner="@dimen/corner_location"
-                    app:stroke_width="@dimen/stroke_width_location"
-                    app:isShowState2="true"
-                    app:shaderEnable="true"
-                    app:shaderMode="topToBottom"
-                    app:shaderStartColor="@color/colorPrimary"
-                    app:shaderEndColor="@color/colorPrimaryDark"
-                    app:pressBgColor="@color/colorPrimaryLight"
-                    app:stroke_color="@color/colorPrimaryWhite"
-                    app:state_drawable2="@drawable/ic_sketch_home_kkblueishwhite_88dp"
+                    app:state_drawable2_width="@dimen/icon_size_location"
                     app:state_drawable2_height="@dimen/icon_size_location"
+                    app:isShowState2="true"
+                    app:state_drawable2="@drawable/ic_sketch_home_kkblueishwhite_88dp"
                     app:state_drawable2_mode="center"
-                    app:state_drawable2_width="@dimen/icon_size_location" />
-                <!-- WORK/SCHOOL TODO: onClick="getWorkSchoolLocation" -->
+                    app:isShowState="true"
+                    app:state_drawable="@drawable/bkg_custom_location_superbtn"
+                    app:state_drawable_mode="fill"
+                    android:onClick="getLocationDetails"/>
+                <!-- WORK/SCHOOL -->
                 <com.coorchice.library.SuperTextView
                     android:id="@+id/superbtn_workschool_location"
                     android:layout_width="@dimen/width_location"
                     android:layout_height="@dimen/height_location"
                     android:layout_margin="@dimen/margin_location"
-                    app:corner="@dimen/corner_location"
-                    app:stroke_width="@dimen/stroke_width_location"
-                    app:state_drawable2="@drawable/ic_sketch_workschool_kkblueishwhite_88dp"
-                    app:state_drawable2_height="@dimen/icon_size_location"
                     app:state_drawable2_width="@dimen/icon_size_location"
+                    app:state_drawable2_height="@dimen/icon_size_location"
                     app:isShowState2="true"
+                    app:state_drawable2="@drawable/ic_sketch_workschool_kkblueishwhite_88dp"
                     app:state_drawable2_mode="center"
-                    app:shaderEnable="true"
-                    app:shaderMode="topToBottom"
-                    app:shaderStartColor="@color/colorPrimary"
-                    app:shaderEndColor="@color/colorPrimaryDark"
-                    app:pressBgColor="@color/colorPrimaryLight"
-                    app:stroke_color="@color/colorPrimaryWhite" />
-                <!-- CURRENT LOCATION    TODO: onClick="getUserLocation" -->
+                    app:isShowState="true"
+                    app:state_drawable="@drawable/bkg_custom_location_superbtn"
+                    app:state_drawable_mode="fill"
+                    android:onClick="getLocationDetails"/>
+                <!-- CURRENT LOCATION -->
                 <com.coorchice.library.SuperTextView
                     android:id="@+id/superbtn_current_location"
                     android:layout_width="@dimen/height_location"
                     android:layout_height="@dimen/width_location"
                     android:layout_margin="@dimen/margin_location"
-                    app:corner="@dimen/corner_action_button"
-                    app:stroke_width="@dimen/stroke_width_location"
-                    app:state_drawable_height="@dimen/icon_size_location"
-                    app:state_drawable_width="@dimen/icon_size_location"
+                    app:state_drawable2_width="@dimen/icon_size_location"
+                    app:state_drawable2_height="@dimen/icon_size_location"
+                    app:isShowState2="true"
+                    app:state_drawable2="@drawable/ic_sketch_current_location_kkblueishwhite_128dp"
+                    app:state_drawable2_mode="center"
                     app:isShowState="true"
-                    app:shaderEnable="true"
-                    app:shaderMode="topToBottom"
-                    app:shaderStartColor="@color/colorPrimary"
-                    app:shaderEndColor="@color/colorPrimaryDark"
-                    app:pressBgColor="@color/colorPrimaryLight"
-                    app:stroke_color="@color/colorPrimaryWhite"
-                    app:state_drawable="@drawable/ic_sketch_current_location_kkblueishwhite_128dp"
-                    app:state_drawable_mode="center" />
+                    app:state_drawable="@drawable/bkg_custom_location_superbtn"
+                    app:state_drawable_mode="fill"
+                    android:onClick="getLocationDetails"/>
 
             </LinearLayout>
 
