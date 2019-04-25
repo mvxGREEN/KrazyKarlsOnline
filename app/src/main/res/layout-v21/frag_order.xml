@@ -18,51 +18,43 @@
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_header"
-        android:elevation="4dp"
+        android:elevation="@dimen/elevation_panel_header"
+        android:layout_marginTop="16dp"
         android:clipChildren="false"
-        android:layout_gravity="center"
+        android:layout_gravity="bottom"
         android:background="@drawable/bkg_panel_header">
 
         <!-- LAYOUT PANEL TITLE -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="start|center_vertical"
+            android:gravity="start|bottom"
             android:clipChildren="false"
             android:orientation="horizontal">
 
-            <!-- DIVIDER -->
-            <View
+            <RelativeLayout
                 android:layout_width="0dp"
-                android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.08"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginEnd="-2dp"
-                android:layout_marginRight="-2dp"
-                android:contentDescription="@string/cont_desc_rounded_rect"
-                android:background="@drawable/capsule_kkorange" />
+                android:layout_height="wrap_content"
+                android:layout_weight="0.17">
 
-            <!-- PAGE ICON TODO: Replace icon with 'About" icon -->
-            <ImageView
-                android:id="@+id/ic_page"
-                android:layout_width="@dimen/size_page_icon"
-                android:layout_height="@dimen/size_page_icon"
-                android:layout_marginBottom="-16dp"
-                android:background="@drawable/ic_sketch_order_kkblueishwhite_88dp"
-                android:contentDescription="@string/page_tab_icon"/>
+                <!-- PAGE ICON -->
+                <ImageView
+                    android:id="@+id/ic_page"
+                    android:layout_width="@dimen/size_page_icon"
+                    android:layout_height="@dimen/size_page_icon"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/ic_sketch_order_kkblueishwhite_88dp"
+                    android:contentDescription="@string/page_tab_icon"/>
+
+            </RelativeLayout>
 
             <!-- DIVIDER -->
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/height_capsule"
-                android:layout_weight="0.70"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="-2dp"
-                android:layout_marginLeft="-2dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
+                android:layout_weight="0.83"
+                android:layout_marginStart="@dimen/x_margin_capsule"
+                android:layout_marginEnd="@dimen/x_margin_capsule"
                 android:contentDescription="@string/cont_desc_rounded_rect"
                 android:background="@drawable/capsule_kkorange" />
 
@@ -75,6 +67,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_middle"
+        android:elevation="@dimen/elevation_panel_middle"
         android:padding="@dimen/x_padding_panel"
         android:orientation="vertical"
         android:clipChildren="false"
@@ -91,14 +84,6 @@
         android:clipChildren="false"
         android:background="@drawable/bkg_panel_footer_kkdarkblue_transparent"
         android:orientation="horizontal">
-
-        <!--View
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_capsule"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="4dp"
-            android:background="@drawable/capsule_kkorange"
-            android:contentDescription="@string/cont_desc_rounded_rect" /-->
 
     </LinearLayout>
 

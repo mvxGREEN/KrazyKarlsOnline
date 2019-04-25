@@ -18,7 +18,7 @@
         android:id="@+id/layout_header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_header_menu"
-        android:elevation="4dp"
+        android:elevation="@dimen/elevation_panel_header"
         android:clipChildren="false"
         android:layout_gravity="center">
 
@@ -55,6 +55,7 @@
         android:id="@+id/fading_edge_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_panel_middle_menu"
+        android:elevation="@dimen/elevation_panel_middle"
         android:padding="4dp"
         android:orientation="vertical"
         android:clipChildren="false"
