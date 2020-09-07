@@ -1,12 +1,15 @@
-# KrazyKarlsOnline
+### KrazyKarlsOnline
 **Android client for Krazy Karl's Pizza**
 _By Mvx Green_
 
-### Screenshots
+# Screenshots
 ![alt text](https://raw.githubusercontent.com/mvxGREEN/KrazyKarlsOnline/master/screenshots/KKO_MENU_2.jpg)
 
-### Mission
-To extend the online presence of Krazy Karl's Pizza with an Android client emphasizing user-first, mobile-friendly design.
+# Mission
+To extend the online presence of Krazy Karl's Pizza with an Android client.
+
+# Meta-Mission
+Learn the basics of designing and building a restaurant eCommerce app.
 
 ### Active Goals
 - Online ordering & billing system (pickup or delivery)
